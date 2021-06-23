@@ -5,21 +5,21 @@ link: <https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBN
 
 ## Equipe e Definição de Papéis
 
-Membro     |     Papel   |   E-mail   |
----------  | ----------- | ---------- |
-           | Gerente     | 
-Sandra     | Cliente (Diretora) | sandra@ceres.ufrn.br
-Zé         | Analista, Testador | ze@silva.com
-Wanessa    | Gerente, Desenvolvedor | wanessaparelhas68@gmail.com
+Membro     |          Papel         |            E-mail            |
+---------  | ---------------------- | ---------------------------- |
+Adalberto  | Desenvolvedor          | btow.m@hotmail.com           |
+Lucas      | Desenvolvedor          | santoslucas9956@gmail.com    |
+Wanessa    | Gerente, Desenvolvedor | wanessaparelhas68@gmail.com  |
+Zaú        | Analista, Testador     | zauhdf@gmail.com             |
 
 ### Matriz de Competências
 
 Membro     |     Competências   |
----------  | ----------- |
-Taciano    | Desenvolvedor Java, Junit, Eclipse, JSP, JSF, Hibernate, Matemática, Latex, etc |
-Sandra     | Gestão, Geográfa |
-Zé         | Desenvolvedor Java, Astrofísico |
-Maria      | Gestão, Desenvolvedor Java, Pesquisadora em Engenharia de Software |
+---------  | ------------------ |
+Adalberto  | Desenvolvedor |
+Lucas      | |
+Wanessa    | Desenvolvedor |
+Zaú        |  |
 
 ## Perfis dos Usuários
 
