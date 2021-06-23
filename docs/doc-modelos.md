@@ -10,6 +10,24 @@ Abaixo apresentamos o modelo dados (Entidade-Relacionamento) usando o **BrModelo
 
 ## Descrição das Entidades
 
+A seguir temos uma breve descrição das entidades presentes no modelo e dos atributos que elas contém, assim como suas devidas finalidades.
+
+### Entidade: User(Usuário)
+
+A entidade usuário armazena somente informações cruciais para a descrição do agente no sistema. Dentre as informações estão nome real e nome de usuário, para simplificar a visualização no sistema. Score para definir a experiência do usuário utilizando o sistema, com uma espécie de gamificação das tarefas, para estimular o uso e a organização de tarefas. Data de nascimento para possíveis recursos que possam envolver a gamificação do sistema ou algo para “aproximar mais o sistema do usuário". O email é outra informação pertinente, através dela podemos entrar em contato e enviar notificações independente da plataforma de acesso.
+
+### Entidade: Project(Projeto)
+
+Um projeto é utilizado para agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas. Ela armazena atributos como nome, descrição e cor. O objetivo da cor é para que seja possível criar categorias em que o usuário possa, visivelmente, classificar os projetos. Como exemplo, um conjunto de projetos destinados a faculdade, com finalidades diferentes.
+
+### Entidade: Task(Tarefa)
+
+As tarefas têm uma estrutura maior, seu principal atributo note(nota) tem tamanho indefinido, tipicamente um VARCHAR. Ele armazena o conteúdo codificado em markdown da anotação, podendo conter links, tabelas e afins. A tarefa também contém os atributos de data de criação, conclusão e o prazo para conclusão, sendo assim é possível adicionar um timer para realização da tarefa. Outro atributo que vale a pena mencionar é a prioridade, assim é possível adicionar mais uma propriedade para seleção e especificar com maior precisão as notificações a fim de diferenciá-las.
+
+### Entidade: Reminder(Lembrete)
+
+O fundamento do lembrete é permitir enviar de forma síncrona ou assíncrona notificações para o usuário, seja através de alertas no navegador ou e-mails. Sua estrutura particularmente simples, contém a data e hora para disparo e seu conteúdo de forma textual, até 256 caracteres.
+
 ## Dicionário de Dados
 
 Dicionário de dados centraliza informações sobre o conjunto de dados (dataset) sob análise. Seu propósito é melhorar a comunicação entre todos os envolvidos no projeto, além de ser um repositório (documento) que descreve de forma estruturada, o significado, origem, relacionamento e uso dos dados.
