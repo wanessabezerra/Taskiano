@@ -6,7 +6,7 @@ Neste documento temos o modelo de Dados (Entidade-Relacionamento). Temos também
 
 Abaixo apresentamos o modelo dados (Entidade-Relacionamento) usando o **BrModelo**.
 
- ![Modelo UML](yuml/monitoria-modelo.png)
+ ![Modelo Entidade-Relacionamento](images/entity_relationship_model.png)
 
 ## Descrição das Entidades
 
