@@ -6,125 +6,78 @@ Neste documento temos o modelo de Dados (Entidade-Relacionamento). Temos também
 
 Abaixo apresentamos o modelo dados (Entidade-Relacionamento) usando o **BrModelo**.
 
- ![Modelo UML](yuml/monitoria-modelo.png)
+![Modelo Entidade-Relacionamento](images/entity_relationship_model.png)
 
 ## Descrição das Entidades
+
+A seguir temos uma breve descrição das entidades presentes no modelo e dos atributos que elas contém, assim como suas devidas finalidades.
+
+### Entidade: User(Usuário)
+
+A entidade usuário armazena somente informações cruciais para a descrição do agente no sistema. Dentre as informações estão nome real e nome de usuário, para simplificar a visualização no sistema. Score para definir a experiência do usuário utilizando o sistema, com uma espécie de gamificação das tarefas, para estimular o uso e a organização de tarefas. Data de nascimento para possíveis recursos que possam envolver a gamificação do sistema ou algo para “aproximar mais o sistema do usuário". O email é outra informação pertinente, através dela podemos entrar em contato e enviar notificações independente da plataforma de acesso.
+
+### Entidade: Project(Projeto)
+
+Um projeto é utilizado para agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas. Ela armazena atributos como nome, descrição e cor. O objetivo da cor é para que seja possível criar categorias em que o usuário possa, visivelmente, classificar os projetos. Como exemplo, um conjunto de projetos destinados a faculdade, com finalidades diferentes.
+
+### Entidade: Task(Tarefa)
+
+As tarefas têm uma estrutura maior, seu principal atributo note(nota) tem tamanho indefinido, tipicamente um VARCHAR. Ele armazena o conteúdo codificado em markdown da anotação, podendo conter links, tabelas e afins. A tarefa também contém os atributos de data de criação, conclusão e o prazo para conclusão, sendo assim é possível adicionar um timer para realização da tarefa. Outro atributo que vale a pena mencionar é a prioridade, assim é possível adicionar mais uma propriedade para seleção e especificar com maior precisão as notificações a fim de diferenciá-las.
+
+### Entidade: Reminder(Lembrete)
+
+O fundamento do lembrete é permitir enviar de forma síncrona ou assíncrona notificações para o usuário, seja através de alertas no navegador ou e-mails. Sua estrutura particularmente simples, contém a data e hora para disparo e seu conteúdo de forma textual, até 256 caracteres.
 
 ## Dicionário de Dados
 
 Dicionário de dados centraliza informações sobre o conjunto de dados (dataset) sob análise. Seu propósito é melhorar a comunicação entre todos os envolvidos no projeto, além de ser um repositório (documento) que descreve de forma estruturada, o significado, origem, relacionamento e uso dos dados.
 
-## Tabela: Doador
+## Tabela: User(Usuário)
 
-| Atributo           | Chave       | Tipo de dado  | Tamanho      | Descrição                            |
-|--------------------|:-----------:|:-------------:|:------------:|--------------------------------------|
-| codigo             | PK          |  NUMERIC      |       4      | Identificador incremental de doador. |
-| nome               | NN          |  VARCHAR[100] |     100      | Nome do doador.                      |
-| sexo               | NN          |  CHAR[1]      |       1      | Sexo do doador (M/F).                |
-| tipo de sangue     | NN          |  CHAR[3]      |       3      | Tipo sanguineo.                      |
-| data_de_nascimento | NN          |  CHAR[10]     |      10      | Data formato (XX/XX/XXXX).           |
-| cod_endereco       | FK          |  NUMERIC      |              | Chave para um endereço.              |
+| Atributo | Chave | Tipo de dado | Tamanho | Descrição                                     |
+| -------- | :---: | :----------: | :-----: | --------------------------------------------- |
+| id       |  PK   |   NUMERIC    |    4    | Identificador incremental de usuário.         |
+| name     |  NN   | VARCHAR[100] |   100   | Nome real do usuário.                         |
+| username |  NN   | VARCHAR[16]  |   16    | Nome para exibição do usuário.                |
+| birthday |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                    |
+| email    |  NN   | VARCHAR[256] |   256   | Email formato local-part@domain - - RFC 5322. |
+| score    |  NN   |   NUMERIC    |    4    | Score para gamificação das tarefas.           |
 
-## Tabela: Telefone
+## Tabela: Project(Projeto)
 
-| Atributo           | Chave      | Tipo de dado  | Tamanho      | Descrição                            |
-|--------------------|:----------:|:-------------:|:------------:|--------------------------------------|
-| cod_doador         |     FK     |  NUMERIC      |              | Chave para um doador.                |
-| numero_fone        |     NN     |  CHAR[14]     |     14       | Telefone com formato: (XX)XXXXX-XXXX.|
+| Atributo     | Chave | Tipo de dado | Tamanho | Descrição                                      |
+| ------------ | :---: | :----------: | :-----: | ---------------------------------------------- |
+| id           |  PK   |   NUMERIC    |    4    | Identificador incremental de projeto.          |
+| name         |  NN   | VARCHAR[100] |   100   | Nome do projeto.                               |
+| description  |  NN   | VARCHAR[280] |   280   | Descrição do projeto.                          |
+| createDate   |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                     |
+| completeDate |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                     |
+| color        |  NN   |  VARCHAR[6]  |    4    | Código Hexadecimal da cor do projeto (RRGGBB). |
+| user_id      |  FK   |   NUMERIC    |    4    | Chave para um usuário.                         |
 
-## Tabela: Endereço
+## Tabela: Task(Tarefa)
 
-| Atributo        | Chave  | Tipo de dado  | Tamanho      | Descrição                                     |
-|-----------------|:------:|:-------------:|:------------:|-----------------------------------------------|
-| codigo          |  PK    |   NUMERIC     |      4       |  Identificador incremental de endereço.       |
-| rua             |  NN    |   VARCHAR[50] |      50      |  Rua limitada a 50 caracteres.                |
-| numero          |  NN    |   NUMERIC     |       4      |  Numero limitada a 4 caracteres.              |
-| bairro          |  NN    |   VARCHAR[50] |      50      |  Bairro limitada a 50 caracteres.             |
-| cidade          |  NN    |   VARCHAR[50] |      50      |  Cidade limitada a 50 caracteres.             |
-| estado          |  NN    |   VARCHAR[50] |      50      |  Estado limitada a 50 caracteres.             |
-| cep             |  NN    |   NUMERIC     |      10      |  Cep limitada a 10 caracteres.                |
+| Atributo     | Chave | Tipo de dado |  Tamanho  | Descrição                                                             |
+| ------------ | :---: | :----------: | :-------: | --------------------------------------------------------------------- |
+| id           |  PK   |   NUMERIC    |     4     | Identificador incremental de tarefa.                                  |
+| name         |  NN   | VARCHAR[50]  |    50     | Nome do projeto.                                                      |
+| fixed        |  NN   |   BOOLEAN    |     1     | Identificador de fixação do projeto.                                  |
+| note         |  NN   |  VARCHAR[]   | Undefined | Nota da tarefa em markdown, com número ilimitado de caracteres.       |
+| priority     |  NN   |   NUMERIC    |     4     | Prioridade da tarefa.                                                 |
+| createDate   |  NN   |   DATETIME   |     8     | Data e hora formato (YYYY-MM-DD HH:MM:SS.ffffff).                     |
+| completeDate |  NN   |   DATETIME   |     8     | Data e hora formato (YYYY-MM-DD HH:MM:SS.ffffff).                     |
+| timer        |  NN   |   DATETIME   |     8     | Prazo para conclusão da tarefa. Formato (YYYY-MM-DD HH:MM:SS.ffffff). |
+| subTask      |  FK   |   NUMERIC    |     4     | Chave para uma tarefa. (Não obrigatório)                              |
+| task_project |  FK   |   NUMERIC    |     4     | Chave para um projeto.                                                |
 
-## Tabela: Funcionário
+## Tabela: Reminder(Lembrete)
 
-| Atributo             | Chave       | Tipo de dado  | Tamanho      | Descrição                                     |
-|----------------------|:-----------:|:-------------:|:------------:|-----------------------------------------------|
-| codigo               | PK          |   NUMERIC     |      4       | Identificador incremental de funcionario.     |
-| nome                 | NN          |   CHAR[100]   |     100      | Nome do usuario/funcionario de acesso.        |
-| email                | NN          |   CHAR[256]   |     256      | Email com limite padrão de 256 caracteres.    |
-| username             | NN          |   CHAR[100]   |     100      | Identificação unica.                          |
-| cod_endereco         | FK          |   NUMERIC     |              | Chave para um endereço.                       |
-
-## Tabela: Banco de Sangue
-
-| Atributo      | Chave | Tipo de dado  | Tamanho      | Descrição                                       |
-|-------------- |:-----:|:-------------:|:------------:|-------------------------------------------------|
-| codigo        | PK    |   NUMERIC     |      4       | Identificador incremental de banco de sangue.   |
-| nome          | NN    |   VARCHAR[50] |      50      | Limite de caracteres varia.                     |
-| capacidade    | NN    |   NUMERIC     |      4       | Capacidade maxima do banco.                     |
-
-## Tabela: FuncionarioBanco_de_Sangue
-
-| Atributo           | Chave      | Tipo de dado  | Tamanho | Descrição                     |
-|--------------------|:----------:|:-------------:|:-------:|-------------------------------|
-| cod_funcionario    |     FK     |  NUMERIC      |         | Chave para um funcionário.    |
-| cod_banco_de_sangue|     FK     |  NUMERIC      |         | Chave para um banco de sangue.|
-
-## Tabela: Bolsa de Sangue
-
-| Atributo                  | Chave | Tipo de dado  | Tamanho      | Descrição                                     |
-|---------------------------|:-----:|:-------------:|:------------:|-----------------------------------------------|
-| codigo                    | PK    |   NUMERIC     |      4       | Identificador incremental de tipo sanguineo.  |
-| identificacao_da_doacao   | NN    |   NUMERIC     |      4       | Identificador da doacao.                      |
-| data_hora_coleta          | NN    |   DATATIME    |     10       | Coleta de sangue.                             |
-| tipo_de_doacao            | NN    |   CHAR[20]    |     20       | Se a doação é Voluntária, Autóloga.           |
-| data_hora_de_validade     | NN    |   DATATIME    |     10       | Data de validade do sangue coletado.          |
-| cod_tipo_sanguineo        | FK    |   NUMERIC     |              | Chave para um tipo sanguíneo.                 |
-| cod_tipo_de_hemocomponente| FK    |   NUMERIC     |              | Chave para um tipo de hemocomponente presente.|
-
-## Tabela: Tipo sanguíneo
-
-| Atributo        | Chave  | Tipo de dado  | Tamanho      | Descrição                                     |
-|-----------------|:------:|:-------------:|:------------:|-----------------------------------------------|
-| codigo          |  PK    |   NUMERIC     |      4       | Identificador incremental de tipo sanguíneo.  |
-| nome            |  NN    |   VARCHAR[50] |      50      | Identificação do tipo sanguineo coletado.     |
-
-## Tabela: Tipo de hemocomponente
-
-| Atributo        | Chave | Tipo de dado  | Tamanho      | Descrição                                     |
-|-----------------|:-----:|:-------------:|:------------:|-----------------------------------------------|
-| codigo          | PK    |   NUMERIC     |      4       | Identificador incremental de hemocomponente.  |
-| nome            | NN    |   VARCHAR[100]|    100       | Nome do homocomponente.                       |
-| descricao       | NN    |   VARCHAR[256]|    256       | Descrição do homocomponente.                  |
-
-## Tabela: DoadorBolsa_de_Sangue
-
-| Atributo           | Chave      | Tipo de dado  | Tamanho | Descrição                     |
-|--------------------|:----------:|:-------------:|:-------:|-------------------------------|
-| cod_doador         |     FK     |  NUMERIC      |         | Chave para um doador.         |
-| cod_bolsa_de_sangue|     FK     |  NUMERIC      |         | Chave para um bolsa de sangue.|
-
-## Tabela: Bolsa_de_SangueBanco_de_Sangue
-
-| Atributo           | Chave      | Tipo de dado  | Tamanho | Descrição                     |
-|--------------------|:----------:|:-------------:|:-------:|-------------------------------|
-| cod_bolsa_de_sangue|     FK     |  NUMERIC      |         | Chave para um bolsa de sangue.|
-| cod_banco_de_sangue|     FK     |  NUMERIC      |         | Chave para um banco de sangue.|
-
-## Tabela: Saída
-
-| Atributo          | Chave | Tipo de dado  | Tamanho      | Descrição                                     |
-|:----------------- |:-----:|:-------------:|:------------:|-----------------------------------------------|
-| codigo            | PK    |  NUMERIC      |     4        | Identificador incremental de saída.           |
-| nome_do_hospital  | NN    |  VARCHAR[100] |     100      | Nome do hospital.                             |
-| nome_do_paciente  | NN    |  VARCHAR[100] |     100      | Nome do paciente.                             |
-| data_hora_de_saida| NN    |  DATETIME     |     10       | Data de saida.                                |
-
-## Tabela: Bolsa_de_SangueSaida
-
-| Atributo           | Chave      | Tipo de dado  | Tamanho | Descrição                     |
-|--------------------|:----------:|:-------------:|:-------:|-------------------------------|
-| cod_bolsa_de_sangue|     FK     |  NUMERIC      |         | Chave para um bolsa de sangue.|
-| cod_saida          |     FK     |  NUMERIC      |         | Chave para uma saída.         |
+| Atributo    | Chave | Tipo de dado | Tamanho | Descrição                                                           |
+| ----------- | :---: | :----------: | :-----: | ------------------------------------------------------------------- |
+| id          |  PK   |   NUMERIC    |    4    | Identificador incremental de Lembrete.                              |
+| datetime    |  NN   |   DATETIME   |    8    | Prazo para disparar Lembrete. Formato (YYYY-MM-DD HH:MM:SS.ffffff). |
+| content     |  NN   | VARCHAR[256] |   256   | Conteúdo do Lembrete.                                               |
+| notify_task |  FK   |   NUMERIC    |    4    | Chave para uma tarefa.                                              |
 
 ### Referências
 
@@ -133,3 +86,5 @@ Dicionário de dados centraliza informações sobre o conjunto de dados (dataset
 [Dicionário de Dados](https://www.luis.blog.br/dicionario-de-dados.html)
 
 [Dicionário de Dados Portal Dados Abertos](https://tce.pe.gov.br/internet/docs/dadosabertos/TomeConta2017DicionarioDados.pdf)
+
+[Definição formal da estrutura de endereço de email](https://datatracker.ietf.org/doc/html/rfc5322)
