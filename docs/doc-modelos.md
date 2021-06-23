@@ -2,7 +2,6 @@
 
 Neste documento temos o modelo de Dados (Entidade-Relacionamento). Temos também a descrição das entidades e o dicionário de dados.
 
-
 ## Modelo de Dados
 
 Abaixo apresentamos o modelo dados (Entidade-Relacionamento) usando o **BrModelo**.
@@ -10,7 +9,6 @@ Abaixo apresentamos o modelo dados (Entidade-Relacionamento) usando o **BrModelo
  ![Modelo UML](yuml/monitoria-modelo.png)
 
 ## Descrição das Entidades
-
 
 ## Dicionário de Dados
 
@@ -46,7 +44,7 @@ Dicionário de dados centraliza informações sobre o conjunto de dados (dataset
 | estado          |  NN    |   VARCHAR[50] |      50      |  Estado limitada a 50 caracteres.             |
 | cep             |  NN    |   NUMERIC     |      10      |  Cep limitada a 10 caracteres.                |
 
-## Tabela: Funcionário  
+## Tabela: Funcionário
 
 | Atributo             | Chave       | Tipo de dado  | Tamanho      | Descrição                                     |
 |----------------------|:-----------:|:-------------:|:------------:|-----------------------------------------------|
