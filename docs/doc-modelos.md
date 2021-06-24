@@ -18,7 +18,7 @@ A entidade usuário armazena somente informações cruciais para a descrição d
 
 ### Entidade: Project(Projeto)
 
-Um projeto é utilizado para agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas. Ela armazena atributos como nome, descrição e cor. O objetivo da cor é para que seja possível criar categorias em que o usuário possa, visivelmente, classificar os projetos. Como exemplo, um conjunto de projetos destinados a faculdade, com finalidades diferentes.
+Um projeto é utilizado para agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas. Ela armazena atributos como nome, descrição e cor. O objetivo da cor é para que seja possível criar categorias em que o usuário possa, visivelmente, classificar os projetos. Como exemplo, um conjunto de projetos destinados a faculdade, com finalidades diferentes. Também é possível arquivar um projeto, para mantê-lo no sistema, sem a necessidade de exclui-lo.
 
 ### Entidade: Task(Tarefa)
 
@@ -52,6 +52,7 @@ Dicionário de dados centraliza informações sobre o conjunto de dados (dataset
 | description  |  NN   | VARCHAR[280] |   280   | Descrição do projeto.                          |
 | createDate   |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                     |
 | completeDate |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                     |
+| hasArchived  |  NN   |   BOOLEAN    |    1    | Identificador de status de projeto.            |
 | color        |  NN   |  VARCHAR[6]  |    4    | Código Hexadecimal da cor do projeto (RRGGBB). |
 | user_id      |  FK   |   NUMERIC    |    4    | Chave para um usuário.                         |
 
