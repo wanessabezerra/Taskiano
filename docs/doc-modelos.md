@@ -70,12 +70,13 @@ Dicionário de dados centraliza informações sobre o conjunto de dados (dataset
 | subTask      |  FK   |   NUMERIC    |     4     | Chave para uma tarefa. (Não obrigatório)                              |
 | task_project |  FK   |   NUMERIC    |     4     | Chave para um projeto.                                                |
 
-## Tabela: Reminder(Lembrete)
+## Tabela: Reminder(Lembrete/Notificação)
 
 | Atributo    | Chave | Tipo de dado | Tamanho | Descrição                                                           |
 | ----------- | :---: | :----------: | :-----: | ------------------------------------------------------------------- |
 | id          |  PK   |   NUMERIC    |    4    | Identificador incremental de Lembrete.                              |
 | datetime    |  NN   |   DATETIME   |    8    | Prazo para disparar Lembrete. Formato (YYYY-MM-DD HH:MM:SS.ffffff). |
+| title       |  NN   | VARCHAR[32]  |   32    | Título do Lembrete.                                                 |
 | content     |  NN   | VARCHAR[256] |   256   | Conteúdo do Lembrete.                                               |
 | notify_task |  FK   |   NUMERIC    |    4    | Chave para uma tarefa.                                              |
 
