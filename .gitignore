@@ -364,4 +364,8 @@ psd
 thumb
 sketch
 
+### virtualenv ###
+
+/py_env
+
 # End of https://www.toptal.com/developers/gitignore/api/react,node,python,django
