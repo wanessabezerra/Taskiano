@@ -1,145 +1,78 @@
-UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE
-CENTRO DE ENSINO SUPERIOR DO SERIDÓ
-DEPARTAMENTO DE COMPUTAÇÃO E TECNOLOGIA
-CURSO DE BACHARELADO EM SISTEMAS DE INFORMAÇÃO
+# Documento de Visão
+
+## Equipe e Definição de Papéis
+
+Membro     |     Papel   |   E-mail   |
+---------  | ----------- | ---------- |
+Adalberto    | Desenvolvedor  | btow.m@hotmail.com |
+Lucas     | Desenvolvedor | santoslucas9956@gmail.com |
+Wanessa         | Gerente, Desenvolvedor | wanessaparelhas68@gmail.com |
+Zau      | Analista, Testador | zauhdf@gmail.com |
+
+### Matriz de Competências
+
+Membro     |     Competências   |
+---------  | ----------- |
+Adalberto	 | Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring Boot, React, etc |
+Lucas      | Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring, React, etc |
+Wanessa	   | Gerente e Desenvolvedora Python, JavaScript, Hibernate, JSP, JPA, TypeScript, Spring, React, etc |
+Zau	       | Software Tester e Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring, React, etc |
 
 
-Doc 001 - Documento de Visão
+## Perfis dos Usuários
+
+O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
+
+Perfil                                 | Descrição   |
+---------                              | ----------- |
+Administrador | Este usuário utiliza qualquer função.|
+Usuário | Este usuário utiliza as funções de cadastro, edição, alteração e exclusão das tarefas, assim como pode sugerir tarefas para outros usuários e compartilha-las.|
 
 
+## Lista de Requisitos Funcionais
+
+Requisito                                 | Descrição   | Ator |
+---------                                 | ----------- | ---------- |
+RF01 - Incluir Tarefa | Uma tarefa tem os atributos nome, data, descrição curta, contatos, situação | Administrador/Usuário |
+RF02 - Alterar Tarefa | A alteração permite a mudança de todos os atributos de uma tarefa.          | Administrador/Usuário |
+RF03 - Listar Tarefas | Lista todas as suas tarefas ativas                                          | Administrador/Usuário |
+RF04 - Visualizar Tarefas | Visualiza a tarefa compartilhada | Administrador/Usuário |
+RF05 - Excluir Tarefas | Remove as tarefas | Administrador/Usuário |
+RF06 - Solicitar Alterações de Tarefa | Solicita acesso a uma tarefa visualizada | Administrador/Usuário |
+RF07 – Criar Quadros de Tarefas | Cria um quadro de tarefas para agrupa-las | Administrador/Usuário |
+RF08 – Excluir Quadros de Tarefas | Remove o quadro de tarefas | Administrador/Usuário |
+RF09 – Alterar Quadros de Tarefas | Altera o nome do quadro |Administrador/Usuário |
+RF10 – Arquivar Quadros de Tarefas | Arquiva todo o quadro, incluindo tarefas | Administrador/Usuário | 
+RF11 – Compartilhar Quadros de Tarefas | Permite convidar outros usuarios para vê o quadro | Administrador/Usuário |
+RF12 – Incluir Comentários nas Tarefas | Inclui comentarios que podem ser observados pelos usuarios | Administrador/Usuário |
+RF13 – Colocar Ranking de Sucesso da Tarefa | Coloca um ranking de eficiência da tarefa | Administrador/Usuário |
+RF14 – Colocar Prioridades em Tarefas ou Quadros | Coloca prioridade das tarefas para aumentar eficiência | Administrador/Usuário |
+RF15 – Remover Usuário | Remove o usuario da base de dados, não permitindo mais o acesso | Administrador |
+RF16 – Suspender Usuário | Puni o usuario durante um periodo de tempo, impedindo de usar a ferramenta | Administrador |
+RF17 – Alterar Usuário | Altera dados cadastrais do usuario | Administrador/ Usuário |
+
+### Modelo Conceitual
 
 
+#### Descrição das Entidades
 
-ADALBERTO MAIA DA SILVA
-LUCAS DA SILVA SANTOS
-WANESSA DA SILVA BEZERRA
-ZAU JÚLIO DE ARAÚJO GALVÃO
+## Lista de Requisitos Não-Funcionais
 
+Requisito                                | Descrição   |
+---------                                 | ----------- |
+RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamento no Firefox e no Chrome. |
+RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milessegundos |
+RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
 
+## Riscos
 
+Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os responsáveis.
 
-
-
-
-
-NOME DO PROJETO: Taskiano
-
-
-
-
-
-
-
+Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
+------ | ------ | ------ | ------ | ------ | ------ |
+24/06/2021	|Não aprendizado das ferramentas utilizadas pelos componentes da equipe	| Alta |	Gerente	| Vigente	| Reforçar estudos sobre as ferramentas.
+24/06/2021	|Ausência por qualquer membro da equipe	| Média	| Gerente	| Vigente	| Planejar o cronograma tendo em base a agenda dos membros.
+24/06/2021	|Divisão de tarefas mal sucedida	| Baixa	| Gerente	| Vigente	|Acompanhar de perto o desenvolvimento de cada membro da equipe
 
 
-
-Caicó – RN
-2021
-Sumário
-
-Doc 001 - Documento de Visão	1
-Sumário	2
-Equipe e Definição de Papéis:	3
-Matriz de Competências:	3
-Descrição do Projeto:	3
-Perfis dos Usuários:	3
-Requisitos Funcionais:	4
-Requisitos não-Funcionais:	5
-Riscos:	5
-
-
-
-
-
- 
-Equipe e Definição de Papéis:
-	
-Equipe	Papel	E-mail
-Adalberto	Desenvolvedor	btow.m@hotmail.com
-Lucas	Desenvolvedor	santoslucas9956@gmail.com
-Wanessa	Gerente, Desenvolvedor	wanessaparelhas68@gmail.com
-Zau	Analista, Testador	zauhdf@gmail.com
-	Matriz de Competências:
-Equipe	Competências
-Adalberto	Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring Boot, React, etc
-Lucas	Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring, React, etc
-Wanessa	Gerente e Desenvolvedora Python, JavaScript, Hibernate, JSP, JPA, TypeScript, Spring, React, etc
-Zau	Software Tester e Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring, React, etc
-
-Descrição do Projeto:
-
-	O projeto Taskiano é um sistema de gerenciamento de tarefas para otimização do tempo, incluindo planejamento, monitoramento e relatório sobre o ciclo de vida da tarefa para que o usuário possa tomar decisões mais assertivas sobre suas demandas.
-
-
-	Perfis dos Usuários:
-
-	O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis:
-
-	Perfil Administrador
-		Este usuário utiliza qualquer função.
-	Perfil Usuário
-		Este usuário utiliza as funções de cadastro, edição, alteração e exclusão das tarefas, assim como pode sugerir tarefas para outros usuários e compartilha-las.
-	Requisitos Funcionais:
-
-RF01 - Incluir Tarefa
-Descrição: Uma tarefa tem os atributos nome, data, descrição curta, contatos, situação
-Ator: Administrador/Usuário
-
-RF02 - Alterar Tarefa
-Descrição: A alteração permite a mudança de todos os atributos de uma tarefa.
-Ator: Administrador/Usuário
-
-RF03 - Listar Tarefas
-Ator: Administrador/Usuário
-
-RF04 - Visualizar Tarefas
-Ator: Administrador/Usuário
-
-RF05 - Excluir Tarefas
-Ator: Administrador/Usuário
-
-RF06 - Solicitar Alterações de Tarefa
-Ator: Administrador/Usuário
-
-RF07 – Criar Quadros de Tarefas
-Ator: Administrador/Usuário
-
-RF08 – Excluir Quadros de Tarefas
-Ator: Administrador/Usuário
-
-RF09 – Alterar Quadros de Tarefas
-Ator: Administrador/Usuário
-
-RF10 – Arquivar Quadros de Tarefas
-Ator: Administrador/Usuário
-
-RF11 – Compartilhar Quadros de Tarefas
-Ator: Administrador/Usuário
-
-RF12 – Incluir Comentários nas Tarefas
-Ator: Administrador/Usuário
-RF13 – Colocar Ranking de Sucesso da Tarefa
-Ator: Administrador/Usuário
-
-RF14 – Colocar Prioridades em Tarefas ou Quadros
-Ator: Administrador/Usuário
-
-RF15 – Remover Usuário
-Ator: Administrador
-
-RF16 – Suspender Usuário
-Ator: Administrador
-
-RF17 – Alterar Usuário 
-Ator: Administrador/ Usuário
-	Requisitos não-Funcionais:
-
-	RNF01 - Deve ser acessível via navegador
-	RNF02 - Deve rodar em Windows, Linux e Android
-	RNF03 - Deve ser feito o log de ações dos usuários
-Riscos:
-Data	Risco	Prioridade	Responsável	Status	Providência/Solução
-24/06/2021	Não aprendizado das ferramentas utilizadas pelos componentes da equipe	Alta	Gerente	Vigente	Reforçar estudos sobre as ferramentas.
-24/06/2021	Ausência por qualquer membro da equipe	Média	Gerente	Vigente	Planejar o cronograma tendo em base a agenda dos membros.
-24/06/2021	Divisão de tarefas mal sucedida	Baixa	Gerente	Vigente	Acompanhar de perto o desenvolvimento de cada membro da equipe
-					
+### Referências
