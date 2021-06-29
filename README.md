@@ -1,4 +1,5 @@
-# Taskiano
+
+<h1 align="center">  Taskiano </h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
@@ -12,15 +13,22 @@
 
 O projeto Taskiano é um software de gestão de tarefas que visa a otimização de tempo e auxilia na tomada de decisões do usuário, monitorando o ciclo de vida de cada tarefa registrada, gerando relátorios para análise de desempenho de quem executa a tarefa que foi atribuída.
 
-## Tecnologias utilizadas para o desenvolvimento
+
+## Documentos
+
+| Nome                           | Link                                      |
+| ------------------------------ | ------------------------------------------|
+| Plano de Iteração              |[Clique aqui ➡️](docs/doc-iteracao.md)    |
+| Documento de Visão             |[Clique aqui ➡️](docs/doc-visao.md)       |
+| Documento de Modelos           |[Clique aqui ➡️](docs/doc-modelos.md)     |
+| Documento Lista de User Stories|[Clique aqui ➡️](docs/doc-userstories.md) |
+
+
+## Tecnologias utilizadas para o desenvolvimento 
 
 Nextjs, TS/JS, SASS, Django, MariaDB.
 
-## Links
-
-Links de tutoriais com as tecnologias usadas no Taskiano.
-
-### Tecnologias
+### Tutoriais 
 
 | Nome       | Descrição                           | Link                                                                                             |
 | ---------- | ----------------------------------- | ------------------------------------------------------------------------------------------------ |
