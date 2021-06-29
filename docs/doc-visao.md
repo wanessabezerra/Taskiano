@@ -2,18 +2,18 @@
 
 ## Equipe e Definição de Papéis
 
-| Membro    | Papel                             | E-mail                      |
-| --------- | --------------------------------- | --------------------------- |
-| Adalberto | Desenvolvedor                     | btow.m@hotmail.com          |
-| Lucas     | Desenvolvedor                     | santoslucas9956@gmail.com   |
-| Wanessa   | Gerente, Desenvolvedor            | wanessaparelhas68@gmail.com |
-| Zau       | Analista, Testador, Desenvolvedor | zauhdf@gmail.com            |
+| Membro    | Papel                                      | E-mail                      |
+| --------- | ------------------------------------------ | --------------------------- |
+| Adalberto | Gerente, Analista, Testador, Desenvolvedor | btow.m@hotmail.com          |
+| Lucas     | Gerente, Analista, Testador, Desenvolvedor | santoslucas9956@gmail.com   |
+| Wanessa   | Gerente, Analista, Testador, Desenvolvedor | wanessaparelhas68@gmail.com |
+| Zau       | Gerente, Analista, Testador, Desenvolvedor | zauhdf@gmail.com            |
 
 ### Matriz de Competências
 
 | Membro    | Competências                                                                                                      |
 | --------- | ----------------------------------------------------------------------------------------------------------------- |
-| Adalberto | Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring Boot, React, etc                        |
+| Adalberto | Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring Boot, React                             |
 | Lucas     | Desenvolvedor Javascript, React, NexjtJS, Python, MongoDB, MySQL                                                  |
 | Wanessa   | Gerente e Desenvolvedora Python, C, Django, HTML, CSS, JavaScript                                                 |
 | Zau       | Software Tester e Desenvolvedor Javascript, Typescript, React, Nexjtjs, Python, Qt, Firebase, MongoDB, PostgreSQL |
@@ -41,7 +41,7 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF08 – Excluir Projetos de Tarefas                | Remove o projeto de tarefas                                                 | Usuário |
 | RF09 – Alterar Projetos de Tarefas                | Altera o nome do projeto                                                    | Usuário |
 | RF10 – Arquivar Projetos de Tarefas               | Arquiva todo o projeto, incluindo tarefas                                   | Usuário |
-| RF11 – Incluir Comentários nas Tarefas            | Inclui comentarios que podem ser observados pelos usuários                  | Usuário |
+| RF11 – Incluir Comentários nas Tarefas            | Inclui comentários que podem ser observados pelos usuários                  | Usuário |
 | RF12 – Incluir Imagens nas Tarefas                | Inclui imagens que podem ser observados pelos usuários                      | Usuário |
 | RF13 – Incluir Links nas Tarefas                  | Inclui imagens que podem ser observados pelos usuários                      | Usuário |
 | RF14 – Colocar Prioridades em Tarefas ou Projetos | Coloca prioridade das tarefas para aumentar eficiência                      | Usuário |
