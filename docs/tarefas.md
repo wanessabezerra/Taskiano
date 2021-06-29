@@ -11,7 +11,7 @@ It2      | 30/06/2021  | 14/07/2021 | 15/07/2021   | Zaú       | Implementar US
 It3      | 16/07/2021  | 28/07/2021 | 29/07/2021   | Lucas     | Implementar US01, Testar US01, Implementar US02, Testar US02, Detalhar US03, US04, Deploy do Release (Implantação)
 It4      | 30/07/2021  | 11/08/2021 | 12/08/2021   | Adalberto | ....
 It5      | 13/08/2021  | 25/08/2021 | 26/08/2021   | Gerente 5 | ....
-It6      | 27/08/2021  | 08/09/2021 | 09/09/2021   | Gerente 6 | ....   
+It6      | 27/08/2021  | 08/09/2021 | 09/09/2021   | Gerente 6 | ....
 
 * Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
 * Observação 2: Use este Plano de Iteração como Modelo. No seu projeto você deve identificar os User Stories e o gerente deve alocar um US por membro da equipe.
@@ -49,15 +49,15 @@ As atividades da **Iteração 1** são:
 * **Definir tecnologia** do projeto e colocar no `README.md` do repositório;
 * **Postar o link de tutoriais** com a tecnologia do seu projeto no fórum do sigaa e colocar no `README.md`. Postar no Discord os links dos tutoriais nos respectivos canais.
 * Criação do **Documento de Visão** no formato Markdown, crie um diretório *"docs"* no repositório ([Modelo aqui!](../docs/doc-visao.md));
-    * Deve conter **lista de requisitos funcionais, requisitos não funcionais, perfil de usuários e tabela de riscos**;
-    * **Aloque entidades por membro** da equipe para fazer o levantamento dos requisitos funcionais (aloque duas ou três por membro da equipe);
+* Deve conter **lista de requisitos funcionais, requisitos não funcionais, perfil de usuários e tabela de riscos**;
+* **Aloque entidades por membro** da equipe para fazer o levantamento dos requisitos funcionais (aloque duas ou três por membro da equipe);
 * Criação do **Documento de Modelos** com o Modelo Conceitual usando *UML* ou o Modelo de Dados usando *MER*. Crie um **Dicionário de Dados**, no formato Markdown, coloque no diretório *"docs"* do repositório ([Modelo aqui!](../docs/doc-modelos.md));
 * Criação de um **Plano de Release e Iteração** para o Projeto ([Modelo aqui!](../docs/doc-iteracao.md));
 * Criar e colocar **Estrutura inicial do Projeto** no repositório;
 * Criação de um **User Story (US)** base para o Projeto;
-    * Deve ser feito o **Detalhamento do US00** (User Story base);
-    * Deve ser feita a **Implementação do US00**;
-    * Versão inicial do **Documento de User Stories** ([Modelo aqui!](../docs/doc-userstories.md));
+* Deve ser feito o **Detalhamento do US00** (User Story base);
+* Deve ser feita a **Implementação do US00**;
+* Versão inicial do **Documento de User Stories** ([Modelo aqui!](../docs/doc-userstories.md));
 * Coloque **links para a documentação** no README.md do repositório;
 
 O gerente deve enviar nesta tarefa o link do repositório e o link dos dois documentos que devem estar no mesmo repositório.
@@ -205,4 +205,3 @@ alocar as issues para cada membro da equipe;
 * Cadastrar issues de bugs caso os Testes de Aceitação não passem;
 * Avisar ao getente os bugs e correções necessárias descritas relatório de testes;
 * Avisar ao gerente quando concluir uma tarefa;
-
