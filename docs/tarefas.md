@@ -1,32 +1,66 @@
-# Plano de Iteração
+# Calendário das Iterações e Releases
 
-Este plano de iteração será usando como exemplo da disciplina Engenharia de Software II.
+Este plano de iteração será usando como exemplo da disciplina Engenharia de Software II no período 2021.1.
 
-## Calendário da Iterações
+## Plano de Iterações
 
 Iteração | Data início | Data Final | Apresentação | Gerente   | Detalhes
 -------- | ----------- | ---------- | ------------ | -------   | -------
-It1      | 17/06/2021  | 24/06/2021 | 24/06/2021   | Wanessa   | Criar Documento de Visão, Modelos, Plano de Iteração e Release, Estrutura inicial do Projeto
-It2      | 25/06/2021  | 01/07/2021 | 01/07/2021   | Gerente 2 | Implementar US00, Detalhar US00, US01, US02
-It3      | 02/07/2021  | 08/07/2021 | 08/07/2021   | Gerente 3 | Implementar US01, US02, Detalhar US03, US04, Testar US00
-It4      | 09/07/2021  | 15/07/2021 | 15/07/2021   | Gerente 4 |
-It5      | 16/07/2021  | 22/07/2021 | 22/07/2021   | Gerente 5 |
-It6      | 23/07/2021  | 29/07/2021 | 29/07/2021   | Gerente 6 |
+It1      | 15/06/2021  | 29/06/2021 | 29/06/2021   | Gerente 1 | Criar Documento de Visão, Modelos e Plano de Iteração e Plano de Release, Detalhar User Story Base - US00, Estrutura do Projeto (Implementar US00)
+It2      | 30/06/2021  | 14/07/2021 | 15/07/2021   | Gerente 2 | Implementar US00, Testar US00, Detalhar US01, Detalhar US02
+It3      | 16/07/2021  | 28/07/2021 | 29/07/2021   | Gerente 3 | Implementar US01, Testar US01, Implementar US02, Testar US02, Detalhar US03, US04, Deploy do Release (Implantação)
+It4      | 30/07/2021  | 11/08/2021 | 12/08/2021   | Gerente 4 | ....
+It5      | 13/08/2021  | 25/08/2021 | 26/08/2021   | Gerente 5 | ....
+It6      | 27/08/2021  | 08/09/2021 | 09/09/2021   | Gerente 6 | ....   
 
-## Descrição das Tarefas em cada Iteração
+* Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
+* Observação 2: Use este Plano de Iteração como Modelo. No seu projeto você deve identificar os User Stories e o gerente deve alocar um US por membro da equipe.
+
+## Plano de Release
+
+Release | Data início | Data Final | Gerente   | Detalhes
+------- | ----------- | ---------- | --------- | --------
+R01     | 15/06/2021  | 28/07/2021 | Gerente 1 | Lista de funcionalidades da Release 01 (It1, It2, It3).
+R02     | 29/07/2021  | 09/09/2021 | Gerente 2 | Lista de funcionalidades da Release 02 (It4, It5, It6).
+
+* Observação 3: Os releases são ajustados para fornecer um MVP. As release podem ter número de iterações diferentes, de acordo com as funcionalidades necessárias por release.
+
+## Atividades por Iteração
+
+Nesta página teremos de forma geral a descrição das atividades em cada Iteração de desenvolvimento do projeto. Na página [Plano de Iteração e Plano de Release](doc-iteracao.md) temos um exemplo de cronograma.
+
+No processo de desenvolvimento que utilizamos da disciplina, inspirados no XP e YP, temos as seguintes fases:
+
+* Planejamento
+  * Criação dos documentos iniciais;
+  * Iteração 1;
+* Inicialização
+  * Estruturação do projeto, planejamento de iterações, definições de arquitetura;s
+  * Iteração 2;
+* Desenvolvimento
+  * atualização do planejamento, implementação, testes e implantação;
+  * demais iterações sempre finalizando com um MVP.
 
 ### T01 - Iteração 1 - Planejamento
 
-A Iteração 1 começou dia 17/06/2021 e vai até 24/06/2021. As atividades dessa tarefa são:
+As atividades da **Iteração 1** são:
 
-* Criar repositório do projeto no GitHub com .gitignore para a linguagem do projeto;
-* Definir tecnologia do projeto e colocar no README.md do repositório;
-* Postar o link de tutoriais com a tecnologia do seu projeto no fórum do sigaa e colocar no README.md;
-* Criação do **Documento de Visão** no formato Markdown, crie um diretório "docs" no repositório;
-  * Deve conter *lista de requisitos funcionais*, *requisitos não funcionais*, *perfil de usuários* e *tabela de riscos*;
-* Criação do **Documento de Modelos** com o Modelo Conceitual, Modelo de Dados e o Dicionário de Dados, no formato Markdown, coloque no diretório "docs" do repositório;
-* Coloque links para a documentação no README.md do repositório;
-* Colocar Estrutura inicial do Projeto no repositório;
+* **Criar repositório** do projeto no GitHub com `.gitignore` para a linguagem do projeto;
+* **Definir tecnologia** do projeto e colocar no `README.md` do repositório;
+* **Postar o link de tutoriais** com a tecnologia do seu projeto no fórum do sigaa e colocar no `README.md`. Postar no Discord os links dos tutoriais nos respectivos canais.
+* Criação do **Documento de Visão** no formato Markdown, crie um diretório *"docs"* no repositório ([Modelo aqui!](../docs/doc-visao.md));
+    * Deve conter **lista de requisitos funcionais, requisitos não funcionais, perfil de usuários e tabela de riscos**;
+    * **Aloque entidades por membro** da equipe para fazer o levantamento dos requisitos funcionais (aloque duas ou três por membro da equipe);
+* Criação do **Documento de Modelos** com o Modelo Conceitual usando *UML* ou o Modelo de Dados usando *MER*. Crie um **Dicionário de Dados**, no formato Markdown, coloque no diretório *"docs"* do repositório ([Modelo aqui!](../docs/doc-modelos.md));
+* Criação de um **Plano de Release e Iteração** para o Projeto ([Modelo aqui!](../docs/doc-iteracao.md));
+* Criar e colocar **Estrutura inicial do Projeto** no repositório;
+* Criação de um **User Story (US)** base para o Projeto;
+    * Deve ser feito o **Detalhamento do US00** (User Story base);
+    * Deve ser feita a **Implementação do US00**;
+    * Versão inicial do **Documento de User Stories** ([Modelo aqui!](../docs/doc-userstories.md));
+* Coloque **links para a documentação** no README.md do repositório;
+
+O gerente deve enviar nesta tarefa o link do repositório e o link dos dois documentos que devem estar no mesmo repositório.
 
 Nesta iteração temos atividades diferentes para dois perfis **Gerentes** e **Analistas**:
 
@@ -171,3 +205,4 @@ alocar as issues para cada membro da equipe;
 * Cadastrar issues de bugs caso os Testes de Aceitação não passem;
 * Avisar ao getente os bugs e correções necessárias descritas relatório de testes;
 * Avisar ao gerente quando concluir uma tarefa;
+
