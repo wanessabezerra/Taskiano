@@ -1,5 +1,13 @@
 # Taskiano
 
+<p align="center">
+  <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green"/>
+  <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"/>
+</p>
+
 ## Descrição do projeto
 
 O projeto Taskiano é um software de gestão de tarefas que visa a otimização de tempo e auxilia na tomada de decisões do usuário, monitorando o ciclo de vida de cada tarefa registrada, gerando relátorios para análise de desempenho de quem executa a tarefa que foi atribuída.
@@ -7,7 +15,6 @@ O projeto Taskiano é um software de gestão de tarefas que visa a otimização 
 ## Tecnologias utilizadas para o desenvolvimento
 
 Nextjs, TS/JS, SASS, Django, MariaDB.
-
 
 ## Links
 
