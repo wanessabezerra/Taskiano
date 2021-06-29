@@ -4,6 +4,11 @@
 
 O projeto Taskiano é um software de gestão de tarefas que visa a otimização de tempo e auxilia na tomada de decisões do usuário, monitorando o ciclo de vida de cada tarefa registrada, gerando relátorios para análise de desempenho de quem executa a tarefa que foi atribuída.
 
+## Tecnologias utilizadas para o desenvolvimento
+
+Nextjs, TS/JS, SASS, Django, MariaDB.
+
+
 ## Links
 
 Links de tutoriais com as tecnologias usadas no Taskiano.
