@@ -13,7 +13,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Data       | Versão  | Descrição                          | Autor                          |
 | :--------- | :-----: | :--------------------------------: | :----------------------------- |
 | 25/06/2021 | 0.0.1   | Template e descrição do documento  | Wanessa da Silva Bezerra       |
-| 23/06/2020 | 0.0.2   | Detalhamento do User Story US01    |                                |
+| 29/06/2020 | 0.0.2   | Detalhamento do User Story US01    | Lucas da Silva santos          |
 | ...        | ...     | ...                                | ...                            |
 | 12/07/2020 | 1.0.0   | Documento completo com o detalhamento de todos os User Stories |    |
 
