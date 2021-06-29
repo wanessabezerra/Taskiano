@@ -47,9 +47,9 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF14 – Colocar Prioridades em Tarefas ou Projetos | Coloca prioridade das tarefas para aumentar eficiência                      | Usuário |
 | RF15 – Alterar Usuário                            | Altera dados cadastrais do usuário                                          | Usuário |
 | RF16 – Cadastrar Usuário                          | Um usuário contém nome, email, username e data de nascimento                                           | Usuário |
-| RF16 – Consultar Usuário                          | Exibe as informações básicas do usuário cosultado                                           | Usuário |
-| RF16 – Vizualizar detalhes do Usuário                          | Exibe as informações detalhadas do usuário cosultado                                           | Usuário |
-| RF16 – Excluir Usuário                          | Remove a conta do usuário do sistema                                           | Usuário |
+| RF17 – Consultar Usuário                          | Exibe as informações básicas do usuário cosultado                                           | Usuário |
+| RF18 – Vizualizar detalhes do Usuário                          | Exibe as informações detalhadas do usuário cosultado                                           | Usuário |
+| RF19 – Excluir Usuário                          | Remove a conta do usuário do sistema                                           | Usuário |
 
 ## Lista de Requisitos Não-Funcionais
 
