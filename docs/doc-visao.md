@@ -2,12 +2,12 @@
 
 ## Equipe e Definição de Papéis
 
-| Membro    | Papel                                      | E-mail                      |
-| --------- | ------------------------------------------ | --------------------------- |
-| Adalberto | Gerente, Analista, Testador, Desenvolvedor | btow.m@hotmail.com          |
-| Lucas     | Gerente, Analista, Testador, Desenvolvedor | santoslucas9956@gmail.com   |
-| Wanessa   | Gerente, Analista, Testador, Desenvolvedor | wanessaparelhas68@gmail.com |
-| Zau       | Gerente, Analista, Testador, Desenvolvedor | zauhdf@gmail.com            |
+| Membro    | Papel                                      | E-mail                      | GitHub                                            |
+| --------- | ------------------------------------------ | --------------------------- | ------------------------------------------------- |
+| Adalberto | Gerente, Analista, Testador, Desenvolvedor | btow.m@hotmail.com          |[Clique aqui :octocat:](https://github.com/batbeto)              |
+| Lucas     | Gerente, Analista, Testador, Desenvolvedor | santoslucas9956@gmail.com   |[Clique aqui :octocat:](https://github.com/LucasSilva01)    |
+| Wanessa   | Gerente, Analista, Testador, Desenvolvedor | wanessaparelhas68@gmail.com |[Clique aqui :octocat:](https://github.com/wanessabezerra)|
+| Zau       | Gerente, Analista, Testador, Desenvolvedor | zauhdf@gmail.com            |[Clique aqui :octocat:](https://github.com/ZauJulio)            |
 
 ### Matriz de Competências
 
@@ -16,7 +16,7 @@
 | Adalberto | Desenvolvedor JavaScript, Python, Hibernate, JSP, JPA, TypeScript, Spring Boot, React                             |
 | Lucas     | Desenvolvedor Javascript, React, NexjtJS, Python, MongoDB, MySQL                                                  |
 | Wanessa   | Gerente e Desenvolvedora Python, C, Django, HTML, CSS, JavaScript                                                 |
-| Zau       | Software Tester e Desenvolvedor Javascript, Typescript, React, Nexjtjs, Python, Qt, Firebase, MongoDB, PostgreSQL |
+| Zaú       | Software Tester e Desenvolvedor Javascript, Typescript, React, Nexjtjs, Python, Qt, Firebase, MongoDB, PostgreSQL |
 
 ## Perfis dos Usuários
 
@@ -46,10 +46,10 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF13 – Incluir Links nas Tarefas                  | Inclui imagens que podem ser observados pelos usuários                      | Usuário |
 | RF14 – Colocar Prioridades em Tarefas ou Projetos | Coloca prioridade das tarefas para aumentar eficiência                      | Usuário |
 | RF15 – Alterar Usuário                            | Altera dados cadastrais do usuário                                          | Usuário |
-| RF16 – Cadastrar Usuário                          | Um usuário contém nome, email, username e data de nascimento                                           | Usuário |
-| RF17 – Consultar Usuário                          | Exibe as informações básicas do usuário cosultado                                           | Usuário |
-| RF18 – Vizualizar detalhes do Usuário                          | Exibe as informações detalhadas do usuário cosultado                                           | Usuário |
-| RF19 – Excluir Usuário                          | Remove a conta do usuário do sistema                                           | Usuário |
+| RF16 – Cadastrar Usuário                          | Um usuário contém nome, email, username e data de nascimento                | Usuário |
+| RF17 – Consultar Usuário                          | Exibe as informações básicas do usuário cosultado                           | Usuário |
+| RF18 – Vizualizar detalhes do Usuário             | Exibe as informações detalhadas do usuário cosultado                        | Usuário |
+| RF19 – Excluir Usuário                            | Remove a conta do usuário do sistema                                        | Usuário |
 
 ## Lista de Requisitos Não-Funcionais
 
@@ -68,5 +68,3 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 | 24/06/2021 | Não aprendizado das ferramentas utilizadas pelos componentes da equipe | Alta       | Gerente     | Vigente | Reforçar estudos sobre as ferramentas.                         |
 | 24/06/2021 | Ausência por qualquer membro da equipe                                 | Média      | Gerente     | Vigente | Planejar o cronograma tendo em base a agenda dos membros.      |
 | 24/06/2021 | Divisão de tarefas mal sucedida                                        | Baixa      | Gerente     | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
-
-### Referências
