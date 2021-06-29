@@ -1,10 +1,13 @@
 # Taskiano
 
+## Descrição do projeto
+
+
 ## Links
 
 Links de tutoriais com as tecnologias usadas no Taskiano.
 
-### Framework
+### Tecnologias
 
 | Nome   | Descrição | Link   |
 | ------ | ----------| ------ |
