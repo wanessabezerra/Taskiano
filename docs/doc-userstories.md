@@ -1,4 +1,3 @@
-
 # Documento Lista de User Stories
 
 Documento construído a partido do **Modelo BSI - Doc 004 - Lista de User Stories** que pode ser encontrado no
@@ -10,38 +9,38 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ## Histórico de revisões
 
-| Data       | Versão  | Descrição                          | Autor                          |
-| :--------- | :-----: | :--------------------------------: | :----------------------------- |
-| 25/06/2021 | 0.0.1   | Template e descrição do documento  | Wanessa da Silva Bezerra       |
-| 29/06/2020 | 0.0.2   | Detalhamento do User Story US01    | Lucas da Silva santos          |
-| ...        | ...     | ...                                | ...                            |
-| 12/07/2020 | 1.0.0   | Documento completo com o detalhamento de todos os User Stories |    |
+| Data       | Versão |                           Descrição                            | Autor                    |
+| :--------- | :----: | :------------------------------------------------------------: | :----------------------- |
+| 25/06/2021 | 0.0.1  |               Template e descrição do documento                | Wanessa da Silva Bezerra |
+| 29/06/2020 | 0.0.2  |                Detalhamento do User Story US01                 | Lucas da Silva santos    |
+| ...        |  ...   |                              ...                               | ...                      |
+| 12/07/2020 | 1.0.0  | Documento completo com o detalhamento de todos os User Stories |                          |
 
 ### User Story US01 - Manter Usuário
 
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos name, id, email, username, data de nascimento, tipo de usuário, status, password, avatarURL. O email será o login e ele pode registrar-se diretamente no sistema, o avatarURL é um link para uma foto de seu perfil. Além disso o usuário poderá alterar alguns dados, como o e-mail ou a senha. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os usuários comuns do sistema. |
+|               |                     |
+| ------------- | :------------------ |
+| **Descrição** | O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login social, através de meios como Google, Facebook e Twitter. Um usuário tem os atributos name, email, username, data de nascimento, score e avatarURL. O login é feito através de outras contas que o usuário já possua, o avatarURL é um link para uma foto de seu perfil. Além disso o usuário poderá alterar alguns dados, como o e-mail ou avatar. O score representa a experiência do usuário dentro da plataforma e poderá ser utilizado para gamificação das tarefa. |
 
-| **Requisitos envolvidos** |                                                    |
-| ------------- | :------------------------------------------------------------- |
-| RF01          | Cadastrar Usuário |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+| **Requisitos envolvidos** |                                |
+| ------------------------- | :----------------------------- |
+| RF15                      | Alterar Usuário                |
+| RF16                      | Cadastrar Usuário              |
+| RF17                      | Consultar Usuário              |
+| RF18                      | Vizualizar detalhes do Usuário |
+| RF19                      | Excluir Usuário                |
 
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Prioridade**            | Essencial                           |
-| **Estimativa**            | 8 h                                 |
-| **Tempo Gasto (real):**   |                                     |
-| **Tamanho Funcional**     | 7 PF                                |
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | *PF      |
 
-| Testes de Aceitação (TA) |  |
-| ----------- | --------- |
-| **Código**      | **Descrição** |
-| **TA01.01** | Descrever o teste de aceitação 01 do US01 |
-| **TA01.02** | Descrever o teste de aceitação 02 do US01 |
-| **TA01.03** | Descrever o teste de aceitação 03 do US01 |
-| **TA01.04** | Descrever o teste de aceitação 04 do US01 |
+| Testes de Aceitação (TA) |                                           |
+| ------------------------ | ----------------------------------------- |
+| **Código**               | **Descrição**                             |
+| **TA01.01**              | Descrever o teste de aceitação 01 do US01 |
+| **TA01.02**              | Descrever o teste de aceitação 02 do US01 |
+| **TA01.03**              | Descrever o teste de aceitação 03 do US01 |
+| **TA01.04**              | Descrever o teste de aceitação 04 do US01 |
