@@ -34,14 +34,15 @@ Dicionário de dados centraliza informações sobre o conjunto de dados (dataset
 
 ## Tabela: User(Usuário)
 
-| Atributo | Chave | Tipo de dado | Tamanho | Descrição                                     |
-| -------- | :---: | :----------: | :-----: | --------------------------------------------- |
-| id       |  PK   |   NUMERIC    |    4    | Identificador incremental de usuário.         |
-| name     |  NN   | VARCHAR[100] |   100   | Nome real do usuário.                         |
-| username |  NN   | VARCHAR[16]  |   16    | Nome para exibição do usuário.                |
-| birthday |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                    |
-| email    |  NN   | VARCHAR[256] |   256   | Email formato local-part@domain - - RFC 5322. |
-| score    |  NN   |   NUMERIC    |    4    | Score para gamificação das tarefas.           |
+| Atributo  | Chave | Tipo de dado | Tamanho | Descrição                                     |
+| --------- | :---: | :----------: | :-----: | --------------------------------------------- |
+| id        |  PK   |   NUMERIC    |    4    | Identificador incremental de usuário.         |
+| name      |  NN   | VARCHAR[100] |   100   | Nome real do usuário.                         |
+| username  |  NN   | VARCHAR[16]  |   16    | Nome para exibição do usuário.                |
+| avatarUrl |  NN   | VARCHAR[256] |   256   | Url do avatar do usuário.                     |
+| birthday  |  NN   |     DATE     |    3    | Data formato (XX/XX/XXXX).                    |
+| email     |  NN   | VARCHAR[256] |   256   | Email formato local-part@domain - - RFC 5322. |
+| score     |  NN   |   NUMERIC    |    4    | Score para gamificação das tarefas.           |
 
 ## Tabela: Project(Projeto)
 
