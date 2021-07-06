@@ -71,23 +71,22 @@ Exemplo:
 
 ## 4. Mecanismos arquiteturais
 
-Nesta fase do documento, devemos listar os mecanismos arquiteturais encontrados no sistema, ou seja, identificar todos os mecanismos de análise, mecanismo de design e mecanismo de implementação. O intuito desta etapa é verificar e garantir que todas as preocupações técnicas relativas à arquitetura do sistema tenham sido capturadas.
+A seguir está listado os principais mecanismos arquiteturais presentes no sistema, os mecanismos de análise, design e implementação. O intuito desta etapa é verificar e garantir que todas as preocupações técnicas relativas à arquitetura do sistema tenham sido capturadas.
 
-Exemplo:
 
-| Mecanismo de Análise                       | Mecanismo de Design                                                                    | Mecanismo de Implementação                           |
-| ------------------------------------------ | -------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| Persistência                               | Banco de dados relacional                                                              | SQL Server Enterprise                                |
-| Integração com sistemas legados (Cobrança) | Interface utilizando XML em serviço e arquivo texto.                                   | Web Service e System.IO                              |
-| Log                                        | Implementação dos recursos de log do componente de persistência.                       | ADO.NET                                              |
-| Recursos avançados de Web 2.0              | Implementação de recursos para usabilidade.                                            | Silverlight e WPF (Windows Presentation Foundation). |
-| Camada de distribuição                     | Classe de comunicação com o banco, classe de persistência.                             | ADO.NET Entity                                       |
-| Front-End                                  | Interface de comunicação com o usuário do portal.                                      | ASP.NET, Ajax, Silverlight, WPF.                     |
-| Tratamento de exceções                     | Camada para tratar as exceções criando interações diferentes para usuários e técnicos. | ASP.NET e C#.                                        |
-| Build                                      | Programação da IDE para validação do código fonte.                                     | Visual Studio Team System Foundation Server.         |
-| Deploy                                     | Configuração da IDE de deploy.                                                         | Visual Studio Team System Foundation Server.         |
-|                                            |                                                                                        |                                                      |
-
+| Mecanismo de Análise                       | Mecanismo de Design                                  | Mecanismo de Implementação      |
+| ------------------------------------------ | ---------------------------------------------------- | ------------------------------- |
+| Persistência                               | Banco de dados relacional                            | MariaDB Server                  |
+| Autenticação                               | **Authentication as service**                        | Google Firebase Authentication  |
+| Autenticação Social _is human_             | **Authentication as service**                        | Google Firebase Authentication  |
+| Autorização                                | Tokens de autenticação                               | JWT                             |
+| Interface interativa 3º grau               | Drag-and-drop                                        | React(react-beautiful-dnd)      |
+| Notificações _in browser_                  | Toasts                                               | React(react-hot-toast)          |
+| Integração com sistemas legados (Cobrança) | Interface utilizando XML em serviço e arquivo texto. | Web Service e System.IO         |
+| Front-End                                  | Interface gráfica de usuário.                        | Next.js/React.                  |
+| Back-End                                   | Interface de controle de dados.                      | Django/Django-REST-framework.   |
+| Host                                       | Disponibilização da plataforma.                      | Vercel, Heroku, Google Firebase |
+|                                            |                                                      |                                 |
 ### 4.1. Tecnologias
 
 A seguir descrevemos brevemente as principais tecnologias empregadas no desenvolvimento desta aplicação, suas funcionalidades e o papel que desempenham.
