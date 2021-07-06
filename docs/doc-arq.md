@@ -26,19 +26,23 @@ Descrição do documento. Focar no conteúdo.
 
 ### 1.1. Histórico de revisões
 
-| Data       | Versão | Descrição                                  | Autor     |
-| ---------- | ------ | ------------------------------------------ | --------- |
-| 05/07/2021 | 1.0    | Documento Inicial                          | Zaú Júlio |
-| 05/07/2021 | 1.1    | Organização da estrutura e adição de index | Zaú Júlio |
-| 05/07/2021 | 2.0    | Adição da descrição das tecnologias        | Zaú Júlio |
+| Data       | Versão | Descrição                                   | Autor     |
+| ---------- | ------ | ------------------------------------------- | --------- |
+| 05/07/2021 | 1.0    | Documento Inicial                           | Zaú Júlio |
+| 05/07/2021 | 1.1    | Organização da estrutura e adição de index  | Zaú Júlio |
+| 05/07/2021 | 2.0    | Adição da descrição das tecnologias         | Zaú Júlio |
+| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura | Zaú Júlio |
 
 ## 2. Visão Geral
 
-Preparar uma imagem e descrever de forma sucinta a arquitetura.
+A arquitetura de microserviços empregada nesse projeto está ilustada na Fiura 1, logo abaixo. O núcleo arquitetural é a camada de interface gráfica com usuário, implementada em Javascript e Typescript com **Next.js**/**React** e hospedada na Vercel.
+Esta camada da aplicação comunica-se diretamente com o serviços do Firebase, Authentication e Storage, e com a camada de controle de entidades.
 
-![alt_text](images/image1.jpg "image_tooltip")
+Esta camada por sua vez é implementada em Python através do _meta-framework_ Django REST e hospedada no Heroku, em conjunto com o banco de dados relacional **MariaDB**. A aplicação de controle das entidades também está estreitamente conectada ao serviço de autenticação do Google Firebase. A conexão com o Firebase Authentication fornece mecanismos de autenticação e autorização a aplicação, garantindo a segurança e confiabilidade necessárias para a plataforma.
 
-Figure 1. Imagem que representa a visão geral no documento. Fonte: [https://sites.google.com/site/projetowebsae/projeto-arquitetural](https://sites.google.com/site/projetowebsae/projeto-arquitetural)
+![Modelo Entidade-Relacionamento](images/arch.png)
+
+Figura 1. Imagem que representa a visão geral no documento.
 
 ## 3. Requisitos Não Funcionais
 
