@@ -25,11 +25,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF01                      | Cadastrar Usuário              |
-| RF02                      | Alterar Usuário                |
-| RF03                      | Consultar Usuários             |
-| RF04                      | Excluir Usuário                |
-| RF05                      | Vizualizar detalhes do Usuário |
+| RF15                      | Cadastrar Usuário              |
+| RF16                      | Alterar Usuário                |
+| RF17                      | Consultar Usuários             |
+| RF18                      | Vizualizar detalhes do Usuário |
+| RF19                      | Excluir Usuário                |
 
 |                         |           |
 | ----------------------- | :-------- |
