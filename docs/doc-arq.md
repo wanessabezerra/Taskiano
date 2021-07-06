@@ -26,13 +26,14 @@ Neste documento é abordado a arquitetura da plataforma e suas peculiaridades, t
 
 ### 1.1. Histórico de revisões
 
-| Data       | Versão | Descrição                                   | Autor     |
-| ---------- | ------ | ------------------------------------------- | --------- |
-| 05/07/2021 | 1.0    | Documento Inicial                           | Zaú Júlio |
-| 05/07/2021 | 1.1    | Organização da estrutura e adição de index  | Zaú Júlio |
-| 05/07/2021 | 2.0    | Adição da descrição das tecnologias         | Zaú Júlio |
-| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura | Zaú Júlio |
-| 06/07/2021 | 4.0    | Adição da descrição do documento            | Zaú Júlio |
+| Data       | Versão | Descrição                                       | Autor     |
+| ---------- | ------ | ----------------------------------------------- | --------- |
+| 05/07/2021 | 1.0    | Documento Inicial                               | Zaú Júlio |
+| 05/07/2021 | 1.1    | Organização da estrutura e adição de index      | Zaú Júlio |
+| 05/07/2021 | 2.0    | Adição da descrição das tecnologias             | Zaú Júlio |
+| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura     | Zaú Júlio |
+| 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio |
+| 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio |
 
 ## 2. Visão Geral
 
@@ -73,7 +74,6 @@ Exemplo:
 
 A seguir está listado os principais mecanismos arquiteturais presentes no sistema, os mecanismos de análise, design e implementação. O intuito desta etapa é verificar e garantir que todas as preocupações técnicas relativas à arquitetura do sistema tenham sido capturadas.
 
-
 | Mecanismo de Análise                       | Mecanismo de Design                                  | Mecanismo de Implementação      |
 | ------------------------------------------ | ---------------------------------------------------- | ------------------------------- |
 | Persistência                               | Banco de dados relacional                            | MariaDB Server                  |
@@ -87,6 +87,7 @@ A seguir está listado os principais mecanismos arquiteturais presentes no siste
 | Back-End                                   | Interface de controle de dados.                      | Django/Django-REST-framework.   |
 | Host                                       | Disponibilização da plataforma.                      | Vercel, Heroku, Google Firebase |
 |                                            |                                                      |                                 |
+
 ### 4.1. Tecnologias
 
 A seguir descrevemos brevemente as principais tecnologias empregadas no desenvolvimento desta aplicação, suas funcionalidades e o papel que desempenham.
