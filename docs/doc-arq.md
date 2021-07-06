@@ -26,9 +26,11 @@ Descrição do documento. Focar no conteúdo.
 
 ### 1.1. Histórico de revisões
 
-| Data       | Versão | Descrição         | Autor     |
-| ---------- | ------ | ----------------- | --------- |
-| 05/07/2021 | 1.0    | Documento Inicial | Zaú Júlio |
+| Data       | Versão | Descrição                                  | Autor     |
+| ---------- | ------ | ------------------------------------------ | --------- |
+| 05/07/2021 | 1.0    | Documento Inicial                          | Zaú Júlio |
+| 05/07/2021 | 1.1    | Organização da estrutura e adição de index | Zaú Júlio |
+| 05/07/2021 | 2.0    | Adição da descrição das tecnologias        | Zaú Júlio |
 
 ## 2. Visão Geral
 
