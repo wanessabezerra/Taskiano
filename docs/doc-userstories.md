@@ -14,7 +14,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 25/06/2021 | 0.0.1  |               Template e descrição do documento                | Wanessa da Silva Bezerra |
 | 29/06/2021 | 0.0.2  |                Detalhamento do User Story US01                 | Lucas da Silva santos    |
 | 05/07/2021 | 0.1.0  |                  Correções do User Story US01                  | Zaú Júlio Araújo Galvão  |
-| ...        |  ...   |                              ...                               | ...                      |
+| 05/07/2021 | 0.2.0  |                Detalhamento do User Story US02                 | Wanessa da Silva Bezerra |
 | 16/07/2021 | 1.0.0  | Documento completo com o detalhamento de todos os User Stories |                          |
 
 ### User Story US01 - Manter Usuário
