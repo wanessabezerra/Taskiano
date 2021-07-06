@@ -15,6 +15,7 @@ Criado a partir de: [Processo BSI - Projeto Arquitetural](https://docs.google.co
 - [4. Mecanismos arquiteturais](#4-mecanismos-arquiteturais)
   - [4.1. Tecnologias](#41-tecnologias)
 - [5. Decisões de Design](#5-decisões-de-design)
+  - [5.1. Da arquitetura](#51-da-arquitetura)
 - [6. Validação com Casos de Teste](#6-validação-com-casos-de-teste)
 - [7. Componentes](#7-componentes)
 - [8. Implantação](#8-implantação)
@@ -34,6 +35,7 @@ Neste documento é abordado a arquitetura da plataforma e suas peculiaridades, t
 | 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura     | Zaú Júlio |
 | 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio |
 | 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio |
+| 06/07/2021 | 6.0    | Adição do tópico de Decisões de Design          | Zaú Júlio |
 
 ## 2. Visão Geral
 
@@ -106,12 +108,23 @@ A seguir descrevemos brevemente as principais tecnologias empregadas no desenvol
 
 ## 5. Decisões de Design
 
-**Fundamentação:** nesta fase, o arquiteto deve fundamentar todas as decisões importantes de design. Além disso, deve descrever as alternativas significativas rejeitadas no projeto. Esta seção pode indicar hipóteses, restrições, resultados de análises e experiências significativas para a arquitetura.
+### 5.1. Da arquitetura
 
-Por exemplo:
+A escolha da arquitetura foi ponderada sobre a experiência da equipe com as tecnologias, metodologias e designs. Dentre as opções estavam arquitetura Monolítica, Microkernel, Camadas e Microserviços.
 
-- Porque utilizar arquitetura REST?
-- Porque utilizar arquitetura monolítica e não de micro-serviço?
+A arquitetura monolítica foi descartada devido a necessidade da utilização de serviços externos e do tempo necessário para implementação. A arquitetura de Microkernel foi considerada de integração complexa e devido a falta de experiência da equipe, foi descartada. A arquitetura em camadas fornece uma boa integração com testes é possível descentralização, o que auxilia na escalabilidade da aplicação, horizontalmente e verticalmente. Contudo, a possibilidade de integração com múltiplos serviços através do Google Firebase, para lidar com funcionalidades como Autenticação e Autorização e Cloud Storage, outra arquitetura proposta foi selecionada.
+
+A arquitetura selecionada, ponderando sobre o ambiente proposto para a plataforma, foi de Microsserviços. Entretanto, qualquer uma das demais arquiteturas poderiam ser empregadas sem grandes problemas. A arquitetura de Microservices foi selecionada por oferecer as seguintes vantagens:
+
+- Descentralização
+- Alta escalabilidade
+- Implementação fracionária
+- Estrutura modular
+- Módulos independentes
+- Fácil Integrabilidade
+- Experiência da equipe
+
+Sendo assim a arquitetura do sistema foi dividida em módulos de Front-End, com Next.js/React, Back-End, com a Aplicação REST e o banco de dados MariaDB e por fim, uma camada de acesso a serviços do Google Firebase no Front-End (Autenticação e Storage) e no Back-End (Autorização). O uso da arquitetura REST se deu devido a baixa complexidade de implementação, fácil utilização e alta experiência da equipe projetando e implementando este modelo.
 
 ## 6. Validação com Casos de Teste
 
