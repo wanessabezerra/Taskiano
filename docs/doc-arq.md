@@ -22,7 +22,7 @@ Criado a partir de: [Processo BSI - Projeto Arquitetural](https://docs.google.co
 
 ## 1. Descrição
 
-Descrição do documento. Focar no conteúdo.
+Neste documento é abordado a arquitetura da plataforma e suas peculiaridades, tecnologias, decisões de design, implantação, entre outros. Através deste, objetivo atendido é a apresentação do sistema ser realizada de forma que seja possível compreender os aspectos gerais das funcionalidades internas do projeto e suas respectivas finalidades.
 
 ### 1.1. Histórico de revisões
 
@@ -32,6 +32,7 @@ Descrição do documento. Focar no conteúdo.
 | 05/07/2021 | 1.1    | Organização da estrutura e adição de index  | Zaú Júlio |
 | 05/07/2021 | 2.0    | Adição da descrição das tecnologias         | Zaú Júlio |
 | 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura | Zaú Júlio |
+| 06/07/2021 | 4.0    | Adição da descrição do documento            | Zaú Júlio |
 
 ## 2. Visão Geral
 
