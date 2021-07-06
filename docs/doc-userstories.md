@@ -68,10 +68,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):** |           |
 | **Tamanho Funcional**   | 7 PF      |
 
-| Testes de Aceitação (TA) |                                           |
-| ------------------------ | ----------------------------------------- |
-| **Código**               | **Descrição**                             |
-| **TA01.01**              | Descrever o teste de aceitação 01 do US01 |
-| **TA01.02**              | Descrever o teste de aceitação 02 do US01 |
-| **TA01.03**              | Descrever o teste de aceitação 03 do US01 |
-| **TA01.04**              | Descrever o teste de aceitação 04 do US01 |
+| Testes de Aceitação (TA) |                                                                                                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Código**               | **Descrição**                                                                                                                                                                                                                         |
+| **TA02.01**              | O usuário informa, na tela Tarefa, todos os dados da tarefa para registrar corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso.                                  |
+| **TA02.02**              | O usuário informa, na tela Tarefa, os dados da tarefa para registrar incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. Mensagem: Cadastro não realizado, o campo “xxxx” não foi informado corretamente.  |
+| **TA02.03**              | O usuário informa, na tela Tarefa, todos os dados da Tarefa para que ele deseja atualizar corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Tarefa atualizada com sucesso.                    |
+| **TA02.04**              | O usuário informa, na tela Tarefa, os dados da tarefa para atualizar incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. A tarefa não foi atualizado, o campo “xxxx” não foi informado corretamente.       |
+| **TA02.05**              | O usuário informa, na tela Tarefa, a tarefa que ele deseja excluir corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Tarefa deletada com sucesso.                                             |
+| **TA02.06**              | O usuário informa, na tela Tarefa, os dados da tarefa que deseja excluir incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. A tarefa não foi deletado, o código da tarefa não foi informado corretamente. |
