@@ -52,13 +52,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Descrição** | O sistema deve manter um cadastro de tarefas. Uma tarefa tem os atributos id, fixed, name, note, super, createDate, completeDate, priority, timer. O código será a chave primeira e os atributos serão registrados pelo o usuário. |
 
-| **Requisitos envolvidos** |                                |
-| ------------------------- | :----------------------------- |
-| RF01                      | Cadastrar Usuário              |
-| RF02                      | Alterar Usuário                |
-| RF03                      | Consultar Usuários             |
-| RF04                      | Excluir Usuário                |
-| RF05                      | Vizualizar detalhes do Usuário |
+| **Requisitos envolvidos** |                                           |
+| ------------------------- | :---------------------------------------- |
+| RF01                      | Cadastrar Tarefa                          |
+| RF02                      | Alterar Tarefa                            |
+| RF03                      | Consultar Usuários                        |
+| RF04                      | Vizualizar detalhes do Usuário            |
+| RF05                      | Excluir Usuário                           |
+| RF06                      | Solicitar acesso a uma tarefa visualizada |
 
 |                         |           |
 | ----------------------- | :-------- |
