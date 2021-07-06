@@ -46,13 +46,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA01.03**              | Descrever o teste de aceitação 03 do US01 |
 | **TA01.04**              | Descrever o teste de aceitação 04 do US01 |
 
-### User Story US01 - Manter Tarefa
+### User Story US02 - Manter Tarefa
 
-|               |                                                                                                                       |
-| ------------- | :-------------------------------------------------------------------------------------------------------------------- |
-| **Descrição** | O sistema deve manter um cadastro de tarefas que tem acesso ao sistema via login e senha. Uma tarefa tem os atributos |
-
-. O email será o login e ele pode registrar-se diretamente no sistema, o avatarURL é um link para uma foto de seu perfil. Além disso o usuário poderá alterar alguns dados, como o e-mail ou a senha. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os usuários comuns do sistema. |
+|               |                                                                                                                                                                                                                                    |
+| ------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve manter um cadastro de tarefas. Uma tarefa tem os atributos id, fixed, name, note, super, createDate, completeDate, priority, timer. O código será a chave primeira e os atributos serão registrados pelo o usuário. |
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
