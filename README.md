@@ -22,6 +22,7 @@ O projeto Taskiano é um software de gestão de tarefas que visa a otimização 
 | Documento Lista de User Stories       | [Clique aqui ➡️](docs/doc-userstories.md) |
 | Documento Arquitetural                | [Clique aqui ➡️](docs/doc-arq.md)         |
 | Relatório de Testes de Módulo/Sistema | [Clique aqui ➡️](docs/doc-us-tests.md)    |
+| Documento APF                         | [Clique aqui ➡️](docs/doc-apf.md)         |
 
 ## Tecnologias utilizadas para o desenvolvimento
 
