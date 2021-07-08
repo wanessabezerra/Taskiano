@@ -40,7 +40,7 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF07 – Criar Projetos de Tarefas                  | Cria um projeto de tarefas para agrupa-las                                  | Usuário |
 | RF08 – Excluir Projetos de Tarefas                | Remove o projeto de tarefas                                                 | Usuário |
 | RF09 – Alterar Projetos de Tarefas                | Altera o nome do projeto                                                    | Usuário |
-| RF10 – Arquivar Projetos de Tarefas               | Arquiva todo o projeto, incluindo tarefas                                   | Usuário |
+| RF10 – Consultar Projetos de Tarefas               | Consulta um projeto criado e tem como retorno seus atributos públicos                                        | Usuário |
 | RF11 – Incluir Comentários nas Tarefas            | Inclui comentários que podem ser observados pelos usuários                  | Usuário |
 | RF12 – Incluir Imagens nas Tarefas                | Inclui imagens que podem ser observados pelos usuários                      | Usuário |
 | RF13 – Incluir Links nas Tarefas                  | Inclui imagens que podem ser observados pelos usuários                      | Usuário |
@@ -50,6 +50,9 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF17 – Consultar Usuário                          | Exibe as informações básicas do usuário cosultado                           | Usuário |
 | RF18 – Vizualizar detalhes do Usuário             | Exibe as informações detalhadas do usuário cosultado                        | Usuário |
 | RF19 – Excluir Usuário                            | Remove a conta do usuário do sistema                                        | Usuário |
+| RF20 – Arquivar Projetos de Tarefas              | Arquiva todo o projeto, incluindo tarefas
+
+                                   | Usuário |
 
 ## Lista de Requisitos Não-Funcionais
 

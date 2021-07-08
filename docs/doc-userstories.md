@@ -22,7 +22,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição** | O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos name, id, email, username, data de nascimento, tipo de usuário, status, password, avatarURL. O email será o login e ele pode registrar-se diretamente no sistema, o avatarURL é um link para uma foto de seu perfil. Além disso o usuário poderá alterar alguns dados, como o e-mail ou a senha. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os usuários comuns do sistema. |
+| **Descrição** | O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos name, id, email, username, data de nascimento, status, password, avatarURL. O email será o login e ele pode registrar-se diretamente no sistema, o avatarURL é um link para uma foto de seu perfil. Além disso o usuário poderá alterar alguns dados, como o e-mail ou a senha. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os usuários comuns do sistema. |
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
@@ -81,3 +81,40 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA02.04**              | O usuário informa, na tela Tarefa, os dados da tarefa para atualizar incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. A tarefa não foi atualizado, o campo “xxxx” não foi informado corretamente.       |
 | **TA02.05**              | O usuário informa, na tela Tarefa, a tarefa que ele deseja excluir corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Tarefa deletada com sucesso.                                             |
 | **TA02.06**              | O usuário informa, na tela Tarefa, os dados da tarefa que deseja excluir incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. A tarefa não foi deletado, o código da tarefa não foi informado corretamente. |
+
+
+### User Story US02 - Manter Projeto
+
+|               |                                                                                                                                                                                                                                    |
+| ------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve manter um cadastro de projetos. Um projeto contém os seguintes atributos, id, name createDate, completeDate, color, description, hashArchived. Cada projeto possui suas próprias tarefas definidas pelo usuário criador do projeto.|
+
+| **Requisitos envolvidos** |                                           |
+| ------------------------- | :---------------------------------------- |
+| RF07                      | Criar Projetos de Tarefas                     |
+| RF08                      | Excluir Projetos de  Tarefas                     |
+| RF09                      | Alterar Projetos de Tarefas	                  |
+| RF10                      | Consultar Projetos de Tarefas                     |
+| RF14                      | Colocar Prioridades em Tarefas ou Projetos                    |
+| RF20                      | Arquivar Projetos de Tarefas              |
+
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | 7 PF      |
+
+| Testes de Aceitação (TA) |                                                                                                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Código**               | **Descrição**                                                                                                                                                                                                                         |
+| **TA02.01**              | Na tela de criação de projetos o usuário preenche todos os campos referente ao projeto a ser criado, caso não ocorra nada de errado é exibida uma mensagem de sucesso na tela.        |
+| **TA02.02**              | Quando um projeto é finalizado ou por algum motivo interrompido, o usuário criador do projeto tem a opção de excluí-lo, logo após é exibida uma mensagem de sucesso na tela.
+                           |
+| **TA02.03**              | Com um projeto criado é possível realizar alterações em dados cadastrais que o usuário criador tem acesso como o nome do projeto, cor, descrição e o status para definir se ele está ou não arquivado.
+                           |
+| **TA02.04**              | Com um projeto criado é possível consultá-lo atráves do nome do projeto, descrição, data e status, tendo como retorno uma instância de busca.
+                           |
+| **TA02.05**              | Com um projeto criado é possível colocar prioridades para que projetos mais importantes tenham preferência e sejam concluídos|
+| **TA02.06**              | Quando um projeto é finalizado, ele é arquivado para auxiliar na organização dos projetos de usuário|
+
