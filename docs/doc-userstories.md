@@ -83,7 +83,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA02.06**              | O usuário informa, na tela Tarefa, os dados da tarefa que deseja excluir incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. A tarefa não foi deletado, o código da tarefa não foi informado corretamente. |
 
 
-### User Story US02 - Manter Projeto
+### User Story US03 - Manter Projeto
 
 |               |                                                                                                                                                                                                                                    |
 | ------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -108,13 +108,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |                                                                                                                                                                                                                                       |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Código**               | **Descrição**                                                                                                                                                                                                                         |
-| **TA02.01**              | Na tela de criação de projetos o usuário preenche todos os campos referente ao projeto a ser criado, caso não ocorra nada de errado é exibida uma mensagem de sucesso na tela.        |
-| **TA02.02**              | Quando um projeto é finalizado ou por algum motivo interrompido, o usuário criador do projeto tem a opção de excluí-lo, logo após é exibida uma mensagem de sucesso na tela.
-                           |
-| **TA02.03**              | Com um projeto criado é possível realizar alterações em dados cadastrais que o usuário criador tem acesso como o nome do projeto, cor, descrição e o status para definir se ele está ou não arquivado.
-                           |
-| **TA02.04**              | Com um projeto criado é possível consultá-lo atráves do nome do projeto, descrição, data e status, tendo como retorno uma instância de busca.
-                           |
+| **TA02.01**              | Na tela de criação de projetos o usuário preenche todos os campos referente ao projeto a ser criado, caso não ocorra nada de errado é exibida uma mensagem de sucesso na tela.|
+| **TA02.02**              | Quando um projeto é finalizado ou por algum motivo interrompido, o usuário criador do projeto tem a opção de excluí-lo, logo após é exibida uma mensagem de sucesso na tela.|                         
+| **TA02.03**              | Com um projeto criado é possível realizar alterações em dados cadastrais que o usuário criador tem acesso como o nome do projeto, cor, descrição e o status para definir se ele está ou não arquivado.|     
+| **TA02.04**              | Com um projeto criado é possível consultá-lo atráves do nome do projeto, descrição, data e status, tendo como retorno uma instância de busca.|   
 | **TA02.05**              | Com um projeto criado é possível colocar prioridades para que projetos mais importantes tenham preferência e sejam concluídos|
 | **TA02.06**              | Quando um projeto é finalizado, ele é arquivado para auxiliar na organização dos projetos de usuário|
 
