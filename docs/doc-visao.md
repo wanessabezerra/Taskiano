@@ -50,9 +50,7 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF17 – Consultar Usuário                          | Exibe as informações básicas do usuário cosultado                           | Usuário |
 | RF18 – Vizualizar detalhes do Usuário             | Exibe as informações detalhadas do usuário cosultado                        | Usuário |
 | RF19 – Excluir Usuário                            | Remove a conta do usuário do sistema                                        | Usuário |
-| RF20 – Arquivar Projetos de Tarefas              | Arquiva todo o projeto, incluindo tarefas
-
-                                   | Usuário |
+| RF20 – Arquivar Projetos de Tarefas              | Arquiva todo o projeto, incluindo tarefas                                    | Usuário |
 
 ## Lista de Requisitos Não-Funcionais
 
