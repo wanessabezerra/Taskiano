@@ -112,6 +112,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA02.02**              | Quando um projeto é finalizado ou por algum motivo interrompido, o usuário criador do projeto tem a opção de excluí-lo, logo após é exibida uma mensagem de sucesso na tela.|                         
 | **TA02.03**              | Com um projeto criado é possível realizar alterações em dados cadastrais que o usuário criador tem acesso como o nome do projeto, cor, descrição e o status para definir se ele está ou não arquivado.|     
 | **TA02.04**              | Com um projeto criado é possível consultá-lo atráves do nome do projeto, descrição, data e status, tendo como retorno uma instância de busca.|   
-| **TA02.05**              | Com um projeto criado é possível colocar prioridades para que projetos mais importantes tenham preferência e sejam concluídos|
-| **TA02.06**              | Quando um projeto é finalizado, ele é arquivado para auxiliar na organização dos projetos de usuário|
+| **TA02.05**              | Com um projeto criado é possível colocar prioridades para que projetos mais importantes tenham preferência e sejam concluídos.|
+| **TA02.06**              | Quando um projeto é finalizado, ele é arquivado para auxiliar na organização dos projetos de usuário.|
 
