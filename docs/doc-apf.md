@@ -9,8 +9,7 @@
 - [2. Contagem Indicativa (Ci)](#2-contagem-indicativa-ci)
   - [2.1. Descrição](#21-descrição)
   - [2.2. Contagem](#22-contagem)
-  - [2.3. Duração e custo considerando produtividade 8h/PF e Ci = 205 PF](#23-duração-e-custo-considerando-produtividade-8hpf-e-ci--205-pf)
-  - [2.4. Duração e custo considerando produtividade 1h/PF e Ci = 133 PF](#24-duração-e-custo-considerando-produtividade-1hpf-e-ci--133-pf)
+  - [2.3. Produtividade Hr/PF](#23-produtividade-hrpf)
 - [3. Contagem Estimativa (Ce)](#3-contagem-estimativa-ce)
 - [4. Contagem Detalhada](#4-contagem-detalhada)
 
@@ -32,12 +31,13 @@ Os pontos de função são utilizados como fator normalizado do tamanho do softw
 | 07/07/2021 | 1.0    | Documento Inicial                           | Zaú Júlio Araújo Galvão |
 | 08/07/2021 | 1.1    | Revisão estrutural                          | Zaú Júlio Araújo Galvão |
 | 08/07/2021 | 1.2    | Revisão estrutural, Descrições e Referência | Zaú Júlio Araújo Galvão |
+| 09/07/2021 | 2.0    | Contagem Indicativa (Ci)                    | Zaú Júlio Araújo Galvão |
 
 # 2. Contagem Indicativa (Ci)
 
 ## 2.1. Descrição
 
-A Contagem Indicativa do Tamanho Funcional, ou CI, é uma medida de software, baseada em uma avaliação padronizada dos requisitos lógicos dos usuários. Tem por objetivo fornecer uma estimativa padronizada do tamanho e complexidade de um software.
+A Contagem Indicativa do Tamanho Funcional, ou Ci, é uma medida de software, baseada em uma avaliação padronizada dos requisitos lógicos dos usuários. Tem por objetivo fornecer uma estimativa padronizada do tamanho e complexidade de um software.
 
 ## 2.2. Contagem
 
@@ -48,29 +48,47 @@ Na contagem indicativa é necessário analisar os **ALIs**[1] (Arquivos Lógicos
 [2]  AIE: Arquivos apenas referenciados pela aplicação.
 ```
 
-| ALI/AIE          | Entidades Relacionadas    | PF  |
-| ---------------- | ------------------------- | --- |
-| AIE Language     | Language                  | 15  |
-| AIE Genre        | Genre                     | 15  |
-| ALI User         | User e Group              | 35  |
-| ALI Library      | Library                   | 35  |
-| ALI Author       | Author                    | 35  |
-| ALI Book         | Book                      | 35  |
-| ALI BookInstance | BookInstance e LoanStatus | 35  |
+| ALI/AIE      | Entidades Relacionadas | PF  |
+| ------------ | ---------------------- | --- |
+| AIE Task     | Task                   | 15  |
+| AIE Reminder | Reminder               | 15  |
+| ALI User     | User                   | 35  |
+| ALI Project  | Project                | 35  |
+| **Total**    | -                      | 100 |
 
-Tamanho Funcional **Ci = 205 PF** ( 133,25 PF < Ci <= 276,75 PF)
+```txt
+m = Margem bruta => 35%
+c = Contagem Total PF => 100
 
-## 2.3. Duração e custo considerando produtividade 8h/PF e Ci = 205 PF
+Tamanho Funcional Ci = 100 PF
 
-A produtividade de python é 8h/PF (alta produtividade segundo a SERPRO).
-Com Duração de 1640 horas, um dev trabalhando 8h por dia temos 205 dias de duração.
-Custo de R$ 17,00 por hora, então totalizamos R$ 27880,00.
+Margem = ( 65 PF < (c * m) <= 135 PF)
+```
 
-## 2.4. Duração e custo considerando produtividade 1h/PF e Ci = 133 PF
+## 2.3. Produtividade Hr/PF
 
-A produtividade de python com 1h/PF.
-Com Duração de 133 horas, um dev trabalhando 8h por dia temos 17 dias de duração.
-Custo de R$ 17,00 por hora, então totalizamos R$ 2261,00.
+Para estipular a produtividade Hr/PF da equipe foi considerando o desempenho médio da equipe por linguagem:
+
+- 2Hr/PF para Python
+- 2Hr/PF para JS/TS
+
+Com produtividade média da equipe em **2Hr/PF**.
+
+```txt
+- Considerando o custo de R$ 17,00 por hora.
+```
+
+Considerando somente um desenvolvedor. O projeto teria **duração de 200 Horas**, com empenho de 2 Horas por dia, trabalhando por 100 dias.
+
+- Total: R$ 3400,00
+
+Considerando a equipe constituída por 4 membros, empenhando 8 Horas por dia(12.5PF/Dia), duração de **128 Horas**, temos como resultado a conclusão do projeto em cerca de 4 Dias.
+
+- Total: R$ 2176,00
+
+Considerando o cenário acadêmico, a equipe constituída por 4 membros, empenhando 2 Horas por dia(1PF/Dia), duração de **200 Horas**, temos como resultado a conclusão do projeto em cerca de 25 Dias.
+
+- Total: R$ 3400,00
 
 # 3. Contagem Estimativa (Ce)
 
