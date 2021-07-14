@@ -50,14 +50,16 @@ Figura 1. Imagem que representa a visão geral no documento.
 
 ## 3. Requisitos Não Funcionais
 
-**Requisitos não-funcionais:** nesta fase do documento, é necessário listar os requisitos não funcionais encontrados no sistema, tais como: portabilidade, usabilidade, desempenho e etc. O objetivo é colocar o nome do requisito e descrever com detalhes suas características.
+**Requisitos não-funcionais:** foi elaborada uma lista de requisitos não funcionais que fazem parte do sistema, descrevendo cada requisito, mostrando sua finalidade e funcionamento para uma boa experiência do usuário final.
 
 
 
 <table>
   <td>Requitos</td><td>Descrição</td>
   <tr>
-   <td>RNF001 Design</td>
+   <td>RNF001 
+    <br>Design</br> 
+    </td>
    <td>
       <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e com menus bem organizados em diferentes níveis.
     </td>
@@ -75,7 +77,9 @@ Figura 1. Imagem que representa a visão geral no documento.
     </td>
   </tr>
   <tr>
-    <td>RNF004 Segurança</td>
+    <td>RNF004 
+      <br>Segurança</br>
+     </td>
     <td>
       <p> <strong> 1. </strong> O software deve possuir autenticação social para garantir a integridade dos dados de usuário.
     </td>
