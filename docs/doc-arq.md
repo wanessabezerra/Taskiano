@@ -155,7 +155,7 @@ Exemplo:
 
 ## 7. Componentes
 
-Nesta fase, o arqiteto deve apresentar o diagrama de componentes. É recomendado como boas práticas de mercado o uso do modelo UML para criação do diagrama, que deve apresentar os possíveis componentes e suas dependências. Além disso, o arquiteto deve criar uma tabela detalhando as responsabilidades de cada componente.
+Ilustração do diagrama de componentes do Taskiano na figura 2 e o detalhamento das responsabilidades de cada componente na tabela a seguir.
 
 ![Modelo Entidade-Relacionamento](images/diagrama_uml.png)
 
