@@ -36,7 +36,8 @@ Neste documento é abordado a arquitetura da plataforma e suas peculiaridades, t
 | 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio       |
 | 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio       |
 | 06/07/2021 | 6.0    | Adição do tópico de Decisões de Design          | Zaú Júlio       |
-| 14/07/2021 | 7.0    | Adição da descrição dos componentes             | Wanessa Bezerra |
+| 14/07/2021 | 7.0    | Adição da imagem do diagrama UML de componentes | Wanessa Bezerra |
+| 14/07/2021 | 8.0    | Adição da descrição dos componentes             | Wanessa Bezerra |
 
 ## 2. Visão Geral
 
@@ -160,13 +161,13 @@ Nesta fase, o arqiteto deve apresentar o diagrama de componentes. É recomendado
 
 Figure 2. Representação gráfica com diagrama UML para representar os componentes.
 
-|            |                                                                                                                                                                                                                                                                 |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Componente | Descrição                                                                                                                                                                                                                                                       |
-| User       | O User é responsável por armazena somente informações cruciais para a descrição do agente no sistema, além disso, possui o Score para definir a experiência do usuário utilizando o sistema e atráves do email podemos entrar em contato e enviar notificações. |
-| Project    | O Project é responsável por agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas.                                    |
-| Task       |                                                                                                                                                                                                                                                                 |
-| Reminder   |                                                                                                                                                                                                                                                                 |
+|            |                                                                                                                                                                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Componente | Descrição                                                                                                                                                                                                                                                                        |
+| User       | O User é responsável por armazena somente informações cruciais para a descrição do agente no sistema, além disso, possui o Score para definir a experiência do usuário utilizando o sistema e atráves do email podemos entrar em contato e enviar notificações.                  |
+| Project    | O Project é responsável por agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas.                                                     |
+| Task       | A Task têm uma estrutura maior, ela é responsável por armazena o conteúdo da anotação, podendo conter links, tabelas e afins. Task também contém a data de criação, conclusão e o prazo para conclusão, além de possuir a atribuição de prioridade a tarefa que está e execução. |
+| Reminder   | Reminder é responsável pelas notificações para o usuário, seja através de alertas no navegador ou e-mails.                                                                                                                                                                       |
 
 ## 8. Implantação
 
