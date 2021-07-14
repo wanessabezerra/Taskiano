@@ -52,19 +52,25 @@ Figura 1. Imagem que representa a visão geral no documento.
 
 **Requisitos não-funcionais:** nesta fase do documento, é necessário listar os requisitos não funcionais encontrados no sistema, tais como: portabilidade, usabilidade, desempenho e etc. O objetivo é colocar o nome do requisito e descrever com detalhes suas características.
 
-Exemplo:
+
 
 <table>
   <tr>
-   <td>Design</td>
+   <td>RNF001 Design</td>
    <td>
       <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e com menus bem organizados em diferentes níveis.
     </td>
   </tr>
   <tr>
-    <td>Interoperabilidade</td>
+   <td>RNF002 Portabilidade</td>
+   <td>
+    <p> <strong> 1. O software deve ser responsivo e projetado LTS(long-term support), para que tenha suporte por um período de tempo maior que o normal e futuramente dar suporte a plataforma mobile.</strong>
+    </td>
+  </tr> 
+  <tr>
+    <td>RNF002 Interoperabilidade</td>
     <td>
-      <p> <strong> 1. </strong> Deve ser desenvolvido na plataforma .NET com banco de dados SQL Server Enterprise ou Oracle 10g.
+      <p> <strong> 1. </strong> O software deve ser desenvolvido com os frameworks Django e NextJs com banco de dados MariaDB server e firebase para autenticação.
     </td>
   </tr>
 </table>
