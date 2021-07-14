@@ -146,6 +146,19 @@ Nesta fase selecionar User Stories com cenários escolhidos para a validação d
 
 Exemplo:
 
+
+<table>
+  <td>User Story</td><td>Motivos da escolha e descrição</td>
+  <tr>
+   <td>US-003 
+     <br/>Manter projeto
+    </td>
+   <td>
+      <p> Este conjunto de funcionalidades devem ser testados, pois implicam na experiência que o usuário virá a ter com a criação e administração de seus projetos.
+      <br/><strong>.1 Criar projetos</strong> - Deve ser verificado se o projeto tem um nome válido, se o projeto tem uma data de encerramento correta e se existe ou não uma descrição.
+    </td>
+  </tr>
+</table>
 |            |                                                   |
 | ---------- | ------------------------------------------------- |
 | User Story | Motivos da escolha                                |
