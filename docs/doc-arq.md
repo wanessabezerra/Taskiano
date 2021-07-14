@@ -154,8 +154,9 @@ Exemplo:
      <br/>Manter projeto
     </td>
    <td>
-      <p> Este conjunto de funcionalidades devem ser testados, pois implicam na experiência que o usuário virá a ter com a criação e administração de seus projetos.
-      <br/><strong>.1 Criar projetos</strong> - Deve ser verificado se o projeto tem um nome válido, se o projeto tem uma data de encerramento correta e se existe ou não uma descrição.
+      <p> Este conjunto de funcionalidades devem ser testados, pois implicam na experiência que o usuário virá a ter com a criação e administração de seus projetos.<br/>
+      <br/><strong>1. Criar projetos de tarefas</strong>  
+        <br/>Deve ser verificado se o projeto tem um nome válido, se o projeto tem uma data de encerramento correta e se existe ou não uma descrição.
     </td>
   </tr>
 </table>
