@@ -52,13 +52,11 @@ Figura 1. Imagem que representa a visão geral no documento.
 
 **Requisitos não-funcionais:** foi elaborada uma lista de requisitos não funcionais que fazem parte do sistema, descrevendo cada requisito, mostrando sua finalidade e funcionamento para uma boa experiência do usuário final.
 
-
-
 <table>
   <td>Requitos</td><td>Descrição</td>
   <tr>
-   <td>RNF001 
-    <br>Design</br> 
+   <td>RNF001
+    <br>Design</br>
     </td>
    <td>
       <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e com menus bem organizados em diferentes níveis.
@@ -69,7 +67,7 @@ Figura 1. Imagem que representa a visão geral no documento.
    <td>
     <p> <strong> 1. </strong>O software deve ser responsivo e projetado LTS(long-term support), para que tenha suporte por um período de tempo maior que o normal e futuramente dar suporte a plataforma mobile.
     </td>
-  </tr> 
+  </tr>
   <tr>
     <td>RNF003 Interoperabilidade</td>
     <td>
@@ -77,7 +75,7 @@ Figura 1. Imagem que representa a visão geral no documento.
     </td>
   </tr>
   <tr>
-    <td>RNF004 
+    <td>RNF004
       <br>Segurança</br>
      </td>
     <td>
@@ -155,11 +153,11 @@ Exemplo:
 
 ## 7. Componentes
 
-Nesta fase, o arquiteto deve apresentar o diagrama de componentes. É recomendado como boas práticas de mercado o uso do modelo UML para criação do diagrama, que deve apresentar os possíveis componentes e suas dependências. Além disso, o arquiteto deve criar uma tabela detalhando as responsabilidades de cada componente.
+Nesta fase, o arqiteto deve apresentar o diagrama de componentes. É recomendado como boas práticas de mercado o uso do modelo UML para criação do diagrama, que deve apresentar os possíveis componentes e suas dependências. Além disso, o arquiteto deve criar uma tabela detalhando as responsabilidades de cada componente.
 
 Exemplo:
 
-![alt_text](images/image2.jpg "image_tooltip")
+![Modelo Entidade-Relacionamento](images/diagrama_uml.png)
 
 Figure 2. Representação gráfica com diagrama UML para representar os componentes.
 
