@@ -27,15 +27,17 @@ Neste documento é abordado a arquitetura da plataforma e suas peculiaridades, t
 
 ### 1.1. Histórico de revisões
 
-| Data       | Versão | Descrição                                       | Autor     |
-| ---------- | ------ | ----------------------------------------------- | --------- |
-| 05/07/2021 | 1.0    | Documento Inicial                               | Zaú Júlio |
-| 05/07/2021 | 1.1    | Organização da estrutura e adição de index      | Zaú Júlio |
-| 05/07/2021 | 2.0    | Adição da descrição das tecnologias             | Zaú Júlio |
-| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura     | Zaú Júlio |
-| 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio |
-| 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio |
-| 06/07/2021 | 6.0    | Adição do tópico de Decisões de Design          | Zaú Júlio |
+| Data       | Versão | Descrição                                       | Autor           |
+| ---------- | ------ | ----------------------------------------------- | --------------- |
+| 05/07/2021 | 1.0    | Documento Inicial                               | Zaú Júlio       |
+| 05/07/2021 | 1.1    | Organização da estrutura e adição de index      | Zaú Júlio       |
+| 05/07/2021 | 2.0    | Adição da descrição das tecnologias             | Zaú Júlio       |
+| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura     | Zaú Júlio       |
+| 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio       |
+| 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio       |
+| 06/07/2021 | 6.0    | Adição do tópico de Decisões de Design          | Zaú Júlio       |
+| 14/07/2021 | 7.0    | Adição da imagem do diagrama UML de componentes | Wanessa Bezerra |
+| 14/07/2021 | 8.0    | Adição da descrição dos componentes             | Wanessa Bezerra |
 
 ## 2. Visão Geral
 
@@ -52,13 +54,11 @@ Figura 1. Imagem que representa a visão geral no documento.
 
 **Requisitos não-funcionais:** foi elaborada uma lista de requisitos não funcionais que fazem parte do sistema, descrevendo cada requisito, mostrando sua finalidade e funcionamento para uma boa experiência do usuário final.
 
-
-
 <table>
   <td>Requitos</td><td>Descrição</td>
   <tr>
-   <td>RNF001 
-    <br>Design</br> 
+   <td>RNF001
+    <br>Design</br>
     </td>
    <td>
       <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e com menus bem organizados em diferentes níveis.
@@ -69,7 +69,7 @@ Figura 1. Imagem que representa a visão geral no documento.
    <td>
     <p> <strong> 1. </strong>O software deve ser responsivo e projetado LTS(long-term support), para que tenha suporte por um período de tempo maior que o normal e futuramente dar suporte a plataforma mobile.
     </td>
-  </tr> 
+  </tr>
   <tr>
     <td>RNF003 Interoperabilidade</td>
     <td>
@@ -77,7 +77,7 @@ Figura 1. Imagem que representa a visão geral no documento.
     </td>
   </tr>
   <tr>
-    <td>RNF004 
+    <td>RNF004
       <br>Segurança</br>
      </td>
     <td>
@@ -155,25 +155,19 @@ Exemplo:
 
 ## 7. Componentes
 
-Nesta fase, o arquiteto deve apresentar o diagrama de componentes. É recomendado como boas práticas de mercado o uso do modelo UML para criação do diagrama, que deve apresentar os possíveis componentes e suas dependências. Além disso, o arquiteto deve criar uma tabela detalhando as responsabilidades de cada componente.
+Nesta fase, o arqiteto deve apresentar o diagrama de componentes. É recomendado como boas práticas de mercado o uso do modelo UML para criação do diagrama, que deve apresentar os possíveis componentes e suas dependências. Além disso, o arquiteto deve criar uma tabela detalhando as responsabilidades de cada componente.
 
-Exemplo:
-
-![alt_text](images/image2.jpg "image_tooltip")
+![Modelo Entidade-Relacionamento](images/diagrama_uml.png)
 
 Figure 2. Representação gráfica com diagrama UML para representar os componentes.
 
-|            |                                                                     |
-| ---------- | ------------------------------------------------------------------- |
-| Componente | Descrição                                                           |
-| BackOffice | Descrever de forma sucinta as responsabilidades deste componente... |
-| Assinante  |                                                                     |
-| Serviço    |                                                                     |
-| Financeiro |                                                                     |
-| Pesquisa   |                                                                     |
-| Suporte    |                                                                     |
-| Log        |                                                                     |
-| Segurança  |                                                                     |
+|            |                                                                                                                                                                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Componente | Descrição                                                                                                                                                                                                                                                                        |
+| User       | O User é responsável por armazena somente informações cruciais para a descrição do agente no sistema, além disso, possui o Score para definir a experiência do usuário utilizando o sistema e atráves do email podemos entrar em contato e enviar notificações.                  |
+| Project    | O Project é responsável por agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas.                                                     |
+| Task       | A Task têm uma estrutura maior, ela é responsável por armazena o conteúdo da anotação, podendo conter links, tabelas e afins. Task também contém a data de criação, conclusão e o prazo para conclusão, além de possuir a atribuição de prioridade a tarefa que está e execução. |
+| Reminder   | Reminder é responsável pelas notificações para o usuário, seja através de alertas no navegador ou e-mails.                                                                                                                                                                       |
 
 ## 8. Implantação
 
