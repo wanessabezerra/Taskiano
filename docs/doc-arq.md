@@ -156,23 +156,17 @@ Exemplo:
 
 Nesta fase, o arqiteto deve apresentar o diagrama de componentes. É recomendado como boas práticas de mercado o uso do modelo UML para criação do diagrama, que deve apresentar os possíveis componentes e suas dependências. Além disso, o arquiteto deve criar uma tabela detalhando as responsabilidades de cada componente.
 
-Exemplo:
-
 ![Modelo Entidade-Relacionamento](images/diagrama_uml.png)
 
 Figure 2. Representação gráfica com diagrama UML para representar os componentes.
 
-|            |                                                                     |
-| ---------- | ------------------------------------------------------------------- |
-| Componente | Descrição                                                           |
-| BackOffice | Descrever de forma sucinta as responsabilidades deste componente... |
-| Assinante  |                                                                     |
-| Serviço    |                                                                     |
-| Financeiro |                                                                     |
-| Pesquisa   |                                                                     |
-| Suporte    |                                                                     |
-| Log        |                                                                     |
-| Segurança  |                                                                     |
+|            |                                                                                                                                                                                                                                                                 |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Componente | Descrição                                                                                                                                                                                                                                                       |
+| User       | O User é responsável por armazena somente informações cruciais para a descrição do agente no sistema, além disso, possui o Score para definir a experiência do usuário utilizando o sistema e atráves do email podemos entrar em contato e enviar notificações. |
+| Project    | O Project é responsável por agrupar tarefas com uma finalidade em comum, para que o usuário possa dividir em grupos menores suas pendências e objetivos, e para que possa encontrar mais facilmente tarefas correlacionadas.                                    |
+| Task       |                                                                                                                                                                                                                                                                 |
+| Reminder   |                                                                                                                                                                                                                                                                 |
 
 ## 8. Implantação
 
