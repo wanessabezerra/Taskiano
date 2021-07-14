@@ -27,15 +27,16 @@ Neste documento é abordado a arquitetura da plataforma e suas peculiaridades, t
 
 ### 1.1. Histórico de revisões
 
-| Data       | Versão | Descrição                                       | Autor     |
-| ---------- | ------ | ----------------------------------------------- | --------- |
-| 05/07/2021 | 1.0    | Documento Inicial                               | Zaú Júlio |
-| 05/07/2021 | 1.1    | Organização da estrutura e adição de index      | Zaú Júlio |
-| 05/07/2021 | 2.0    | Adição da descrição das tecnologias             | Zaú Júlio |
-| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura     | Zaú Júlio |
-| 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio |
-| 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio |
-| 06/07/2021 | 6.0    | Adição do tópico de Decisões de Design          | Zaú Júlio |
+| Data       | Versão | Descrição                                       | Autor           |
+| ---------- | ------ | ----------------------------------------------- | --------------- |
+| 05/07/2021 | 1.0    | Documento Inicial                               | Zaú Júlio       |
+| 05/07/2021 | 1.1    | Organização da estrutura e adição de index      | Zaú Júlio       |
+| 05/07/2021 | 2.0    | Adição da descrição das tecnologias             | Zaú Júlio       |
+| 06/07/2021 | 3.0    | Adição da imagem e descrição da arquitetura     | Zaú Júlio       |
+| 06/07/2021 | 4.0    | Adição da descrição do documento                | Zaú Júlio       |
+| 06/07/2021 | 5.0    | Conclusão do tópico de Mecanismos arquiteturais | Zaú Júlio       |
+| 06/07/2021 | 6.0    | Adição do tópico de Decisões de Design          | Zaú Júlio       |
+| 14/07/2021 | 7.0    | Adição da descrição dos componentes             | Wanessa Bezerra |
 
 ## 2. Visão Geral
 
