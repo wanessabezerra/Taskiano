@@ -55,6 +55,7 @@ Figura 1. Imagem que representa a visão geral no documento.
 
 
 <table>
+  <td>Requitos</td><td>Descrição</td>
   <tr>
    <td>RNF001 Design</td>
    <td>
@@ -64,13 +65,19 @@ Figura 1. Imagem que representa a visão geral no documento.
   <tr>
    <td>RNF002 Portabilidade</td>
    <td>
-    <p> <strong> 1. O software deve ser responsivo e projetado LTS(long-term support), para que tenha suporte por um período de tempo maior que o normal e futuramente dar suporte a plataforma mobile.</strong>
+    <p> <strong> 1. </strong>O software deve ser responsivo e projetado LTS(long-term support), para que tenha suporte por um período de tempo maior que o normal e futuramente dar suporte a plataforma mobile.
     </td>
   </tr> 
   <tr>
-    <td>RNF002 Interoperabilidade</td>
+    <td>RNF003 Interoperabilidade</td>
     <td>
       <p> <strong> 1. </strong> O software deve ser desenvolvido com os frameworks Django e NextJs com banco de dados MariaDB server e firebase para autenticação.
+    </td>
+  </tr>
+  <tr>
+    <td>RNF004 Segurança</td>
+    <td>
+      <p> <strong> 1. </strong> O software deve possuir autenticação social para garantir a integridade dos dados de usuário.
     </td>
   </tr>
 </table>
