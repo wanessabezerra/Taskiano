@@ -56,12 +56,9 @@ Exemplo:
 
 <table>
   <tr>
-   <td>Desempenho</td>
+   <td>Design</td>
    <td>
-      <p> <strong> 1.</strong> A página principal tem que ser carregada em no máximo 3 segundos com uma conexão mínima de 256kbps.
-      <p> <strong> 2.</strong> As páginas que recuperam informações de sistemas legados, devem responder em dois segundos a cada 10.000 (contextual) em uma conexão de 256kbps.
-      <p> <strong> 3.</strong> As páginas que recuperam informações de transações no banco de dados da própria aplicação, deve responder em um segundo a cada 10.000 registros (contextual), retornados em uma conexão de 256kbps.
-      <p> <strong> 4.</strong> O servidor deve suportar 100.000 conexões simultâneas sem perda de desempenho.
+      <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e com menus bem organizados em diferentes níveis.
     </td>
   </tr>
   <tr>
