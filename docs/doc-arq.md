@@ -50,24 +50,38 @@ Figura 1. Imagem que representa a visão geral no documento.
 
 ## 3. Requisitos Não Funcionais
 
-**Requisitos não-funcionais:** nesta fase do documento, é necessário listar os requisitos não funcionais encontrados no sistema, tais como: portabilidade, usabilidade, desempenho e etc. O objetivo é colocar o nome do requisito e descrever com detalhes suas características.
+**Requisitos não-funcionais:** foi elaborada uma lista de requisitos não funcionais que fazem parte do sistema, descrevendo cada requisito, mostrando sua finalidade e funcionamento para uma boa experiência do usuário final.
 
-Exemplo:
+
 
 <table>
+  <td>Requitos</td><td>Descrição</td>
   <tr>
-   <td>Desempenho</td>
+   <td>RNF001 
+    <br>Design</br> 
+    </td>
    <td>
-      <p> <strong> 1.</strong> A página principal tem que ser carregada em no máximo 3 segundos com uma conexão mínima de 256kbps.
-      <p> <strong> 2.</strong> As páginas que recuperam informações de sistemas legados, devem responder em dois segundos a cada 10.000 (contextual) em uma conexão de 256kbps.
-      <p> <strong> 3.</strong> As páginas que recuperam informações de transações no banco de dados da própria aplicação, deve responder em um segundo a cada 10.000 registros (contextual), retornados em uma conexão de 256kbps.
-      <p> <strong> 4.</strong> O servidor deve suportar 100.000 conexões simultâneas sem perda de desempenho.
+      <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e com menus bem organizados em diferentes níveis.
     </td>
   </tr>
   <tr>
-    <td>Interoperabilidade</td>
+   <td>RNF002 Portabilidade</td>
+   <td>
+    <p> <strong> 1. </strong>O software deve ser responsivo e projetado LTS(long-term support), para que tenha suporte por um período de tempo maior que o normal e futuramente dar suporte a plataforma mobile.
+    </td>
+  </tr> 
+  <tr>
+    <td>RNF003 Interoperabilidade</td>
     <td>
-      <p> <strong> 1. </strong> Deve ser desenvolvido na plataforma .NET com banco de dados SQL Server Enterprise ou Oracle 10g.
+      <p> <strong> 1. </strong> O software deve ser desenvolvido com os frameworks Django e NextJs com banco de dados MariaDB server e firebase para autenticação.
+    </td>
+  </tr>
+  <tr>
+    <td>RNF004 
+      <br>Segurança</br>
+     </td>
+    <td>
+      <p> <strong> 1. </strong> O software deve possuir autenticação social para garantir a integridade dos dados de usuário.
     </td>
   </tr>
 </table>
