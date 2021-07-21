@@ -146,12 +146,30 @@ Nesta fase selecionar User Stories com cenários escolhidos para a validação d
 
 Exemplo:
 
-|            |                                                   |
-| ---------- | ------------------------------------------------- |
-| User Story | Motivos da escolha                                |
-| US 01      | Descrever o motivo e os itens que serão testados. |
-| US 04      | ...                                               |
-|            |                                                   |
+
+<table>
+  <td>User Story</td><td>Motivos da escolha e descrição</td>
+  <tr>
+   <td>US-003 
+     <br/>Manter projeto
+    </td>
+   <td>
+      <p> Este conjunto de funcionalidades devem ser testados, pois implicam na experiência que o usuário virá a ter com a criação e administração de seus projetos.<br/>
+      <br/><strong>1. Criar projetos de tarefas</strong>  
+        <br/> Deve ser verificado se o projeto tem um nome válido, se o projeto tem uma data de encerramento correta e se existe ou não uma descrição.
+        <br/><strong>2. Excluir Projetos de Tarefas</strong> 
+        <br/> Deve ser feita uma busca para saber se o projeto a ser excluído existe e está ativo.
+        <br/><strong>3. Alterar Projetos de Tarefas</strong>
+        <br/> Deve ser validados todos os campos que estão sucetíveis a mudanças, validações de nome e quantidade de caracteres.
+        <br/><strong>4. Consultar Projetos de Tarefas</strong>
+        <br/>Dever ser testado o campo de entrada para saber se o está retornando os dados solicitados.
+        <br/><strong>5. Colocar Prioridades em Tarefas ou Projetos</strong>
+        <br/> Realizar apenas um teste de unidade simples para dar prioridade ao projeto criado.
+        <br/><strong>6. Arquivar Projetos de Tarefas</strong>
+        <br/> Apenas um teste de unidade simples.
+    </td>
+  </tr>
+</table>
 
 ## 7. Componentes
 
