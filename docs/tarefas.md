@@ -144,7 +144,7 @@ A Iteração 2 começou dia 30/06/2021 e vai até 14/07/2021. As atividades dess
 
 ### T03 - Iteração 3 - Desenvolvimento
 
-A Iteração 3 começou dia -- e vai até -- . As atividades dessa tarefa são:
+A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dessa tarefa são:
 
 - Atualização do **Documento de Visão**, pode adicionar requisitos funcionais, se necessário;
 - Atualização do **Documento Lista de User Stories** com a lista de User Stories, pode adicionar _User Stories_ se necessário. coloque no diretório "docs" do repositório;
