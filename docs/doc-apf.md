@@ -50,19 +50,19 @@ Na contagem indicativa é necessário analisar os **ALIs**[1] (Arquivos Lógicos
 
 | ALI/AIE      | Entidades Relacionadas | PF  |
 | ------------ | ---------------------- | --- |
-| AIE Task     | Task                   | 15  |
-| AIE Reminder | Reminder               | 15  |
+| ALI Task     | Task                   | 35  |
+| ALI Reminder | Reminder               | 35  |
 | ALI User     | User                   | 35  |
 | ALI Project  | Project                | 35  |
-| **Total**    | -                      | 100 |
+| **Total**    | -                      | 140 |
 
 ```txt
 m = Margem bruta => 35%
-c = Contagem Total PF => 100
+c = Contagem Total PF => 140
 
-Tamanho Funcional Ci = 100 PF
+Tamanho Funcional Ci = 140 PF
 
-Margem = ( 65 PF < (c * m) <= 135 PF)
+Margem = ( 91 PF < (c * m) <= 189 PF)
 ```
 
 ## 2.3. Produtividade Hr/PF
@@ -78,17 +78,32 @@ Com produtividade média da equipe em **2Hr/PF**.
 - Considerando o custo de R$ 17,00 por hora.
 ```
 
-Considerando somente um desenvolvedor. O projeto teria **duração de 200 Horas**, com empenho de 2 Horas por dia, trabalhando por 100 dias.
+Considerando somente um desenvolvedor. O projeto teria **duração de 200 Horas**, com empenho de 8 Horas por dia, trabalhando por 35 dias.
 
-- Total: R$ 3400,00
+<!-- PF_Dia = (1 membro * 8 HrsDia)/2 HrPF = 4 -->
+<!-- Dias = CI/PF_Dia = 140/4 =~ 35 Dias -->
+<!-- Total_Hrs = Dias * (1 membro * 8 HrsDia) = 280 Hrs -->
+<!-- Custo = Total_Hrs * Custo = R$ 4760 -->
 
-Considerando a equipe constituída por 4 membros, empenhando 8 Horas por dia(12.5PF/Dia), duração de **128 Horas**, temos como resultado a conclusão do projeto em cerca de 4 Dias.
+- Total: R$ 4760,00
 
-- Total: R$ 2176,00
+Considerando a equipe constituída por 4 membros, empenhando 8 Horas por dia(16PF/Dia), duração de **288 Horas**, temos como resultado a conclusão do projeto em cerca de 9 Dias.
 
-Considerando o cenário acadêmico, a equipe constituída por 4 membros, empenhando 2 Horas por dia(1PF/Dia), duração de **200 Horas**, temos como resultado a conclusão do projeto em cerca de 25 Dias.
+<!-- PF_Dia = (4 membros * 8 HrsDia)/2 HrPF = 16 -->
+<!-- Dias = CI/PF_Dia = 140/16 =~ 9 Dias -->
+<!-- Total_Hrs = Dias * (4 membros * 8 HrsDia) = 288 Hrs -->
+<!-- Custo = Total_Hrs * Custo = R$ 4896 -->
 
-- Total: R$ 3400,00
+- Total: R$ 4896,00
+
+Considerando o cenário acadêmico, a equipe constituída por 4 membros, empenhando 2 Horas por dia(4PF/Dia), duração de **280 Horas**, temos como resultado a conclusão do projeto em cerca de 35 Dias.
+
+<!-- PF_Dia = (4 membros * 2 HrsDia)/2 HrPF = 4 -->
+<!-- Dias = CI/PF_Dia = 140/4 =~ 35 Dias -->
+<!-- Total_Hrs = Dias * (4 membros * 2 HrsDia) = 280 Hrs -->
+<!-- Custo = Total_Hrs * Custo = R$ 4760 -->
+
+- Total: R$ 4760,00
 
 # 3. Contagem Estimativa (Ce)
 
