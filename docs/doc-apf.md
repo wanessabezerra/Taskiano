@@ -163,3 +163,19 @@ Tamanho Funcional: Dados + Operações
 **Ce** = 45 PF + 127 PF = **172 PF**
 
 # 4. Contagem Detalhada
+
+Tabela Task (2 RFR e 9 DER - Baixa Complexidade)
+1 ALI * 7PF = 7PF
+
+Tabela Reminder (1 RFR e 4 DER - Baixa Complexidade)
+1 ALI * 7PF = 7PF
+
+ALI: 4 ALI * 7PF = 28PF
+
+Incluir, Selecionar, Excluir, Atualizar, Listar Task
+
+3 EE * 4 PF + 1 SE* 5 PF + 2 CE * 4 PF = 25 PF
+
+Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
+
+3 EE *3 PF + 2 CE* 3 PF = 15 PF
