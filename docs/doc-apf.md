@@ -26,12 +26,13 @@ Os pontos de função são utilizados como fator normalizado do tamanho do softw
 
 ## 1.1. Histórico de revisões
 
-| Data       | Versão | Descrição                                   | Autor                   |
-| ---------- | ------ | ------------------------------------------- | ----------------------- |
-| 07/07/2021 | 1.0    | Documento Inicial                           | Zaú Júlio Araújo Galvão |
-| 08/07/2021 | 1.1    | Revisão estrutural                          | Zaú Júlio Araújo Galvão |
-| 08/07/2021 | 1.2    | Revisão estrutural, Descrições e Referência | Zaú Júlio Araújo Galvão |
-| 09/07/2021 | 2.0    | Contagem Indicativa (Ci)                    | Zaú Júlio Araújo Galvão |
+| Data       | Versão | Descrição                                   | Autor                    |
+| ---------- | ------ | ------------------------------------------- | ------------------------ |
+| 07/07/2021 | 1.0    | Documento Inicial                           | Zaú Júlio Araújo Galvão  |
+| 08/07/2021 | 1.1    | Revisão estrutural                          | Zaú Júlio Araújo Galvão  |
+| 08/07/2021 | 1.2    | Revisão estrutural, Descrições e Referência | Zaú Júlio Araújo Galvão  |
+| 09/07/2021 | 2.0    | Contagem Indicativa (Ci)                    | Zaú Júlio Araújo Galvão  |
+| 09/07/2021 | 3.0    | Contagem Detalhada                          | Wanessa da Silva Bezerra |
 
 # 2. Contagem Indicativa (Ci)
 
@@ -163,3 +164,38 @@ Tamanho Funcional: Dados + Operações
 **Ce** = 45 PF + 127 PF = **172 PF**
 
 # 4. Contagem Detalhada
+
+Tabela Task (2 RFR e 9 DER - Baixa Complexidade)
+1 ALI * 7PF = 7PF
+
+Tabela Reminder (1 RFR e 4 DER - Baixa Complexidade)
+1 ALI * 7 PF = 7 PF
+
+ALI: 4 ALI * 7 PF = **28 PF**
+
+Incluir, Selecionar, Excluir, Atualizar, Listar Task
+
+3 **EE** * 4PF + 1 **SE** * 5 PF + 2 **CE** * 4 PF = **25 PF**
+
+Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
+
+3 **EE** * 3 PF + 2 **CE** * 3 PF = **15 PF**
+
+| Operação                 | Tipo | Complexidade       | PF      |
+| ------------------------ | ---- | ------------------ | ------- |
+| Task                     | ALI  | Baixa              | 7       |
+| Reminder                 | ALI  | Baixa              | 7       |
+| Project                  | ALI  | Baixa              | 7       |
+| User                     | ALI  | Baixa              | 7       |
+| Inserir Tarefa           | EE   | Média              | 4       |
+| Atualizar Tarefa         | EE   | Média              | 4       |
+| Listar Tarefa            | CE   | Média              | 4       |
+| Deletar Tarefa           | EE   | Média              | 4       |
+| Listar Tarefas Atrasadas | SE   | Média              | 5       |
+| Visualizar Tarefa        | CE   | Média              | 4       |
+| Inserir Lembrete         | EE   | Baixa              | 3       |
+| Atualizar Lembrete       | EE   | Baixa              | 3       |
+| Listar Lembrete          | CE   | Baixa              | 3       |
+| Deletar Lembrete         | EE   | Baixa              | 3       |
+| Visualizar Lembrete      | CE   | Baixa              | 3       |
+|                          |      | **Total de Dados** | **---** |
