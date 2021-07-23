@@ -166,36 +166,43 @@ Tamanho Funcional: Dados + Operações
 # 4. Contagem Detalhada
 
 Tabela Task (2 RFR e 9 DER - Baixa Complexidade)
-1 ALI * 7PF = 7PF
+1 ALI \* 7PF = 7PF
 
 Tabela Reminder (1 RFR e 4 DER - Baixa Complexidade)
-1 ALI * 7 PF = 7 PF
+1 ALI \* 7 PF = 7 PF
 
-ALI: 4 ALI * 7 PF = **28 PF**
+ALI: 4 ALI \* 7 PF = **28 PF**
 
 Incluir, Selecionar, Excluir, Atualizar, Listar Task
 
-3 **EE** * 4PF + 1 **SE** * 5 PF + 2 **CE** * 4 PF = **25 PF**
+3 **EE** _ 4PF + 1 **SE** _ 5 PF + 2 **CE** \* 4 PF = **25 PF**
 
 Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 
-3 **EE** * 3 PF + 2 **CE** * 3 PF = **15 PF**
+3 **EE** _ 3 PF + 2 **CE** _ 3 PF = **15 PF**
 
-| Operação                 | Tipo | Complexidade       | PF      |
-| ------------------------ | ---- | ------------------ | ------- |
-| Task                     | ALI  | Baixa              | 7       |
-| Reminder                 | ALI  | Baixa              | 7       |
-| Project                  | ALI  | Baixa              | 7       |
-| User                     | ALI  | Baixa              | 7       |
-| Inserir Tarefa           | EE   | Média              | 4       |
-| Atualizar Tarefa         | EE   | Média              | 4       |
-| Listar Tarefa            | CE   | Média              | 4       |
-| Deletar Tarefa           | EE   | Média              | 4       |
-| Listar Tarefas Atrasadas | SE   | Média              | 5       |
-| Visualizar Tarefa        | CE   | Média              | 4       |
-| Inserir Lembrete         | EE   | Baixa              | 3       |
-| Atualizar Lembrete       | EE   | Baixa              | 3       |
-| Listar Lembrete          | CE   | Baixa              | 3       |
-| Deletar Lembrete         | EE   | Baixa              | 3       |
-| Visualizar Lembrete      | CE   | Baixa              | 3       |
-|                          |      | **Total de Dados** | **---** |
+| Operação                | Tipo | Complexidade       | PF     |
+| ----------------------- | ---- | ------------------ | ------ |
+| Task                    | ALI  | Baixa              | 7      |
+| Reminder                | ALI  | Baixa              | 7      |
+| Project                 | ALI  | Baixa              | 7      |
+| User                    | ALI  | Baixa              | 7      |
+| _______________________ | ____ | **Total de Dados** | **28** |
+| > **Tarefa**            |      |                    |        |
+|                         |      |                    |        |
+| Inserir Tarefa          | EE   | Média              | 4      |
+| Atualizar Tarefa        | EE   | Média              | 4      |
+| Listar Tarefa           | CE   | Média              | 4      |
+| Deletar Tarefa          | EE   | Média              | 4      |
+| Listar TarefasAtrasadas | SE   | Média              | 5      |
+| Visualizar Tarefa       | CE   | Média              | 4      |
+| _______________________ | ____ | **Total de Dados** | **25** |
+| > **Lembrete**          |      |                    |        |
+|                         |      |                    |        |
+| Inserir Lembrete        | EE   | Baixa              | 3      |
+| Atualizar Lembrete      | EE   | Baixa              | 3      |
+| Listar Lembrete         | CE   | Baixa              | 3      |
+| Deletar Lembrete        | EE   | Baixa              | 3      |
+| Visualizar Lembrete     | CE   | Baixa              | 3      |
+| _______________________ | ____ | **Total de Dados** | **15** |
+|                         |      |                    |        |
