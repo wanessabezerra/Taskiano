@@ -1,0 +1,83 @@
+.topbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 5rem;
+  width: 100%;
+  background: #282a36;
+
+  padding: 0 3rem 0 35%;
+  border-bottom: 1px solid #797979;
+
+  .searchBar {
+    width: 40rem;
+    height: 3rem;
+    background: rgba(121, 121, 121, 0.15);
+    border-radius: 50px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.3rem;
+    text-align: end;
+    color: rgb(238, 238, 238);
+
+    padding-right: 1.5rem;
+
+    transition: all 0.5s ease;
+
+    &:hover {
+      background: rgba(121, 121, 121, 0.25);
+      &::placeholder {
+        color: #a3a3a3;
+      }
+    }
+
+    &::placeholder {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.3rem;
+
+      /* gray */
+
+      color: #797979;
+      text-align: end;
+
+      transition: all 0.5s ease;
+    }
+  }
+
+  .userAvatar {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 3rem;
+    width: 3rem;
+
+    img,
+    svg {
+      width: 100%;
+      height: 100%;
+      filter: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #8090af;
+        filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    svg {
+      color: #797979;
+    }
+  }
+}
+
+// background: #797979;
+// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

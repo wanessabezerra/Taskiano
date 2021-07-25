@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 28rem;
+  height: 100%;
+
+  gap: 1.7rem;
+
+  background: #21232d;
+
+  .projectSelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: #282a36;
+    border-radius: 8px;
+
+    padding: 1rem 1.4rem;
+    margin: 2rem 0 1rem;
+    gap: 1.5rem;
+
+    .title {
+      font-family: Bebas Neue;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      text-align: right;
+
+      color: #ffffff;
+    }
+
+    .selector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 1rem;
+
+      .selectorItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 1.5rem;
+        height: 1.5rem;
+
+        background: white;
+        border-radius: 50%;
+
+        svg {
+          width: 90%;
+          height: 90%;
+
+          color: #282a36;
+        }
+
+        &:first-of-type {
+          svg {
+            margin-left: -0.1rem;
+          }
+        }
+
+        &:last-of-type {
+          svg {
+            margin-right: -0.1rem;
+          }
+        }
+      }
+
+      .projectName {
+        font-family: Bebas Neue;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2rem;
+        padding-top: 0.2rem;
+
+        background: -webkit-linear-gradient(#ab70ff 17.06%, #ffa039 84.75%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .countdownTitle {
+    font-family: Bitter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  .countdownDescription {
+    font-family: Bitter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #d8d8d8;
+  }
+
+  .sepLine {
+    border: 1px solid rgba(121, 121, 121, 0.25);
+    width: 40%;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .compass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+
+    color: #FFFFFF;
+
+    margin-bottom: 3rem;
+
+    .compassTitle {
+      font-family: Bebas Neue;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2.5rem;
+      text-align: right;
+
+      width: 80%;
+
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.countdownContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.RemainsFormatText {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #ffffff;
+}
+
+.RemainsFormatValue {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 77px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
