@@ -1,0 +1,43 @@
+.userScore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    124.09deg,
+    rgba(44, 94, 140, 0) 41.87%,
+    #333c59 75.45%
+  );
+  border-radius: 5px;
+
+  margin-right: 2rem;
+  width: 55%;
+  height: 100%;
+
+  .title {
+    align-self: flex-start;
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    background: -webkit-linear-gradient(#ab70ff 17.06%, #ffa039 84.75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .score {
+    align-self: flex-end;
+    padding-right: 1rem;
+
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 144px;
+    line-height: 173px;
+    color: #ffffff;
+    text-shadow: 16px 8px 4px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Bar } from "./components/Bar.styles";
+import { Bar } from "../components/Bar.styles";
 
 import styles from "./styles.module.scss";
 

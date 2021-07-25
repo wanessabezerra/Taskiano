@@ -1,0 +1,26 @@
+.globalStatus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
+
+  width: 100%;
+
+  .tasksStatusContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    gap: 2rem;
+
+    .separator {
+      align-self: flex-start;
+      width: 60%;
+      border: 1px solid rgba(121, 121, 121, 0.15);
+    }
+  }
+}
