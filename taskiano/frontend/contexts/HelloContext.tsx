@@ -22,7 +22,6 @@ export function HelloContextProvider({ children }: HelloContextProviderProps) {
 
     async function searchGithubUser(username: string) {
         const _user = await getUser(username);
-        console.log(_user, username);
         setUser(_user);
     }
 
