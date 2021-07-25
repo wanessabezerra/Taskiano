@@ -33,65 +33,13 @@
 
       color: #ffffff;
     }
-
-    .selector {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      gap: 1rem;
-
-      .selectorItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 1.5rem;
-        height: 1.5rem;
-
-        background: white;
-        border-radius: 50%;
-
-        svg {
-          width: 90%;
-          height: 90%;
-
-          color: #282a36;
-        }
-
-        &:first-of-type {
-          svg {
-            margin-left: -0.1rem;
-          }
-        }
-
-        &:last-of-type {
-          svg {
-            margin-right: -0.1rem;
-          }
-        }
-      }
-
-      .projectName {
-        font-family: Bebas Neue;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 2rem;
-        padding-top: 0.2rem;
-
-        background: -webkit-linear-gradient(#ab70ff 17.06%, #ffa039 84.75%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
   }
 
   .countdownTitle {
     font-family: Bitter;
     font-style: normal;
     font-weight: 800;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1.8rem;
 
     text-align: center;
 
@@ -102,8 +50,7 @@
     font-family: Bitter;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.2rem;
 
     color: #d8d8d8;
   }
@@ -139,32 +86,4 @@
       padding-bottom: 2rem;
     }
   }
-}
-
-.countdownContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.RemainsFormatText {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: #ffffff;
-}
-
-.RemainsFormatValue {
-  font-family: Bebas Neue;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 64px;
-  line-height: 77px;
-  /* identical to box height */
-
-  color: #ffffff;
 }

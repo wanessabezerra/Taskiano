@@ -1,11 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import User from "../@types/User";
-import { getUser } from "../services/api";
 
-type HelloContextType = {
-    githubUser: User | undefined;
-    searchGithubUser: Function;
-};
+type HelloContextType = {};
 
 export const HelloContext = createContext({} as HelloContextType);
 
@@ -14,25 +9,9 @@ interface HelloContextProviderProps {
 }
 
 export function HelloContextProvider({ children }: HelloContextProviderProps) {
-    const [user, setUser] = useState<User>({
-        id: "",
-        name: "",
-        avatar: "",
-    });
+    const [] = useState(null);
 
-    async function searchGithubUser(username: string) {
-        const _user = await getUser(username);
-        setUser(_user);
-    }
+    useEffect(() => {}, []);
 
-    return (
-        <HelloContext.Provider
-            value={{
-                githubUser: user,
-                searchGithubUser,
-            }}
-        >
-            {children}
-        </HelloContext.Provider>
-    );
+    return <HelloContext.Provider value={{}}>{children}</HelloContext.Provider>;
 }

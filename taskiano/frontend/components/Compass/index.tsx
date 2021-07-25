@@ -1,8 +1,8 @@
 import React from "react";
 
-import { MapPercentageOfMaxPerDay } from "./utils";
 import WeekdayBar from "./WeekdayBar";
-import { Weekday, WeekdaysPercent } from "./types";
+import { Weekday, WeekdaysPercent } from "../../@types";
+import { MapPercentageOfMaxPerDay } from "../../utils";
 
 import styles from "./styles.module.scss";
 

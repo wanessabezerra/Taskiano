@@ -27,13 +27,15 @@
 
       background: #282a36;
 
-      .centerContainer{
+      .centerContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
 
-        width: 75%;
+        padding: 4rem 0 0 9.5rem;
+
+        width: 90%;
         height: 100%;
       }
     }
