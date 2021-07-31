@@ -25,7 +25,7 @@ class Project(models.Model):
     id_project = models.UUIDField(
         primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100)
-    descripion = models.TextField(max_length=254)
+    description = models.TextField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=False)
     color = models.IntegerField(null=False)
@@ -66,3 +66,11 @@ class Task(models.Model):
 
     def __str__(self):
         return self.id_task + ' - ' + self.name
+
+
+class Reminder(models.Model):
+    id_project = models.UUIDField(
+        primary_key=True, default=uuid4, editable=False)
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=254)
+    created_at = models.DateTimeField(auto_now_add=True)
