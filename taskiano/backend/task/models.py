@@ -11,8 +11,7 @@ class Users(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
-        null=True
-    )
+        null=True)
     birthday = models.DateField(null=False)
     email = models.EmailField(max_length=254)
     avatar_url = models.URLField(max_length=254)
@@ -40,11 +39,7 @@ class Task(models.Model):
         ("3", "Concluída"),
         ("4", "Cancelada"),
     )
-    SITUATION_CHOICES = (
-        ("1", "Aberta"),
-        ("2", "Abandonada"),
-        ("3", "Fechada"),
-    )
+
     PRIORITIES = (
         (0, 'Baixa'),
         (1, 'Normal'),
@@ -57,12 +52,10 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=False)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    situation = models.CharField(max_length=1, choices=SITUATION_CHOICES)
     priority = models.CharField(max_length=1, choices=PRIORITIES)
     score = models.FloatField(default=0, db_index=True)
     user = models.ForeignKey(
         User, related_name='%(class)ss', on_delete=models.CASCADE)
-    hashed = models.CharField(max_length=40, editable=False, db_index=True)
 
     def __str__(self):
         return self.id_task + ' - ' + self.name
