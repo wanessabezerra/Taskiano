@@ -21,6 +21,17 @@ class Users(models.Model):
         return self.name
 
 
+class Project(models.Model):
+    id_project = models.UUIDField(
+        primary_key=True, default=uuid4, editable=False)
+    title = models.CharField(max_length=100)
+    descripion = models.TextField(max_length=254)
+    created_at = models.DateTimeField(auto_now_add=True)
+    closed_in = models.DateField(null=False)
+    color = models.IntegerField(null=False)
+    has_archive = models.BooleanField(default=False)
+
+
 class Task(models.Model):
 
     STATUS_CHOICES = (
@@ -34,7 +45,6 @@ class Task(models.Model):
         ("2", "Abandonada"),
         ("3", "Fechada"),
     )
-
     PRIORITIES = (
         (0, 'Baixa'),
         (1, 'Normal'),
