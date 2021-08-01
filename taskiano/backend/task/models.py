@@ -14,7 +14,7 @@ class Users(models.Model):
         null=True)
     birthday = models.DateField(null=False)
     email = models.EmailField(max_length=254)
-    avatar_url = models.URLField(max_length=254)
+    #avatar_url = models.URLField(max_length=254)
 
     def __str__(self):
         return self.name
@@ -27,8 +27,8 @@ class Project(models.Model):
     description = models.TextField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=False)
-    color = models.IntegerField(null=False)
-    has_archive = models.BooleanField(default=False)
+    #color = models.IntegerField(null=False)
+    # has_archive
 
 
 class Task(models.Model):
@@ -53,6 +53,7 @@ class Task(models.Model):
     closed_in = models.DateField(null=False)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     priority = models.CharField(max_length=1, choices=PRIORITIES)
+    # fixed
     score = models.FloatField(default=0, db_index=True)
     user = models.ForeignKey(
         User, related_name='%(class)ss', on_delete=models.CASCADE)
