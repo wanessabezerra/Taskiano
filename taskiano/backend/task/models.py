@@ -13,8 +13,9 @@ class Users(models.Model):
         on_delete=models.SET_NULL,
         null=True)
     birthday = models.DateField(null=False)
-    email = models.EmailField(max_length=254)
-    avatar_url = models.URLField(max_length=254)
+    email = models.EmailField(max_length=256)
+    score = models.FloatField(default=0, db_index=True)
+    avatar_url = models.URLField(max_length=260)
 
     def __str__(self):
         return self.name
@@ -27,8 +28,8 @@ class Project(models.Model):
     description = models.TextField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=False)
-    color = models.IntegerField(null=False)
-    has_archive = models.BooleanField(default=False)
+    color = models.IntegerField(null=False, default=16777215)
+    has_archived = models.BooleanField(default=False)
 
 
 class Task(models.Model):
@@ -50,10 +51,11 @@ class Task(models.Model):
     title = models.CharField(max_length=100)
     note = models.TextField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
-    closed_in = models.DateField(null=False)
+    closed_in = models.DateField(null=True, default=None)
+    timer = models.FloatField(null=True, default=None)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     priority = models.CharField(max_length=1, choices=PRIORITIES)
-    score = models.FloatField(default=0, db_index=True)
+    fixed = models.BooleanField(default=False)
     user = models.ForeignKey(
         User, related_name='%(class)ss', on_delete=models.CASCADE)
 
@@ -66,4 +68,7 @@ class Reminder(models.Model):
         primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=254)
-    created_at = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(null=True, default=None)
+
+    task = models.ForeignKey(
+        Task, related_name='%(class)ss', on_delete=models.CASCADE)
