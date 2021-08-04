@@ -1,3 +1,8 @@
+$dark: #282a36;
+$darker: #21232d;
+$purple: #ab70ff;
+$orange: #ffa039;
+
 @mixin max-size-percent() {
   height: 100%;
   width: 100%;
@@ -16,7 +21,7 @@
 }
 
 @mixin font-hallowen-gradient() {
-  background: -webkit-linear-gradient(#ab70ff 15%, #ffa039 85%);
+  background: -webkit-linear-gradient($purple 15%, $orange 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -31,7 +36,4 @@
   align-items: $align;
   flex-direction: $direction;
 }
-
-$dark: #282a36;
-$darker: #21232d;
 
