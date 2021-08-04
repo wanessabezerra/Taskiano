@@ -1,16 +1,19 @@
 .sidebarContainer {
   position: fixed;
+
+  z-index: 10;
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
 
   width: 6rem;
   height: 100%;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
 
   background: #21232d;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   .logoIcon {
     position: relative;
