@@ -18,6 +18,17 @@ $orange: #ffa039;
   font-style: normal;
   font-weight: $weight;
   font-size: $size;
+
+  color: white;
+}
+
+@mixin font-bitter($size: 1.5rem, $weight: normal) {
+  font-family: Bitter;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
 }
 
 @mixin font-hallowen-gradient() {
