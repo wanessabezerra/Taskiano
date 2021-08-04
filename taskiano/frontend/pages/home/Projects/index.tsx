@@ -13,9 +13,9 @@ function Projects() {
                 <span className={styles.separator} />
             </div>
             <div className={styles.projectsContainer}>
-                <ProjectWidget name="UFRN" />
-                <ProjectWidget name="Curso Técnico IMD" />
-                <ProjectWidget name="Lista de Compras" />
+                <ProjectWidget tasks={allTasks} name="UFRN" />
+                <ProjectWidget tasks={allTasks} name="Curso Técnico IMD" />
+                <ProjectWidget tasks={allTasks} name="Lista de Compras" />
             </div>
         </div>
     );
