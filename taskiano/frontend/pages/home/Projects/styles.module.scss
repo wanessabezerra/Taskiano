@@ -1,35 +1,37 @@
 @import "../../../styles/variables.scss";
 
 .container {
+
   @include flex-box(
-    $justify: flex-start,
     $align: flex-end,
+    $justify: center,
     $direction: column
   );
 
-  @include max-size-percent();
-
-  padding: 3rem 3rem;
+  width: 100rem;
+  padding: 0 3rem;
 
   .projectViewOptions {
-    .title {
-      font-family: Bebas Neue;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 72px;
-      line-height: 86px;
+    @include flex-box(
+      $justify: flex-start,
+      $align: flex-start,
+      $direction: column
+    );
 
-      color: #fcfcfc;
+    .title {
+      @include font-bebas-neue($size: 3.6rem);
     }
   }
 
   .projectsContainer{
     @include flex-box(
-      $justify: space-around,
-      $align: center,
+      $justify: flex-start,
       $direction: row
     );
 
+    gap: 2rem;
+
     @include max-size-percent();
+    overflow-x: scroll;
   }
 }
