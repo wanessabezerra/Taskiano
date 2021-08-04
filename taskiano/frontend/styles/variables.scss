@@ -15,6 +15,12 @@
   font-size: $size;
 }
 
+@mixin font-hallowen-gradient() {
+  background: -webkit-linear-gradient(#ab70ff 15%, #ffa039 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @mixin flex-box(
   $direction: row,
   $justify: normal,
