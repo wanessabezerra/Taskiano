@@ -1,36 +1,32 @@
+@import "../../../styles/variables.scss";
+
 .weekdayBarContainer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
+  @include flex-box($direction: column, $justify: flex-end, $align: center);
+  @include max-size-percent();
 
-  height: 100%;
-  width: 100%;
+  gap: 0.7rem;
 
-  gap: 0.6rem;
+  &:hover {
+    .tasksDone {
+      transform: scaleY(1);
+    }
+  }
 
   .weekday {
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 1.1rem;
-
-    color: #ffffff;
-
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .tasksDone {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-box($direction: column, $justify: center, $align: center);
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.25s ease;
 
     h1 {
-      font-family: Bebas Neue;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 1rem;
+      @include font-bebas-neue($size: 1.2rem);
     }
 
     p {
