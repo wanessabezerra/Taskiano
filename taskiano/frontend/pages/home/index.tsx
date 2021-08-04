@@ -20,8 +20,8 @@ export default function Home() {
             </Head>
 
             <Sidebar />
+            <Topbar />
             <main className={styles.main}>
-                <Topbar />
                 <div className={styles.content}>
                     <div className={styles.centerContainer}>
                         <GlobalStatus />
