@@ -36,7 +36,7 @@ export const lateTasks: TaskType[] = [
     },
 ];
 
-export const allTasks: TaskType[] = [...nextTasks, ...lateTasks];
+export const allTasks: TaskType[] = [...nextTasks, ...lateTasks, ...lateTasks];
 
 export const tasks = [
     { number: 42 },
