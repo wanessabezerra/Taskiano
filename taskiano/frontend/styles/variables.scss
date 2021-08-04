@@ -8,6 +8,13 @@
   width: 100vw;
 }
 
+@mixin font-bebas-neue($size: 1.5rem, $weight: normal) {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+}
+
 @mixin flex-box(
   $direction: row,
   $justify: normal,
