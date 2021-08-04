@@ -36,6 +36,8 @@ export const lateTasks: TaskType[] = [
     },
 ];
 
+export const allTasks: TaskType[] = [...nextTasks, ...lateTasks];
+
 export const tasks = [
     { number: 42 },
     { number: 48 },
