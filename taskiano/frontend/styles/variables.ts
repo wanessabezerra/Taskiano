@@ -4,6 +4,7 @@ const purple = "#ab70ff";
 const orange = "#ffa039";
 const hightPurple = "#832CFF";
 const hightOrange = "#FF901A";
+const gray = "#797979";
 
 const colors = {
   dark,
@@ -11,7 +12,8 @@ const colors = {
   purple,
   orange,
   hightPurple,
-  hightOrange
+  hightOrange,
+  gray
 }
 
 export default colors;
