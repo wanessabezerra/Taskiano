@@ -4,18 +4,14 @@
 }
 
 @mixin flex-box(
-  $flex: 1,
-  $justify: center,
-  $align: center,
   $direction: row,
-  $wrap: no-wrap,
-  $align-self: auto
+  $justify: normal,
+  $align: center,
 ) {
   display: flex;
-  flex: $flex;
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direction;
-  flex-wrap: $wrap;
-  align-self: $align-self;
 }
+
+$dark: #21232d;
