@@ -1,6 +1,7 @@
 import React from "react";
 
 import ProjectWidget from "../../../components/ProjectWidget";
+import { allTasks } from "../../../services/api";
 
 import styles from "./styles.module.scss";
 
