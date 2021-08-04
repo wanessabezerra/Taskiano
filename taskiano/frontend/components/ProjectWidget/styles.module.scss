@@ -1,1 +1,145 @@
-/* The component style is inserted here. */
+@import "../../styles/variables.scss";
+
+.projectWidget {
+  @include flex-box($direction: column, $align: flex-start);
+
+  width: 100%;
+  gap: 1rem;
+
+  .projectTitle {
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+
+    background: -webkit-linear-gradient(90deg, #aa71fa 15%, #fbb366 85%);
+
+    background-size: 2rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .projectContainer {
+    @include flex-box(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start
+    );
+
+    background: #21232d;
+    border-radius: 8px;
+
+    padding-bottom: 3rem;
+    gap: 2rem;
+
+    .projectHeader {
+      @include flex-box(
+        $direction: row,
+        $justify: space-between,
+        $align: center
+      );
+
+      width: 100%;
+
+      .totalTasks {
+        padding: 0.5rem 0.5rem;
+        color: white !important;
+
+        font-family: Bebas Neue;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+      }
+
+      .progressProject {
+        align-self: flex-start !important;
+
+        @include flex-box(
+          $direction: row,
+          $align: center,
+          $justify: space-around
+        );
+
+        width: 10rem;
+        height: 2rem;
+
+        font-family: Bebas Neue;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+
+        color: white;
+        background: #13368e;
+        border-radius: 0px 8px;
+
+        .statusTasks {
+          p {
+          }
+        }
+      }
+    }
+
+    .addTask {
+      align-self: center;
+
+      height: 2.5rem;
+
+      color: white;
+      font-family: Bebas Neue;
+      font-size: 2rem;
+
+      width: 85%;
+      background: rgba(216, 216, 216, 0.05);
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(
+          -45deg,
+          rgba(216, 216, 216, 0.25),
+          #515353,
+          #515353,
+          #424555,
+          #515353
+        );
+        background-size: 350% 100%;
+        animation: gradient 5s ease infinite;
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+    }
+
+    .tasksContainer {
+      @include flex-box(
+        $direction: column,
+      );
+
+      gap: 2rem;
+      align-self: center;
+
+      padding: 2rem 1rem;
+
+      overflow-y: scroll;
+      width: 85%;
+      height: 20rem;
+
+      background: rgba(216, 216, 216, 0.05);
+      border-radius: 8px;
+
+      &:first-child {
+        padding-top: 10rem !important;
+      }
+    }
+  }
+}
