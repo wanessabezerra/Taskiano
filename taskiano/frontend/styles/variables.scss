@@ -7,15 +7,15 @@
   $flex: 1,
   $justify: center,
   $align: center,
-  $flex-direction: row,
-  $flex-wrap: no-wrap,
+  $direction: row,
+  $wrap: no-wrap,
   $align-self: auto
 ) {
   display: flex;
   flex: $flex;
   justify-content: $justify;
   align-items: $align;
-  flex-direction: $flex-direction;
-  flex-wrap: $flex-wrap;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
   align-self: $align-self;
 }
