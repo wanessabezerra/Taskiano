@@ -34,6 +34,15 @@ $gray: #797979;
   color: white;
 }
 
+@mixin font-raleway($size: 1.5rem, $weight: normal) {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
+}
+
 @mixin font-hallowen-gradient() {
   background: -webkit-linear-gradient($purple 15%, $orange 85%);
   -webkit-background-clip: text;
