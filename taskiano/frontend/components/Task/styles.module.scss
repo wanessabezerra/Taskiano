@@ -1,21 +1,29 @@
+@import "../../styles/variables.scss";
+
 .taskContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-box(
+    $justify: center,
+    $align: center
+  );
+
+  width: 100%;
 
   .timeContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    @include flex-box(
+      $justify: flex-start,
+      $align: center
+    );
 
+    width: 100%;
     gap: 1rem;
 
     .timeRemains {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+      @include flex-box(
+        $justify: flex-start,
+        $align: center
+      );
+
+      width: 24rem;
 
       font-family: Bitter;
       font-style: normal;
@@ -23,6 +31,9 @@
       font-size: 1rem;
 
       color: #d8d8d8;
+      overflow:hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }
