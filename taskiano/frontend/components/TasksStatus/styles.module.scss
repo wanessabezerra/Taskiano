@@ -1,31 +1,22 @@
+@import "../../styles/variables.scss";
+
 .taskStatusContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-box($justify: flex-start, $align: center);
 
   width: 100%;
-  gap: 2rem;
 
   .taskListTitle {
-    width: 70%;
+    @include font-bebas-neue($size: 2.7rem);
 
+    width: 40%;
     text-align: left;
-    font-family: Bebas Neue;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 3.2rem;
     color: #ffffff;
   }
 
   .tasksList {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    @include flex-box($direction: column, $justify: center, $align: flex-start);
 
     gap: 1rem;
-
-    width: 100%;
+    width: 60%;
   }
 }
