@@ -46,4 +46,30 @@ a {
   padding: 0;
   outline: none;
   box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: rgba(136, 136, 136, 0.513);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.404);
+  }
+}
+
+button,
+a {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
