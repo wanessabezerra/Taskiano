@@ -1,14 +1,11 @@
-.selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import "../../../styles/variables.scss";
 
+.selector {
+  @include flex-box($justify: center, $align: center);
   gap: 1rem;
 
   .selectorItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-box($justify: center, $align: center);
 
     width: 1.5rem;
     height: 1.5rem;
@@ -20,7 +17,13 @@
       width: 90%;
       height: 90%;
 
-      color: #282a36;
+      color: $dark;
+    }
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: #8090af;
     }
 
     &:first-of-type {
@@ -37,14 +40,9 @@
   }
 
   .projectName {
-    font-family: Bebas Neue;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2rem;
-    padding-top: 0.2rem;
+    @include font-bebas-neue($size: 2rem);
+    @include font-hallowen-gradient();
 
-    background: -webkit-linear-gradient(#ab70ff 17.06%, #ffa039 84.75%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    padding-top: 0.2rem;
   }
 }

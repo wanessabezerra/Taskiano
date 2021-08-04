@@ -1,89 +1,80 @@
+@import "../../styles/variables.scss";
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  @include flex-box(
+    $direction: column,
+    $justify: flex-start,
+    $align: center
+  );
 
   width: 28rem;
   height: 100%;
 
   gap: 1.7rem;
 
-  background: #21232d;
-
-  .projectSelector {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background: #282a36;
-    border-radius: 8px;
-
-    padding: 1rem 1.4rem;
-    margin: 2rem 0 1rem;
-    gap: 1.5rem;
-
-    .title {
-      font-family: Bebas Neue;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 2rem;
-      text-align: right;
-
-      color: #ffffff;
-    }
-  }
+  background: $darker;
 
   .countdownTitle {
-    font-family: Bitter;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 1.8rem;
-
+    @include font-bitter($size:1.8rem, $weight: 800);
     text-align: center;
-
-    color: #ffffff;
   }
 
   .countdownDescription {
-    font-family: Bitter;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.2rem;
-
+    @include font-bitter($size:1.2rem);
     color: #d8d8d8;
   }
 
   .sepLine {
     border: 1px solid rgba(121, 121, 121, 0.25);
-    width: 40%;
     margin: 1rem 0 0.5rem 0;
+    width: 40%;
   }
+}
 
-  .compass {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.projectSelector {
+  @include flex-box(
+    $justify: center,
+    $align: center
+  );
 
-    height: 100%;
-    width: 100%;
+  background: $dark;
+  border-radius: 8px;
 
-    color: #FFFFFF;
+  padding: 1rem 1.4rem;
+  margin: 2rem 0 1rem;
+  gap: 1.5rem;
 
-    margin-bottom: 3rem;
+  .title {
+    @include font-bebas-neue($size:2rem);
+    text-align: right;
+  }
+}
 
-    .compassTitle {
-      font-family: Bebas Neue;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 2.5rem;
-      text-align: right;
+.compass {
+  @include flex-box(
+    $direction: column,
+    $justify: center,
+    $align: center
+  );
 
-      width: 80%;
+  color: white;
+  margin-bottom: 3rem;
+  @include max-size-percent();
 
-      padding-bottom: 2rem;
-    }
+  .compassTitle {
+    @include font-bebas-neue($size:2.5rem);
+    text-align: right;
+    width: 80%;
+    padding-bottom: 2rem;
+  }
+}
+
+.taskTag {
+  cursor: pointer;
+  color: white;
+  @include font-bebas-neue();
+
+  &:hover {
+    color: $purple;
   }
 }
