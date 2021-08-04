@@ -1,0 +1,21 @@
+@mixin max-size-percent() {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin flex-box(
+  $flex: 1,
+  $justify: center,
+  $align: center,
+  $flex-direction: row,
+  $flex-wrap: no-wrap,
+  $align-self: auto
+) {
+  display: flex;
+  flex: $flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  align-self: $align-self;
+}
