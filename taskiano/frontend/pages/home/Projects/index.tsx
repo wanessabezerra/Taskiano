@@ -16,6 +16,7 @@ function Projects() {
                 <ProjectWidget tasks={allTasks} name="UFRN" />
                 <ProjectWidget tasks={allTasks} name="Curso Técnico IMD" />
                 <ProjectWidget tasks={allTasks} name="Lista de Compras" />
+                <ProjectWidget tasks={allTasks} name="Trabalho" />
             </div>
         </div>
     );
