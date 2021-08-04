@@ -1,5 +1,5 @@
 import React from "react";
-import { ClockTimer } from "../../shared/ClockTimer/index.style";
+import { ClockTimer } from "../../components/ClockTimer";
 import { RemainsFormatValue, RemainsFormatText } from "../../utils";
 
 import styles from "./styles.module.scss";
