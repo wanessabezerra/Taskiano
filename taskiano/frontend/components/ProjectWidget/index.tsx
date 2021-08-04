@@ -14,26 +14,26 @@ interface ProjectWidgetProps {
 function ProjectWidget(props: ProjectWidgetProps) {
   return (
     <div className={styles.projectWidget}>
-      <h1>{props.name}</h1>
-      <div className="projectContainer">
-        <header className="projectHeader">
-          <h1 className="totalTasks">{props.tasks.length} Tarefas</h1>
-          <div className="progressProject">
-            <div className="lateTaks">
+      <h1 className={styles.projectTitle}>{props.name}</h1>
+      <div className={styles.projectContainer}>
+        <div className={styles.projectHeader}>
+          <h1 className={styles.totalTasks}>{props.tasks.length} Tarefas</h1>
+          <div className={styles.progressProject}>
+            <div className={styles.statusTasks}>
               <p>{2}</p>
             </div>
-            <div className="timersTaks">
+            <div className={styles.statusTasks}>
               <p>{2}</p>
             </div>
-            <div className="doneTaks">
+            <div className={styles.statusTasks}>
               <p>{2}</p>
             </div>
           </div>
-        </header>
-        <button type="button" className="addTask">
+        </div>
+        <button type="button" className={styles.addTask}>
           +
         </button>
-        <div className="projectTasks">
+        <div className={styles.tasksContainer}>
           {props.tasks.map((task, index) => {
             return <Task key={index} {...task} />;
           })}
