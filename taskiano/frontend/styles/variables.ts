@@ -2,8 +2,8 @@ const dark = "#282a36";
 const darker = "#21232d";
 const purple = "#ab70ff";
 const orange = "#ffa039";
-const hightPurple = "#832CFF";
-const hightOrange = "#FF901A";
+const highPurple = "#832CFF";
+const highOrange = "#FF901A";
 const gray = "#797979";
 
 const colors = {
@@ -11,8 +11,8 @@ const colors = {
   darker,
   purple,
   orange,
-  hightPurple,
-  hightOrange,
+  highPurple,
+  highOrange,
   gray
 }
 
