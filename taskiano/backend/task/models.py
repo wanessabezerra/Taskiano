@@ -52,7 +52,7 @@ class Task(models.Model):
     note = models.TextField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=True, default=None)
-    timer = models.FloatField(null=True, default=None)
+    timer = models.DateTimeField(null=True, default=None)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     priority = models.CharField(max_length=1, choices=PRIORITIES)
     fixed = models.BooleanField(default=False)
