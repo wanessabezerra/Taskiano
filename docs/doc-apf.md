@@ -214,3 +214,11 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Deletar Projeto         | EE   | Médio              | 4      |
 | Visualizar Projeto      | CE   | Baixa              | 4      |
 | _______________________ | ____ | **Total de Dados** | **21** |
+|                         |      |                    |        |
+| > **Usuário**           |      |                    |        |
+|                         |      |                    |        |
+| Inserir User            | EE   | Médio              | 4      |
+| Atualizar User          | SE   | Médio              | 5      |
+| Listar dados do User    | CE   | Baixo              | 3      |
+| Desativar conta         | EE   | Médio              | 4      |
+| _______________________ | ____ | **Total de Dados** | **16** |
