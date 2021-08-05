@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 @media (max-width: 1920px) {
   html {
@@ -30,7 +31,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Raleway, Bebas Neue, Bitter, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+  font-family: Raleway, Bebas Neue, Bitter, Lato, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
