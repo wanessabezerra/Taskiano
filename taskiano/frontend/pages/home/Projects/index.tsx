@@ -18,6 +18,7 @@ function Projects() {
                 <ProjectWidget tasks={allTasks} name="Lista de Compras" />
                 <ProjectWidget tasks={allTasks} name="Trabalho" />
             </div>
+
         </div>
     );
 }

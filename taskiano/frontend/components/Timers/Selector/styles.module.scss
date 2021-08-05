@@ -7,6 +7,7 @@
   .selectorItem {
     @include flex-box($justify: center, $align: center);
 
+
     width: 1.5rem;
     height: 1.5rem;
 
@@ -24,6 +25,7 @@
     transition: all 0.3s ease;
     &:hover {
       background: #8090af;
+
     }
 
     &:first-of-type {

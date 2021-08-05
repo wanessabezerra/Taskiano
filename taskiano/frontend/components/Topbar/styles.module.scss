@@ -24,8 +24,8 @@
     @include font-raleway($size: 1.3rem);
     text-align: end;
 
-
     transition: all 0.5s ease;
+
     &:hover {
       background: rgba(121, 121, 121, 0.25);
       &::placeholder {
@@ -37,6 +37,7 @@
       @include font-raleway($size: 1.3rem);
 
       color: $gray;
+
       text-align: end;
 
       transition: all 0.5s ease;
@@ -57,6 +58,7 @@
       filter: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
       transition: all 0.3s ease;
+
       &:hover {
         color: #8090af;
         filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
