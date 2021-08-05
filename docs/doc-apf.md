@@ -187,6 +187,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Reminder                | ALI  | Baixa              | 7      |
 | Project                 | ALI  | Baixa              | 7      |
 | User                    | ALI  | Baixa              | 7      |
+
 | _______________________ | ____ | **Soma de Dados**  | **28** |
 | > **Tarefa**            |      |                    |        |
 |                         |      |                    |        |
@@ -196,6 +197,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Deletar Tarefa          | EE   | Média              | 4      |
 | Listar TarefasAtrasadas | SE   | Média              | 5      |
 | Visualizar Tarefa       | CE   | Média              | 4      |
+
 | _______________________ | ____ | **Soma de Dados**  | **25** |
 | > **Lembrete**          |      |                    |        |
 |                         |      |                    |        |
@@ -204,6 +206,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Listar Lembrete         | CE   | Baixa              | 3      |
 | Deletar Lembrete        | EE   | Baixa              | 3      |
 | Visualizar Lembrete     | CE   | Baixa              | 3      |
+
 | _______________________ | ____ | **Soma de Dados**  | **15** |
 |                         |      |                    |        |
 | > **Projeto**           |      |                    |        |

@@ -1,20 +1,29 @@
 import styled from "styled-components";
 
+import colors from "../../../styles/variables";
+
 interface BarProps {
-    height: number;
+  height: number;
 }
 
 export const Bar = styled.button<BarProps>`
-    background: linear-gradient(180deg, #bd8eff 17%, #fdb263 85%);
-    border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    ${colors.purple} 17%,
+    ${colors.orange} 85%
+  );
+  border-radius: 8px;
 
-    height: ${(props) => props.height}%;
-    width: 1.3rem;
+  height: ${(props) => props.height}%;
+  width: 1.3rem;
 
-    transition: transform .2s ease-out;
+  transition: transform 0.2s ease-out;
 
-    &:hover {
-        background: linear-gradient(180deg, #a46df1 17%, #e09442 85%);
-    }
-
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      ${colors.highPurple} 17%,
+      ${colors.highOrange} 85%
+    );
+  }
 `;

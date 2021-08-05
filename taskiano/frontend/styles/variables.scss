@@ -1,0 +1,81 @@
+$dark: #282a36;
+$darker: #21232d;
+$darkForce: #111218;
+$purple: #ab70ff;
+$orange: #ffa039;
+$hightPurple: #832CFF;
+$hightOrange: #FF901A;
+$gray: #797979;
+$white-gray: #d8d8d8;
+$white: #f1f1f1;
+
+@mixin max-size-percent() {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin max-size-viewport() {
+  height: 100vh;
+  width: 100vw;
+}
+
+@mixin font-bebas-neue($size: 1.5rem, $weight: normal) {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
+}
+
+@mixin font-bitter($size: 1.5rem, $weight: normal) {
+  font-family: Bitter;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
+}
+
+@mixin font-raleway($size: 1.5rem, $weight: normal) {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
+}
+
+@mixin font-lato($size: 1.5rem, $weight: normal) {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
+}
+
+@mixin font-hallowen-gradient() {
+  background: -webkit-linear-gradient($purple 15%, $orange 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin flex-box(
+  $direction: row,
+  $justify: normal,
+  $align: center,
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin absolute-center($z-index: 1000) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $z-index;
+}

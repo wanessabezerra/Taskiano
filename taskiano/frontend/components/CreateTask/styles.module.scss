@@ -1,0 +1,116 @@
+@import "../../styles/variables.scss";
+
+.createTaskContainer {
+  @include absolute-center($z-index: 2000);
+  @include flex-box($direction: column, $align: center, $justify: center);
+
+  width: 80vw;
+  height: 90vh;
+
+  background: rgba(33, 35, 45, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(12, 15, 47, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+
+  .headerCreateTask {
+    @include font-bebas-neue($size: 2rem);
+    @include flex-box(
+      $justify: center,
+      $align: center
+    );
+
+    position: relative;
+
+    width: 100%;
+    padding: 0rem 4rem 0 8rem;
+
+    .titleWrapper{
+      @include flex-box($direction: column, $align: center);
+      position: absolute;
+      top: 0rem;
+      left: 0;
+      height: 18rem;
+      width: 4.5rem;
+
+      background: $white;
+      opacity: 0.9;
+      border-radius: 8px 0 8px 0;
+      padding: 0.5rem;
+
+      .title {
+        width: 40rem;
+        height: 2rem;
+        letter-spacing: .2rem;
+        padding-left: 6rem;
+
+        color: $darker;
+        font-size: 2rem;
+        transform: rotate(-90deg);
+        text-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .formGroupHeader {
+      @include flex-box($align: center, $justify: space-around);
+
+      padding-top: 5rem;
+      width: 100%;
+      gap: 1rem;
+    }
+  }
+
+  .formTask {
+    @include flex-box($direction: column, $align: flex-end, $justify: center);
+    color: $white-gray;
+
+    width: 90%;
+    height: 90%;
+
+    .formNote {
+      @include flex-box($direction: row, $align: center, $justify: center);
+
+      width: 100%;
+      height: 65vh;
+
+      gap: 1rem;
+    }
+
+    .formSubmit {
+      @include flex-box($align: center, $justify: center);
+      @include font-bebas-neue();
+
+      color: $darkForce;
+      background: $white;
+
+      width: 6rem;
+      height: 3rem;
+
+      border-radius: 5px;
+      margin-bottom: 2rem;
+
+      cursor: pointer;
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $white;
+        background: #007364;
+      }
+    }
+  }
+}
+
+.closeModal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #ff6363;
+    filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
+  }
+}

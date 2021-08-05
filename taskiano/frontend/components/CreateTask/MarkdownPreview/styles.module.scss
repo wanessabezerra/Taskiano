@@ -1,0 +1,27 @@
+@import "../../../styles/variables.scss";
+
+.notePreviewContainer {
+  @include flex-box($direction: column, $align: center, $justify: center);
+  @include max-size-percent();
+
+  gap: 1rem;
+
+  label {
+    @include font-bebas-neue();
+  }
+
+  .markdown {
+    width: 35vw;
+    height: 80%;
+
+    border-radius: 8px;
+    padding: 1.5rem;
+
+    color: $darkForce;
+    background: $white;
+
+    line-height: 2rem;
+    overflow-x: scroll;
+    overflow-y: auto;
+  }
+}
