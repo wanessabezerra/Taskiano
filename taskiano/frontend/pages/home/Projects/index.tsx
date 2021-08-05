@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 
 function Projects() {
     return (
-        <div className={styles.container}>
+        <div className={styles.projectsContainer}>
             <div className={styles.projectViewOptions}>
                 <h1 className={styles.title}>Projetos</h1>
                 <span className={styles.separator} />
