@@ -187,7 +187,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Reminder                | ALI  | Baixa              | 7      |
 | Project                 | ALI  | Baixa              | 7      |
 | User                    | ALI  | Baixa              | 7      |
-| _______________________ | ____ | **Total de Dados** | **28** |
+| _______________________ | ____ | **Soma de Dados**  | **28** |
 | > **Tarefa**            |      |                    |        |
 |                         |      |                    |        |
 | Inserir Tarefa          | EE   | Média              | 4      |
@@ -196,7 +196,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Deletar Tarefa          | EE   | Média              | 4      |
 | Listar TarefasAtrasadas | SE   | Média              | 5      |
 | Visualizar Tarefa       | CE   | Média              | 4      |
-| _______________________ | ____ | **Total de Dados** | **25** |
+| _______________________ | ____ | **Soma de Dados**  | **25** |
 | > **Lembrete**          |      |                    |        |
 |                         |      |                    |        |
 | Inserir Lembrete        | EE   | Baixa              | 3      |
@@ -204,7 +204,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Listar Lembrete         | CE   | Baixa              | 3      |
 | Deletar Lembrete        | EE   | Baixa              | 3      |
 | Visualizar Lembrete     | CE   | Baixa              | 3      |
-| _______________________ | ____ | **Total de Dados** | **15** |
+| _______________________ | ____ | **Soma de Dados**  | **15** |
 |                         |      |                    |        |
 | > **Projeto**           |      |                    |        |
 |                         |      |                    |        |
@@ -213,7 +213,7 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Listar Projeto          | CE   | Médio              | 4      |
 | Deletar Projeto         | EE   | Médio              | 4      |
 | Visualizar Projeto      | CE   | Baixa              | 4      |
-| _______________________ | ____ | **Total de Dados** | **21** |
+| _______________________ | ____ | **Soma de Dados**  | **21** |
 |                         |      |                    |        |
 | > **Usuário**           |      |                    |        |
 |                         |      |                    |        |
@@ -221,4 +221,5 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Atualizar User          | SE   | Médio              | 5      |
 | Listar dados do User    | CE   | Baixo              | 3      |
 | Desativar conta         | EE   | Médio              | 4      |
-| _______________________ | ____ | **Total de Dados** | **16** |
+|                         |      |**Soma de Dados**   | **16** |
+| _______________________ | ____ |**Soma Total de Dados**| **105** |
