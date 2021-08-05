@@ -206,3 +206,11 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Visualizar Lembrete     | CE   | Baixa              | 3      |
 | _______________________ | ____ | **Total de Dados** | **15** |
 |                         |      |                    |        |
+| > **Projeto**           |      |                    |        |
+|                         |      |                    |        |
+| Inserir Projeto         | EE   | Médio              | 4      |
+| Atualizar Projeto       | SE   | Médio              | 5      |
+| Listar Projeto          | CE   | Médio              | 4      |
+| Deletar Projeto         | EE   | Médio              | 4      |
+| Visualizar Projeto      | CE   | Baixa              | 4      |
+| _______________________ | ____ | **Total de Dados** | **21** |
