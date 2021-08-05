@@ -1,10 +1,13 @@
 $dark: #282a36;
 $darker: #21232d;
+$darkForce: #111218;
 $purple: #ab70ff;
 $orange: #ffa039;
 $hightPurple: #832CFF;
 $hightOrange: #FF901A;
 $gray: #797979;
+$white-gray: #d8d8d8;
+$white: #f1f1f1;
 
 @mixin max-size-percent() {
   height: 100%;
@@ -43,6 +46,15 @@ $gray: #797979;
   color: white;
 }
 
+@mixin font-lato($size: 1.5rem, $weight: normal) {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+
+  color: white;
+}
+
 @mixin font-hallowen-gradient() {
   background: -webkit-linear-gradient($purple 15%, $orange 85%);
   -webkit-background-clip: text;
@@ -60,3 +72,10 @@ $gray: #797979;
   flex-direction: $direction;
 }
 
+@mixin absolute-center($z-index: 1000) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $z-index;
+}
