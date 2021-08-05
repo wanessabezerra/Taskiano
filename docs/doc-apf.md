@@ -222,4 +222,4 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 | Listar dados do User    | CE   | Baixo              | 3      |
 | Desativar conta         | EE   | Médio              | 4      |
 |                         |      |**Soma de Dados**   | **16** |
-| _______________________ | ____ |**Soma Total de Dados**| **105** |
+| _______________________ | ____ |**Total de Dados**  | **105** |
