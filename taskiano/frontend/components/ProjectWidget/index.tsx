@@ -10,7 +10,7 @@ import CreateTask from "../CreateTask";
 
 interface ProjectWidgetProps {
   name: string;
-  tasks: TaskType[];
+  tasks?: TaskType[];
 }
 
 function ProjectWidget(props: ProjectWidgetProps) {
@@ -22,7 +22,7 @@ function ProjectWidget(props: ProjectWidgetProps) {
       <h1 className={styles.projectTitle}>{props.name}</h1>
       <div className={styles.projectContainer}>
         <div className={styles.projectHeader}>
-          <h1 className={styles.totalTasks}>{props.tasks.length} Tarefas</h1>
+          <h1 className={styles.totalTasks}>{props.tasks?.length} Tarefas</h1>
           <ProjectStatus lates={2} timers={3} done={4} />
         </div>
 
@@ -35,7 +35,7 @@ function ProjectWidget(props: ProjectWidgetProps) {
         </button>
 
         <div className={styles.tasksContainer}>
-          {props.tasks.map((task, index) => {
+          {props.tasks?.map((task, index) => {
             return <Task key={index} {...task} />;
           })}
         </div>

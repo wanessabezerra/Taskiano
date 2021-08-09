@@ -1,18 +1,22 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 interface ModalProps {
+  className?: string;
   children: ReactNode;
+  close: () => void;
 }
 
-function Modal({ children }: ModalProps) {
+function Modal(props: ModalProps) {
   return (
-    <div className={styles.modal}>
+    <div className={`${styles.modal} ${props.className}`}>
       <div className={styles.modalContainer} />
-      {children}
+      {props.children}
+      <AiFillCloseCircle className={styles.closeModal} onClick={props.close} />
     </div>
   );
-};
+}
 
 export default Modal;

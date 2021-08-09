@@ -14,17 +14,14 @@
 
   .headerCreateTask {
     @include font-bebas-neue($size: 2rem);
-    @include flex-box(
-      $justify: center,
-      $align: center
-    );
+    @include flex-box($justify: center, $align: center);
 
     position: relative;
 
     width: 100%;
     padding: 0rem 4rem 0 8rem;
 
-    .titleWrapper{
+    .titleWrapper {
       @include flex-box($direction: column, $align: center);
       position: absolute;
       top: 0rem;
@@ -40,7 +37,7 @@
       .title {
         width: 40rem;
         height: 2rem;
-        letter-spacing: .2rem;
+        letter-spacing: 0.2rem;
         padding-left: 6rem;
 
         color: $darker;
@@ -97,20 +94,5 @@
         background: #007364;
       }
     }
-  }
-}
-
-.closeModal {
-  position: absolute;
-  top: 1.5rem;
-  right: 1rem;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: #ff6363;
-    filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
   }
 }

@@ -1,27 +1,43 @@
 @import "../../styles/variables.scss";
 
 .taskContainer {
-  @include flex-box(
-    $justify: center,
-    $align: center
-  );
+  @include flex-box($justify: center, $align: center);
 
   width: 100%;
 
-  .timeContainer {
-    @include flex-box(
-      $justify: flex-start,
-      $align: center
-    );
+  .modal {
+    .taskModal {
+      @include absolute-center($z-index: 2000);
+      @include flex-box($direction: column, $align: center, $justify: center);
 
+      width: 80vw;
+      height: 90vh;
+      padding-top: 2rem;
+
+      background: rgba(33, 35, 45, 0.8);
+      box-shadow: 0 8px 32px 0 rgba(12, 15, 47, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+
+      .taskModalTitle {
+        @include font-bebas-neue($size: 2rem);
+      }
+
+      .taskMarkdownPreview {
+        width: 80% !important;
+      }
+    }
+  }
+
+  .timeContainer {
+    @include flex-box($justify: flex-start, $align: center);
+
+    cursor: pointer;
     width: 100%;
     gap: 1rem;
 
     .timeRemains {
-      @include flex-box(
-        $justify: flex-start,
-        $align: center
-      );
+      @include flex-box($justify: flex-start, $align: center);
 
       width: 24rem;
 
@@ -31,10 +47,9 @@
       font-size: 1rem;
 
       color: $white-gray;
-      overflow:hidden;
+      overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-
     }
   }
 }
