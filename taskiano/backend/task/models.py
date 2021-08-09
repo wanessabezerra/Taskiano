@@ -8,10 +8,6 @@ from django.contrib.auth.models import User
 class Users(models.Model):
     id_user = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=200)
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True)
     birthday = models.DateField(null=False)
     email = models.EmailField(max_length=256)
     score = models.FloatField(default=0, db_index=True)
@@ -42,22 +38,26 @@ class Task(models.Model):
     )
 
     PRIORITIES = (
-        (0, 'Baixa'),
-        (1, 'Normal'),
-        (2, 'Alta'),
+        (0, "Sem prioridade"),
+        (1, "Muito baixa"),
+        (2, "Baixa"),
+        (3, "Média"),
+        (4, "Média alta"),
+        (5, "Alta"),
+        (6, "Muito alta"),
+        (7, "Urgente")
     )
 
     id_task = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100)
-    note = models.TextField(max_length=254)
+    note = models.TextField(max_length=4096)
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=True, default=None)
     timer = models.DateTimeField(null=True, default=None)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    priority = models.CharField(max_length=1, choices=PRIORITIES)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="1")
+    priority = models.IntegerField(choices=PRIORITIES)
     fixed = models.BooleanField(default=False)
-    user = models.ForeignKey(
-        User, related_name='%(class)ss', on_delete=models.CASCADE)
+    user = models.ForeignKey(Users, related_name='%(class)ss', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.id_task + ' - ' + self.name
