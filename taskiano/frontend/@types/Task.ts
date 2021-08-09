@@ -3,5 +3,5 @@ export type TaskType = {
   title: string;
   timer?: any;
   remainingTime: number;
-  note: string;
+  note?: string;
 };
