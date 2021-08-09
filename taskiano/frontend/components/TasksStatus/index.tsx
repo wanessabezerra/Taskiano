@@ -6,21 +6,27 @@ import { TaskType } from "../../@types/Task";
 import styles from "./styles.module.scss";
 
 interface TaskStatusProps {
-    title: string;
-    tasks: Array<TaskType>;
+  title: string;
+  tasks: Array<TaskType>;
 }
 
 function TaskStatus(props: TaskStatusProps) {
-    return (
-        <div className={styles.taskStatusContainer}>
-            <h1 className={styles.taskListTitle}>{props.title}</h1>
-            <div className={styles.tasksList}>
-                {props.tasks.map((task, index) => (
-                    <Task key={index} {...task} />
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div className={styles.taskStatusContainer}>
+      <h1 className={styles.taskListTitle}>{props.title}</h1>
+      <div className={styles.tasksList}>
+        {props.tasks.map((task, index) => (
+          <Task
+            key={index}
+            id={task.id}
+            title={task.title}
+            remainingTime={task.remainingTime}
+            note={task.note ?? ""}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default TaskStatus;

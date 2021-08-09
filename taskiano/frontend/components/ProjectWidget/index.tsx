@@ -35,9 +35,15 @@ function ProjectWidget(props: ProjectWidgetProps) {
         </button>
 
         <div className={styles.tasksContainer}>
-          {props.tasks?.map((task, index) => {
-            return <Task key={index} {...task} />;
-          })}
+          {props.tasks?.map((task, index) => (
+            <Task
+              key={index}
+              id={task.id}
+              title={task.title}
+              remainingTime={task.remainingTime}
+              note={task.note ?? ""}
+            />
+          ))}
         </div>
       </div>
     </div>
