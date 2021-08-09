@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import { AiFillCloseCircle } from "react-icons/ai";
-
 import {
   FixTask,
   NoteTask,
@@ -10,26 +8,19 @@ import {
   TitleTask,
 } from "./Fields";
 import Modal from "../Modal";
-import { MarkdownPreview } from "./MarkdownPreview/MarkdownPreview";
+import { MarkdownPreview } from "../MarkdownPreview";
+import { api } from "../../services/api";
 
 import styles from "./styles.module.scss";
-
-type NewTask = {
-  name: string;
-  note: string;
-  fixed: boolean;
-  priority: number;
-  timer: number;
-};
 
 interface CreateTaskProps {
   close: () => void;
 }
 
 function CreateTask(props: CreateTaskProps) {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [note, setNote] = useState("# Hello World");
-  const [fixed, setFixed] = useState(false);
+  const [fixed, setFixed] = useState<boolean>(false);
   const [priority, setPriority] = useState(0);
   const [timer, setTimer] = useState<Date>(new Date());
   const [timerShow, setTimerShow] = useState("");
@@ -38,20 +29,30 @@ function CreateTask(props: CreateTaskProps) {
     onChangeDate(new Date());
   }, []);
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
 
     const data = {
-      name,
+      title,
       note,
-      fixed,
-      priority,
       timer,
-      timerShow,
+      priority,
+      fixed,
+      user: (await api.get("user/")).data[0].id_user,
     };
 
-    alert(JSON.stringify(data));
     console.log(data);
+
+    try {
+      const response = await api.post("task/", data);
+      props.close();
+
+      console.log(response);
+      alert("Ok");
+    } catch (error) {
+      console.error(error);
+      alert("Erro, verifique os campos");
+    }
   };
 
   const onChangeDate = (e: any) => {
@@ -64,7 +65,7 @@ function CreateTask(props: CreateTaskProps) {
   };
 
   return (
-    <Modal>
+    <Modal close={props.close}>
       <div className={styles.createTaskContainer}>
         <div className={styles.headerCreateTask}>
           <div className={styles.titleWrapper}>
@@ -72,22 +73,17 @@ function CreateTask(props: CreateTaskProps) {
           </div>
 
           <div className={styles.formGroupHeader}>
-            <TitleTask value={name} onChange={(e) => setName(e)} />
+            <TitleTask value={title} onChange={(e) => setTitle(e)} />
             <SelectPriority value={priority} onChange={(e) => setPriority(e)} />
             <FixTask value={fixed} onChange={(e) => setFixed(e)} />
             <TimeTask value={timerShow} onChange={(e) => onChangeDate(e)} />
           </div>
-
-          <AiFillCloseCircle
-            className={styles.closeModal}
-            onClick={props.close}
-          />
         </div>
 
         <form className={styles.formTask} onSubmit={onSubmit}>
           <div className={styles.formNote}>
             <NoteTask value={note} onChange={(e) => setNote(e)} />
-            <MarkdownPreview note={note} />
+            <MarkdownPreview note={note} className={styles.markdownPreview} />
           </div>
 
           <input className={styles.formSubmit} type="submit" value="Criar" />
