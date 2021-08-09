@@ -17,3 +17,22 @@
     z-index: 1000;
   }
 }
+
+.closeModal {
+  position: absolute;
+  top: 4rem;
+  right: 14rem;
+
+  cursor: pointer;
+
+  width: 2rem;
+  height: 2rem;
+
+  transition: all 0.3s ease;
+  color: $white;
+  z-index: 2000;
+  &:hover {
+    color: #ff6363;
+    filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
+  }
+}
