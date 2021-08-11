@@ -12,7 +12,7 @@ from task.api import viewsets as reminderviewsets
 route = routers.DefaultRouter()
 
 route.register(r'task', taskviewsets.TaskViewSet, basename="Task")
-route.register(r'user', usersviewsets.UsersViewSet, basename="User")
+route.register(r'users', usersviewsets.UsersViewSet, basename="User")
 route.register(r'project', projectviewsets.ProjectViewSet, basename="Project")
 route.register(r'reminder', reminderviewsets.ReminderViewSet,
                basename="Reminder")
