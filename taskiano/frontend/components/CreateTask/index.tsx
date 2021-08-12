@@ -35,13 +35,13 @@ function CreateTask(props: CreateTaskProps) {
     const data = {
       title,
       note,
-      timer,
+      // timer,
       priority,
       fixed,
       user: (await api.get("user/")).data[0].id_user,
     };
 
-    console.log(data);
+    // console.log(JSON.stringify(data.timer.getTime()));
 
     try {
       const response = await api.post("task/", data);

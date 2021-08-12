@@ -9,24 +9,31 @@ import { useAuth } from "../hooks/useAuth";
 
 import styles from "../styles/Login.module.scss";
 
+interface ButtonProviderProps {
+  name: string;
+  provider: string;
+  handleSingIn: (provider: string) => void;
+  children: React.ReactNode;
+}
+
+const ButtonProvider = (props: ButtonProviderProps) => {
+  return (
+    <button
+      className={styles.signInButton}
+      onClick={() => props.handleSingIn(props.provider)}
+    >
+      {props.children}
+      {props.name}
+    </button>
+  );
+};
+
 function Login() {
   const router = useRouter();
-  const {
-    user,
-    signInWithGoogle,
-    signInWithFacebook,
-    signInWithTwitter,
-    signInWithGithub,
-  } = useAuth();
+  const { user, signIn } = useAuth();
 
-  async function handleSingin(provider: string) {
-    if (!user) {
-      if (provider === "google") await signInWithGoogle();
-      else if (provider === "facebook") await signInWithFacebook();
-      else if (provider === "twitter") await signInWithTwitter();
-      else if (provider === "github") await signInWithGithub();
-    }
-
+  async function handleSingIn(provider: string) {
+    if (!user) await signIn(provider);
     router.push("/home");
   }
 
@@ -36,34 +43,21 @@ function Login() {
       <main>
         <div className={styles.mainContent}>
           <span>Entrar com</span>
-          <button
-            className={styles.signInButton}
-            onClick={() => handleSingin("google")}
-          >
+          <ButtonProvider name="Google" provider="google" handleSingIn={handleSingIn}>
             <FcGoogle />
-            Google
-          </button>
-          <button
-            className={styles.signInButton}
-            onClick={() => handleSingin("twitter")}
-          >
+          </ButtonProvider>
+
+          <ButtonProvider name="Twitter" provider="twitter" handleSingIn={handleSingIn}>
             <AiFillTwitterCircle color="#57A9E3" />
-            Twitter
-          </button>
-          <button
-            className={styles.signInButton}
-            onClick={() => handleSingin("facebook")}
-          >
+          </ButtonProvider>
+
+          <ButtonProvider name="Facebook" provider="facebook" handleSingIn={handleSingIn}>
             <FaFacebook color="#3D5694" />
-            Facebook
-          </button>
-          <button
-            className={styles.signInButton}
-            onClick={() => handleSingin("github")}
-          >
+          </ButtonProvider>
+
+          <ButtonProvider name="GitHub" provider="github" handleSingIn={handleSingIn}>
             <AiFillGithub />
-            GitHub
-          </button>
+          </ButtonProvider>
         </div>
       </main>
     </div>
