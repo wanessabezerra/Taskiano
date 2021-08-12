@@ -1,4 +1,4 @@
-import { TaskType, Weekday } from "../@types";
+import { TaskType, Weekday } from "../../@types";
 import axios from "axios";
 
 export const api = axios.create({
