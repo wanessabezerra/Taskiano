@@ -1,7 +1,10 @@
 type User = {
-    id: string;
-    name: string;
-    avatar: string;
+  id: string;
+  username?: string;
+  name: string;
+  avatar: string;
+  birthday?: Date;
+  score?: number;
 };
 
 export default User;
