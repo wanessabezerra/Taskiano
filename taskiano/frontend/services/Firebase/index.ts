@@ -1,11 +1,6 @@
 import { app } from "./initService";
 import "firebase/auth";
 
+const auth = app.auth();
 
-const firebaseService = {
-  auth: app.auth(),
-  firebase: app,
-};
-
-
-export default firebaseService;
+export { auth, app };
