@@ -9,7 +9,8 @@ import {
 } from "./Fields";
 import Modal from "../Modal";
 import { MarkdownPreview } from "../MarkdownPreview";
-import { api } from "../../services/api";
+import { TaskRest } from "../../services/api";
+import { useAuth } from "../../hooks/useAuth";
 
 import styles from "./styles.module.scss";
 
@@ -25,29 +26,32 @@ function CreateTask(props: CreateTaskProps) {
   const [timer, setTimer] = useState<Date>(new Date());
   const [timerShow, setTimerShow] = useState("");
 
+  const { user, getToken } = useAuth();
+
   useEffect(() => {
     onChangeDate(new Date());
   }, []);
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const data = {
       title,
       note,
-      // timer,
+      timer,
       priority,
       fixed,
-      user: (await api.get("user/")).data[0].id_user,
+      user: user?.id,
     };
 
-    // console.log(JSON.stringify(data.timer.getTime()));
-
     try {
-      const response = await api.post("task/", data);
+      await TaskRest.create({
+        taskData: data,
+        token: (await getToken()) ?? "",
+      });
+
       props.close();
 
-      console.log(response);
       alert("Ok");
     } catch (error) {
       console.error(error);
