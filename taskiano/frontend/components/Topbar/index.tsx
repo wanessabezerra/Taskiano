@@ -1,30 +1,35 @@
 import React, { useState } from "react";
-import Image, { ImageProps } from "next/image";
 
+import { useAuth } from "../../hooks/useAuth";
 import { FaUserCircle } from "react-icons/fa";
 
 import styles from "./styles.module.scss";
 
-interface TopbarProps {
-  userAvatar?: ImageProps;
-}
+interface TopbarProps {}
 
 function Topbar(props: TopbarProps) {
   const [search, setSearch] = useState("");
+  const [useImg, setUseImg] = useState(true);
+  const { user } = useAuth();
 
   return (
     <div className={styles.topbarContainer}>
       <input
-        className={styles.searchBar}
         type="text"
         value={search}
         placeholder="pesquisar"
+        className={styles.searchBar}
         onChange={(e) => setSearch(e.target.value)}
       />
 
       <div className={styles.userAvatar}>
-        {props.userAvatar ? (
-          <Image {...props.userAvatar} alt="user_avatar"></Image>
+        {user?.avatar && useImg ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={user?.avatar}
+            alt="user_avatar"
+            onError={() => setUseImg(false)}
+          />
         ) : (
           <FaUserCircle />
         )}
