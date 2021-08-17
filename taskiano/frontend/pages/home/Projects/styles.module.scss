@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 
-.projectsContainer {
+.projectsContent {
 
   @include flex-box(
     $align: flex-end,
@@ -30,7 +30,6 @@
     );
 
     gap: 2rem;
-
     @include max-size-percent();
     overflow-x: scroll;
   }
