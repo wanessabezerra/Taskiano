@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
@@ -29,12 +28,10 @@ const ButtonProvider = (props: ButtonProviderProps) => {
 };
 
 function Login() {
-  const router = useRouter();
   const { user, signIn } = useAuth();
 
   async function handleSingIn(provider: string) {
     if (!user) await signIn(provider);
-    router.push("/home");
   }
 
   return (
