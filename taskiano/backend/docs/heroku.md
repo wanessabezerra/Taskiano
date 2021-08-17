@@ -24,7 +24,7 @@
 
 ```sh
 ╭─host@linux ~/Desktop/Projects/Taskiano/taskiano/backend/
-╰─$ heruko login
+╰─$ heroku login
 ```
 
 #### 2: Heroku create a new app
