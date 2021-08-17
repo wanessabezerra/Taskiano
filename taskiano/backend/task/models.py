@@ -2,25 +2,24 @@ from django.conf import settings
 from django.db import models
 from uuid import uuid4
 
-from django.contrib.auth.models import User
-
 
 class Users(models.Model):
-    id_user = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    id = models.CharField(primary_key=True, max_length=150)
     name = models.CharField(max_length=200)
-    birthday = models.DateField(null=False)
-    email = models.EmailField(max_length=256)
+    username = models.CharField(max_length=24)
+    birthday = models.DateField(null=True)
+    email = models.EmailField(max_length=256, null=True)
     score = models.FloatField(default=0, db_index=True)
-    avatar_url = models.URLField(max_length=260)
+    avatar = models.URLField(max_length=260)
 
     def __str__(self):
         return self.name
 
 
 class Project(models.Model):
-    id_project = models.UUIDField(
+    id = models.UUIDField(
         primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     description = models.TextField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=False)
@@ -48,7 +47,7 @@ class Task(models.Model):
         (7, "Urgente")
     )
 
-    id_task = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100)
     note = models.TextField(max_length=4096)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -60,7 +59,17 @@ class Task(models.Model):
     user = models.ForeignKey(Users, related_name='%(class)ss', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.id_task + ' - ' + self.name
+        return self.id + ' - ' + self.name
+
+
+class SubTask(models.Model):
+    id = models.UUIDField(
+        primary_key=True, default=uuid4, editable=False)
+    subtask = models.ForeignKey(
+        Task, related_name='%(class)ss', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.id_subtask + ' - ' + self.name
 
 
 class Reminder(models.Model):
