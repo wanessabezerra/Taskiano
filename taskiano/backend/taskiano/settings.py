@@ -63,6 +63,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3080",
     "http://localhost:4080",
     "http://127.0.0.1:3000",
+    "https://taskiano.vercel.app/"
 ]
 
 ROOT_URLCONF = 'taskiano.urls'
