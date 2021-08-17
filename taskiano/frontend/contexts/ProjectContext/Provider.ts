@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import Project from "../../@types/Project";
+import type { Project } from "../../@types";
 
 type ProjectContextType = {
   projects: Project[] | undefined;
