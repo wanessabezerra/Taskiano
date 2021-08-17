@@ -3,31 +3,26 @@ import { ReactNode, useEffect, useState } from "react";
 import type Project from "../../@types/Project";
 import { ProjectContext } from "./Provider";
 import { useAuth } from "../../hooks/useAuth";
-import { Project as ProjectRest } from "../../services/api/Project.rest";
+import { ProjectRest } from "../../services/api/Project.rest";
 
 interface ProjectContextProviderProps {
   children: ReactNode;
 }
 
-export function ProjectsContextProvider({
-  children,
-}: ProjectContextProviderProps) {
+export function ProjectContextProvider(props: ProjectContextProviderProps) {
   const [projects, setProjects] = useState<Project[]>();
   const { user } = useAuth();
 
-  useEffect(() => console.log(projects), [projects]);
-
-  useEffect(() => {
-    ProjectRest.get(user?.id).then((data: Project[] | null) => {
-      if (data) setProjects([...data]);
-    });
-  }, [user?.id]);
-
   async function create(data: Project) {
     const project = await ProjectRest.create(data);
-
     if (project) setProjects([...(projects ?? []), project]);
   }
+
+  useEffect(() => {
+    ProjectRest.get(user?.id).then((data: Project[]) =>
+      data ? setProjects([...data]) : null
+    );
+  }, [user?.id]);
 
   return (
     <ProjectContext.Provider
@@ -36,7 +31,7 @@ export function ProjectsContextProvider({
         create,
       }}
     >
-      {children}
+      {props.children}
     </ProjectContext.Provider>
   );
 }
