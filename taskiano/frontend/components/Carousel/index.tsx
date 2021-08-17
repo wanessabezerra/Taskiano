@@ -39,6 +39,7 @@ function Carousel(props: CarouselProps) {
         clearTimeout(
           setTimeout(() => handles.increase(), props.autoInfiniteScrollInterval)
         );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   return (
