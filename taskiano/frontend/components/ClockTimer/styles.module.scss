@@ -9,10 +9,7 @@
 }
 
 .calendarTimeContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  @include flex-box($justify: center, $align: center);
   width: 1.5rem;
   height: 1.5rem;
 

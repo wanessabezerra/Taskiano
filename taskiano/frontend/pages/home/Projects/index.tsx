@@ -1,16 +1,19 @@
 import React from "react";
 import useSWR from "swr";
 
+import { useAuth } from "../../../hooks/useAuth";
+import { TaskRest } from "../../../services/api";
+
+import Carousel from "../../../components/Carousel";
 import ProjectWidget from "../../../components/ProjectWidget";
-import { TaskType } from "../../../@types";
-import { api } from "../../../services/api";
 
 import styles from "./styles.module.scss";
 
 function Projects() {
-  const { data } = useSWR("task/", async (u) => {
-    const res = await api.get("task/");
-    let tasks: TaskType[] = res.data;
+  const { getToken } = useAuth();
+
+  const { data } = useSWR("task/", async () => {
+    let tasks: any = await TaskRest.get(await getToken());
 
     for (var task of tasks) {
       const dateInit = new Date(task.timer);
@@ -25,17 +28,18 @@ function Projects() {
   });
 
   return (
-    <div className={styles.projectsContainer}>
+    <div className={styles.projectsContent}>
       <div className={styles.projectViewOptions}>
         <h1 className={styles.title}>Projetos</h1>
         <span className={styles.separator} />
       </div>
-      <div className={styles.projectsContainer}>
+      <Carousel gap={2} howMany={3}>
         <ProjectWidget tasks={data} name="UFRN" />
         <ProjectWidget tasks={data} name="Curso Técnico IMD" />
         <ProjectWidget tasks={data} name="Lista de Compras" />
         <ProjectWidget tasks={data} name="Trabalho" />
-      </div>
+        <ProjectWidget tasks={data} name="Curso Online" />
+      </Carousel>
     </div>
   );
 }

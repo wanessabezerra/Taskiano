@@ -7,10 +7,7 @@
   gap: 1rem;
 
   .projectTitle {
-    font-family: Bebas Neue;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2rem;
+    @include font-bebas-neue($size: 2rem);
 
     background: -webkit-linear-gradient(90deg, #aa71fa 15%, #fbb366 85%);
 
@@ -43,12 +40,7 @@
 
       .totalTasks {
         padding: 0.5rem 0.5rem;
-        color: white !important;
-
-        font-family: Bebas Neue;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.8rem;
+        @include font-bebas-neue($size: 1.8rem);
       }
 
       .progressProject {
@@ -63,19 +55,10 @@
         width: 10rem;
         height: 2rem;
 
-        font-family: Bebas Neue;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.5rem;
+        @include font-bebas-neue($size: 1.5rem);
 
-        color: white;
         background: #13368e;
         border-radius: 0px 8px;
-
-        .statusTasks {
-          p {
-          }
-        }
       }
     }
 
@@ -84,9 +67,7 @@
 
       height: 2.5rem;
 
-      color: white;
-      font-family: Bebas Neue;
-      font-size: 2rem;
+      @include font-bebas-neue($size: 2rem);
 
       width: 85%;
       background: rgba(216, 216, 216, 0.05);
@@ -104,7 +85,7 @@
           #515353
         );
         background-size: 350% 100%;
-        animation: gradient 5s ease infinite;
+        animation: gradient 4s ease infinite;
 
         @keyframes gradient {
           0% {
@@ -136,10 +117,6 @@
 
       background: rgba(216, 216, 216, 0.05);
       border-radius: 8px;
-
-      &:first-child {
-        padding-top: 10rem !important;
-      }
     }
   }
 }

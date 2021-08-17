@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'task',
-    'corsheaders'
+    'corsheaders',
+    'firebase_auth',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3080",
     "http://localhost:4080",
     "http://127.0.0.1:3000",
+    "https://taskiano.vercel.app"
 ]
 
 ROOT_URLCONF = 'taskiano.urls'
@@ -141,6 +143,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'firebase_auth.authentication.FirebaseAuthentication',
+    ),
+}

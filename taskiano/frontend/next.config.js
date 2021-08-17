@@ -1,12 +1,12 @@
+let secureEnv = require("secure-env");
+
+const enc_env = secureEnv({
+  secret: process.env.SECURE_ENV,
+});
+
 module.exports = {
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/home',
-        permanent: true,
-      },
-    ]
+  env: {
+    ...enc_env,
   },
-}
+};

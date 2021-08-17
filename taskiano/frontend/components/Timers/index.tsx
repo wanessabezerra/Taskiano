@@ -5,7 +5,7 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import Compass from "../Compass";
 import Selector from "./Selector";
 import RenderTime from "./RenderTime";
-import Carousel from "../../shared/Carousel";
+import Carousel from "../Carousel";
 
 import { tasks, weekdays } from "../../services/api";
 

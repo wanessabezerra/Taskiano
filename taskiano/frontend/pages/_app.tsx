@@ -1,15 +1,16 @@
 import React from "react";
 import type { AppProps } from "next/app";
 
-import { HelloContextProvider } from "../contexts/HelloContext";
+import { AuthContextProvider } from "../contexts/AuthContext";
 
 import "../styles/globals.scss";
+import "../services/Firebase/initService";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <HelloContextProvider>
+        <AuthContextProvider>
             <Component {...pageProps} />
-        </HelloContextProvider>
+        </AuthContextProvider>
     );
 }
 export default MyApp;

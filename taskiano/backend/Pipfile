@@ -12,6 +12,7 @@ Django = "==3.2.4"
 gunicorn = "*"
 django-heroku = "*"
 django-cors-headers = "*"
+firebase-admin = "*"
 
 [dev-packages]
 

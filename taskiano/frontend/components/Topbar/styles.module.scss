@@ -37,9 +37,7 @@
       @include font-raleway($size: 1.3rem);
 
       color: $gray;
-
       text-align: end;
-
       transition: all 0.5s ease;
     }
   }
@@ -49,19 +47,22 @@
 
     @include flex-box($justify: center, $align: center);
 
-    height: 3rem;
-    width: 3rem;
+    height: 2.6rem;
+    width: 2.6rem;
+    cursor: pointer;
 
     img,
     svg {
       @include max-size-percent();
-      filter: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+      box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.4);
+      filter: 2px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
       transition: all 0.3s ease;
 
       &:hover {
         color: #8090af;
         filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
+        box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.7);
       }
     }
 

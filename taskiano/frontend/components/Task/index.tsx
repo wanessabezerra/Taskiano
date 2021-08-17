@@ -8,19 +8,23 @@ import { RemainsFormatValue, RemainsFormatText } from "../../utils";
 import styles from "./styles.module.scss";
 
 interface TaskProps {
-  id: number;
+  id?: number;
   title: string;
-  remainingTime: number;
+  remainingTime?: number;
   note: string;
 }
 
-function Task({ remainingTime, ...props }: TaskProps) {
+function Task(props: TaskProps) {
   const [showTasks, setShowTasks] = useState(false);
 
-  const remainsTime = RemainsFormatValue({ remainingTime });
-  const reamainsTimeText = RemainsFormatText({ remainingTime });
+  function getDescription({ remainingTime = 0 }: { remainingTime?: number }) {
+    if (remainingTime != 0) {
+      const remainsTime = RemainsFormatValue(remainingTime);
+      const reamainsTimeText = RemainsFormatText(remainingTime);
 
-  const description = `${remainsTime} ${reamainsTimeText} - ${props.title}`;
+      return `${remainsTime} ${reamainsTimeText} - ${props.title}`;
+    } else return props.title;
+  }
 
   return (
     <div className={styles.taskContainer}>
@@ -35,9 +39,12 @@ function Task({ remainingTime, ...props }: TaskProps) {
           </div>
         </Modal>
       )}
+
       <div className={styles.timeContainer} onClick={() => setShowTasks(true)}>
-        <ClockTimer remainingTime={remainingTime} />
-        <h1 className={styles.timeRemains}>{description}</h1>
+        <ClockTimer remainingTime={props.remainingTime} />
+        <h1 className={styles.timeRemains}>
+          {getDescription({ remainingTime: props.remainingTime })}
+        </h1>
       </div>
     </div>
   );
