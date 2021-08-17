@@ -1,5 +1,12 @@
-import { TaskType, Weekday } from "../../@types";
 import axios from "axios";
+
+import { UserRest } from "./User.rest";
+import { TaskRest } from "./Task.rest";
+import { ProjectRest } from "./Project.rest";
+
+import type { TaskType, Weekday } from "../../@types";
+
+export { UserRest, TaskRest, ProjectRest };
 
 export const api = axios.create({
   baseURL: "https://taskiano-backend.herokuapp.com/",
