@@ -377,3 +377,6 @@ sketch
 
 .brModeloDocs/**
 */yarn.lock
+
+**/**/migrations/**
+**/**/taskiano-todo-firebase-adminsdk-*.json
