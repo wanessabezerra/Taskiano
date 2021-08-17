@@ -1,24 +1,13 @@
+@import "../../../styles/variables.scss";
+
 .countdownContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-box($direction: column, $justify: center, $align: center);
 }
 
 .RemainsFormatText {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-
-  color: white;
+  @include font-raleway($size: 1.1rem);
 }
 
 .RemainsFormatValue {
-  font-family: Bebas Neue;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 4.2rem;
-
-  color: white;
+  @include font-bebas-neue($size: 4.2rem);
 }
