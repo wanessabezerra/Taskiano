@@ -7,7 +7,7 @@ import colors from "../../../styles/variables";
 import styles from "./styles.module.scss";
 
 interface ProjectStatusProps {
-  lates: number;
+  over: number;
   timers: number;
   done: number;
   color?: string;
@@ -21,21 +21,21 @@ function ProjectStatus(props: ProjectStatusProps) {
       className={styles.projectStatusContainer}
       style={{ background: color }}
     >
-      <div id="lates" className={styles.statusTasks}>
-        <p>{props.lates}</p>
+      <div className={styles.statusTasks}>
+        <p>{props.over}</p>
         <div className={styles.icon}>
           <FaTimes color={color} />
         </div>
       </div>
 
-      <div id="timers" className={styles.statusTasks}>
+      <div className={styles.statusTasks}>
         <p>{props.timers}</p>
         <div className={styles.icon}>
           <GiAlarmClock color={color} />
         </div>
       </div>
 
-      <div id="done" className={styles.statusTasks}>
+      <div className={styles.statusTasks}>
         <p>{props.done}</p>
         <div className={styles.icon}>
           <MdDone color={color} />
