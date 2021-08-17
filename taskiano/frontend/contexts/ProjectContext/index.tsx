@@ -1,9 +1,11 @@
 import { ReactNode, useEffect, useState } from "react";
 
-import type Project from "../../@types/Project";
-import { ProjectContext } from "./Provider";
 import { useAuth } from "../../hooks/useAuth";
-import { ProjectRest } from "../../services/api/Project.rest";
+import { ProjectRest } from "../../services/api";
+
+import { ProjectContext } from "./Provider";
+
+import type { Project } from "../../@types";
 
 interface ProjectContextProviderProps {
   children: ReactNode;
