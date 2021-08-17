@@ -5,6 +5,7 @@ type User = {
   avatar: string;
   birthday?: Date;
   score?: number;
+  email?: string;
 };
 
 export default User;
