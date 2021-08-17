@@ -1,4 +1,6 @@
-export type Weekday = {
+type Weekday = {
     day: string;
     count: number;
 };
+
+export default Weekday;
