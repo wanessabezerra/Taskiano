@@ -1,5 +1,8 @@
-export * from "./Task";
-export * from "./User";
-export * from "./Weekday";
-export * from "./WeekdayPercent";
-export * from "./Project";
+import TaskType from "./Task";
+import User from "./User";
+import Weekday from "./Weekday";
+import WeekdayPercent from "./WeekdayPercent";
+import Project from "./Project";
+import FirebaseUser from "./FirebaseUser";
+
+export type { TaskType, User, Weekday, WeekdayPercent, Project, FirebaseUser };
