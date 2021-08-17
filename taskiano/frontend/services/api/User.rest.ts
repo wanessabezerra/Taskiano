@@ -1,25 +1,42 @@
 import { api } from "./";
-import type { default as UserType } from "../../@types/User";
+import type { User as UserType } from "../../@types";
 
-export const User = {
-  async create(data: UserType): Promise<UserType | undefined> {
-    return api.post("/users/", data).then(
-      (res) => {
-        return res.data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+interface CreateProps {
+  userData: UserType;
+  token: string;
+}
+
+export const UserRest = {
+  async create(props: CreateProps): Promise<UserType | undefined> {
+    return api
+      .post("/users/", props.userData, {
+        headers: {
+          Authorization: props.token,
+        },
+      })
+      .then(
+        (res) => {
+          return res.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   },
-  async get(id: string): Promise<UserType | undefined> {
-    return api.get("/users/", { params: { id } }).then(
-      (res) => {
-        return res.data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  async get(id: string | undefined): Promise<UserType | undefined> {
+    return api
+      .get("/users/", {
+        headers: {
+          Authorization: id,
+        },
+      })
+      .then(
+        (res) => {
+          return res.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   },
 };
