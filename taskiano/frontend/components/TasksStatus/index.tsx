@@ -1,19 +1,20 @@
 import React from "react";
 
 import Task from "../Task";
-import { TaskType } from "../../@types/Task";
+import type { TaskType } from "../../@types";
 
 import styles from "./styles.module.scss";
 
-interface TaskStatusProps {
+interface TasksStatusProps {
   title: string;
   tasks: Array<TaskType>;
 }
 
-function TaskStatus(props: TaskStatusProps) {
+function TasksStatus(props: TasksStatusProps) {
   return (
     <div className={styles.taskStatusContainer}>
       <h1 className={styles.taskListTitle}>{props.title}</h1>
+
       <div className={styles.tasksList}>
         {props.tasks.map((task, index) => (
           <Task
@@ -29,4 +30,4 @@ function TaskStatus(props: TaskStatusProps) {
   );
 }
 
-export default TaskStatus;
+export default TasksStatus;
