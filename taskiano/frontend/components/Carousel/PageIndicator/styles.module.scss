@@ -1,0 +1,9 @@
+@import "../../../styles/variables.scss";
+
+.pageIndicatorsContainer {
+  @include flex-box($justify: center, $align: center);
+  width: 100%;
+
+  gap: 0.7rem;
+  padding-top: 1rem;
+}
