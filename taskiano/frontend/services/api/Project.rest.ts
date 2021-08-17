@@ -1,8 +1,8 @@
 import { api } from "./";
-import type { default as ProjectType } from "../../@types/Project";
+import type { Project } from "../../@types";
 
-export const Project = {
-  async create(data: ProjectType): Promise<ProjectType> {
+export const ProjectRest = {
+  async create(data: Project): Promise<Project> {
     return api.post("/project/", data).then(
       (res) => {
         return res.data;
@@ -12,7 +12,7 @@ export const Project = {
       }
     );
   },
-  async get(id: string | undefined): Promise<ProjectType[]> {
+  async get(id: string | undefined): Promise<Project[]> {
     return api.get("/project/", { params: { id } }).then(
       (res) => {
         return res.data;
