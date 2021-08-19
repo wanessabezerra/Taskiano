@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'task',
     'corsheaders',
     'firebase_auth',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -152,5 +153,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'firebase_auth.authentication.FirebaseAuthentication',
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
