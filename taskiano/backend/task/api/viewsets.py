@@ -8,7 +8,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from firebase_auth.mixins import FirebaseAuthMixin
 
 
-class TaskViewSet(viewsets.ModelViewSet):
+class TaskViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     serializer_class = serializers.TaskSerializer
     queryset = models.Task.objects.all()
 
