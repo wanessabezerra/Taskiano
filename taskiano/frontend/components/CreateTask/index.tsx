@@ -4,7 +4,7 @@ import {
   FixTask,
   NoteTask,
   SelectPriority,
-  TimeTask,
+  TimerTask,
   TitleTask,
 } from "./Fields";
 import Modal from "../Modal";
@@ -80,7 +80,7 @@ function CreateTask(props: CreateTaskProps) {
             <TitleTask value={title} onChange={(e) => setTitle(e)} />
             <SelectPriority value={priority} onChange={(e) => setPriority(e)} />
             <FixTask value={fixed} onChange={(e) => setFixed(e)} />
-            <TimeTask value={timerShow} onChange={(e) => onChangeDate(e)} />
+            <TimerTask value={timerShow} onChange={(e) => onChangeDate(e)} />
           </div>
         </div>
 
