@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import colors from "../../../styles/variables";
+import colors from "../../../styles/colors";
 
 interface BarProps {
   height: number;
