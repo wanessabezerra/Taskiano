@@ -4,7 +4,7 @@ import { BsCalendarFill } from "react-icons/bs";
 
 import { selectColorByTime } from "../../utils";
 
-import colors from "../../styles/variables";
+import colors from "../../styles/colors";
 import styles from "./styles.module.scss";
 
 interface ClocktimerProps {
