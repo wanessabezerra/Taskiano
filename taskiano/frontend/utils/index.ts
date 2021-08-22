@@ -30,22 +30,23 @@ export function RemainsFormatText(remainingTime: number) {
   let text = "";
 
   if (_reaminingTime <= minuteSeconds) {
-    text = "Seg(s)";
+    text = "Seg";
+    if (remainingTime > 1) text += "'s";
   } else if (_reaminingTime > minuteSeconds && _reaminingTime < hourSeconds) {
-    text = "Min(s)";
+    text = "Min";
+    if (remainingTime >= minuteSeconds * 2) text += "'s";
   } else if (_reaminingTime > hourSeconds && _reaminingTime < daySeconds) {
-    text = "Hora(s)";
+    text = "Hora";
+    if (remainingTime >= hourSeconds * 2) text += "s";
   } else if (_reaminingTime > daySeconds && _reaminingTime < weekSeconds) {
-    text = "Dia(s)";
+    text = "Dia";
+    if (remainingTime >= daySeconds * 2) text += "s";
   } else {
     text = "Semana(s)";
   }
 
-  if (remainingTime > 0) {
-    return text;
-  } else {
-    return text + " atrás";
-  }
+  if (remainingTime > 0) return text;
+  else return text + " atrás";
 }
 
 export function RemainsFormatValue(remainingTime: number) {
@@ -93,4 +94,17 @@ export function MapPercentageOfMaxPerDay(array: Weekday[]): WeekdayPercent[] {
   }
 
   return result;
+}
+
+interface getDescriptionTimeProps {
+  remainingTime?: number;
+}
+
+export function getDescriptionTime({
+  remainingTime = 0,
+}: getDescriptionTimeProps) {
+  const remainsTime = RemainsFormatValue(remainingTime);
+  const reamainsTimeText = RemainsFormatText(remainingTime);
+
+  return `${remainsTime} ${reamainsTimeText}`;
 }
