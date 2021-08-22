@@ -39,7 +39,7 @@ function Timers() {
         {RenderTime}
       </CountdownCircleTimer>
 
-      <Carousel gap={2} howMany={3}>
+      <Carousel howMany={3} infiniteScroll>
         {tasks.map((task, index) => (
           <a key={index} className={styles.taskTag}>
             #{task.number}
