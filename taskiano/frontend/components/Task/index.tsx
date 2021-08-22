@@ -3,28 +3,19 @@ import React, { useState } from "react";
 import Modal from "../Modal";
 import { ClockTimer } from "../ClockTimer";
 import { MarkdownPreview } from "../MarkdownPreview";
-import { RemainsFormatValue, RemainsFormatText } from "../../utils";
+import { getDescriptionTime } from "../../utils";
 
 import styles from "./styles.module.scss";
 
 interface TaskProps {
   id?: number;
-  title: string;
+  title?: string;
   remainingTime?: number;
-  note: string;
+  note?: string;
 }
 
 function Task(props: TaskProps) {
   const [showTasks, setShowTasks] = useState(false);
-
-  function getDescription({ remainingTime = 0 }: { remainingTime?: number }) {
-    if (remainingTime != 0) {
-      const remainsTime = RemainsFormatValue(remainingTime);
-      const reamainsTimeText = RemainsFormatText(remainingTime);
-
-      return `${remainsTime} ${reamainsTimeText} - ${props.title}`;
-    } else return props.title;
-  }
 
   return (
     <div className={styles.taskContainer}>
@@ -43,7 +34,7 @@ function Task(props: TaskProps) {
       <div className={styles.timeContainer} onClick={() => setShowTasks(true)}>
         <ClockTimer remainingTime={props.remainingTime} />
         <h1 className={styles.timeRemains}>
-          {getDescription({ remainingTime: props.remainingTime })}
+          {getDescriptionTime({ remainingTime: props.remainingTime }) + " - " + props.title}
         </h1>
       </div>
     </div>
