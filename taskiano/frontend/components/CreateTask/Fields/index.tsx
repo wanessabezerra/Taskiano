@@ -77,16 +77,3 @@ export const SelectPriority = (props: FieldProps) => {
     </label>
   );
 };
-
-export const TimeTask = (props: FieldProps) => {
-  return (
-    <label className={`${styles.timerForm} ${styles.general}`}>
-      Tempo Estimado/Limite
-      <input
-        type="datetime-local"
-        value={props.value}
-        onChange={props.onChange}
-      />
-    </label>
-  );
-};

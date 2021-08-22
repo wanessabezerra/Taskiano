@@ -1,0 +1,122 @@
+@import "../../../styles/variables.scss";
+
+.tableContent {
+  @include flex-box($direction: column, $justify: center, $align: center);
+  width: 100%;
+  height: 34rem;
+
+  background: $darker;
+  border-radius: 8px;
+
+  .header {
+    width: 100%;
+    background: #303342;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px 8px 0px 0px;
+
+    .row {
+      th {
+        @include font-bebas-neue($size: 2rem);
+      }
+    }
+  }
+
+  .body {
+    @include max-size-percent();
+    overflow-y: scroll;
+
+    .row {
+      border: 1px solid rgba(216, 216, 216, 0.1);
+    }
+  }
+}
+
+.row {
+  @include flex-box($justify: space-between, $align: center);
+  @include font-bitter($size: 1.1rem);
+  width: 100%;
+  height: 4rem;
+  position: relative;
+  overflow: hidden;
+
+  td,
+  th {
+    @include flex-box($justify: center, $align: center);
+
+    &:first-of-type {
+      @include flex-box($justify: flex-start, $align: center);
+      padding-left: 2rem;
+    }
+  }
+
+  .name {
+    width: 35%;
+  }
+
+  .timer {
+    width: 10%;
+    gap: 1rem;
+  }
+
+  .priority {
+    @include font-bebas-neue($size: 1.4rem);
+    width: 20%;
+  }
+
+  .createdAt {
+    @include font-bebas-neue($size: 1.4rem);
+    width: 20%;
+  }
+
+  .project {
+    width: 10%;
+  }
+
+  .whiteSpace{
+    width: 9%;
+  }
+
+  &:hover {
+    td + .project {
+      font-size: 2rem;
+      width: 15%;
+      padding-left: 1rem;
+      :after {
+        left: 0;
+      }
+
+      svg {
+        opacity: 0;
+      }
+    }
+  }
+
+  td.project {
+    @include font-bebas-neue($size: 2rem);
+    @include flex-box($justify: space-between, $align: center);
+    position: absolute;
+    right: 0;
+
+    width: 3rem;
+    height: 4rem;
+
+    transition: all 0.4s ease;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+
+    border-radius: 8px 0 0 8px;
+
+    svg {
+      -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+
+      position: absolute;
+      right: 1rem;
+      width: 1.2rem;
+      height: auto;
+    }
+  }
+}

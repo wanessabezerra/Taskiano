@@ -1,45 +1,68 @@
-import React from "react";
-import useSWR from "swr";
+import React, { useState } from "react";
 
-import { useAuth } from "../../../hooks/useAuth";
-import { TaskRest } from "../../../services/api";
+import { AiOutlineUnorderedList } from "react-icons/ai";
+import { BsGridFill } from "react-icons/bs";
+import { RiAddFill } from "react-icons/ri";
 
-import Carousel from "../../../components/Carousel";
-import ProjectWidget from "../../../components/ProjectWidget";
+import { useProjects } from "../../../hooks/useProjects";
+
+import ProjectsList from "../../../components/ProjectsList";
+import ProjectsWidget from "../../../components/ProjectsWidget";
 
 import styles from "./styles.module.scss";
+import Loader from "../../../components/Loader";
 
 function Projects() {
-  const { getToken } = useAuth();
+  const [viewIn, setViewIn] = useState<"widgets" | "list">("widgets");
+  const { projects } = useProjects();
 
-  const { data } = useSWR("task/", async () => {
-    let tasks: any = await TaskRest.get(await getToken());
-
-    for (var task of tasks) {
-      const dateInit = new Date(task.timer);
-      const dateCurr = new Date();
-
-      const diff = Number(dateInit) - Number(dateCurr);
-
-      task.remainingTime = Math.abs(diff / 1000);
-    }
-
-    return tasks;
-  });
+  const viewHandle = {
+    list: () => setViewIn("list"),
+    widgets: () => setViewIn("widgets"),
+    inList: () => viewIn === "list",
+  };
 
   return (
     <div className={styles.projectsContent}>
+      {!projects && <Loader />}
+
       <div className={styles.projectViewOptions}>
+        <div className={styles.projectViewOptionsTitle}>
+          <div
+            className={`
+              ${styles.viewOptionsIcon}
+              ${!viewHandle.inList() && styles.optionSelected}
+            `}
+            onClick={viewHandle.widgets}
+          >
+            <BsGridFill />
+          </div>
+
+          <div
+            className={`
+              ${styles.viewOptionsIcon}
+              ${viewHandle.inList() && styles.optionSelected}
+            `}
+            onClick={viewHandle.list}
+          >
+            <AiOutlineUnorderedList />
+          </div>
+        </div>
+
         <h1 className={styles.title}>Projetos</h1>
+
+        <div className={styles.addProject}>
+          <RiAddFill onClick={() => {}} />
+        </div>
+
         <span className={styles.separator} />
       </div>
-      <Carousel gap={2} howMany={3}>
-        <ProjectWidget tasks={data} name="UFRN" />
-        <ProjectWidget tasks={data} name="Curso Técnico IMD" />
-        <ProjectWidget tasks={data} name="Lista de Compras" />
-        <ProjectWidget tasks={data} name="Trabalho" />
-        <ProjectWidget tasks={data} name="Curso Online" />
-      </Carousel>
+
+      {viewHandle.inList() ? (
+        <ProjectsList projects={projects} />
+      ) : (
+        <ProjectsWidget projects={projects} />
+      )}
     </div>
   );
 }

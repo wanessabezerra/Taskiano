@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
@@ -36,6 +37,12 @@ function Login() {
 
   return (
     <div className={styles.pageAuth}>
+      <Head>
+        <title>Taskiano | Login</title>
+        <meta name="description" content="To-do" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <aside></aside>
       <main>
         <div className={styles.mainContent}>

@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 interface ModalProps {
   className?: string;
   children: ReactNode;
-  close: () => void;
+  close?: () => void;
 }
 
 function Modal(props: ModalProps) {
@@ -14,7 +14,12 @@ function Modal(props: ModalProps) {
     <div className={`${styles.modal} ${props.className}`}>
       <div className={styles.modalContainer} />
       {props.children}
-      <AiFillCloseCircle className={styles.closeModal} onClick={props.close} />
+      {props.close && (
+        <AiFillCloseCircle
+          className={styles.closeModal}
+          onClick={props.close}
+        />
+      )}
     </div>
   );
 }
