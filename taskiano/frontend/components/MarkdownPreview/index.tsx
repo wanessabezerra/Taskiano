@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 
 interface MarkdownPreviewProps {
   className?: string;
-  note: string;
+  note?: string;
 }
 
 export const MarkdownPreview = (props: MarkdownPreviewProps) => {
