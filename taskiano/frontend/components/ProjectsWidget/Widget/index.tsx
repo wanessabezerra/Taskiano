@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 import ProjectStatus from "./ProjectStatus";
-import CreateTask from "../CreateTask";
-import Task from "../Task";
+import CreateTask from "../../CreateTask";
+import Task from "../../Task";
 
-import type { TaskType } from "../../@types";
+import type { TaskType } from "../../../@types";
 
 import styles from "./styles.module.scss";
 
 interface ProjectWidgetProps {
-  name: string;
+  name?: string;
   tasks?: TaskType[];
 }
 

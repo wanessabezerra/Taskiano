@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../../styles/variables.scss";
 
 .projectWidget {
   @include flex-box($direction: column, $align: flex-start);
@@ -113,7 +113,7 @@
 
       overflow-y: scroll;
       width: 85%;
-      height: 20rem;
+      height: 18rem;
 
       background: rgba(216, 216, 216, 0.05);
       border-radius: 8px;
