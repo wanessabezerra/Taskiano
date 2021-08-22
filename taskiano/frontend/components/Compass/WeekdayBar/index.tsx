@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Bar } from "../components/Bar.styles";
 
 import styles from "./styles.module.scss";
