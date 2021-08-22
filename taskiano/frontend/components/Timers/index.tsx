@@ -9,7 +9,7 @@ import Carousel from "../Carousel";
 
 import { tasks, weekdays } from "../../services/api";
 
-import colors from "../../styles/variables";
+import colors from "../../styles/colors";
 import styles from "./styles.module.scss";
 
 function Timers() {
