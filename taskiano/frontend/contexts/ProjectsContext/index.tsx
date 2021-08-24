@@ -7,7 +7,7 @@ import { ProjectRest, TaskRest } from "../../services/api";
 
 import { ProjectsContext } from "./Provider";
 
-import type { Project } from "../../@types";
+import type { Project, TaskType } from "../../@types";
 
 interface ProjectsContextProviderProps {
   children: ReactNode;
@@ -30,7 +30,7 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
   const [projects, setProjects] = useState<Project[]>();
   const { getToken } = useAuth();
 
-  useSWR("task/", async () => {
+  const { mutate } = useSWR("task/", async () => {
     let tasks: any = await TaskRest.get(await getToken());
     let projects = [] as Project[];
 
@@ -57,6 +57,13 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
     const token = await getToken();
     const project = await ProjectRest.create({ data, token });
     if (project) setProjects([...(projects ?? []), project]);
+    mutate();
+  }
+
+  async function closeTask(task: TaskType) {
+    const token = await getToken();
+    await TaskRest.close({ taskData: task, token });
+    mutate();
   }
 
   return (
@@ -64,6 +71,7 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
       value={{
         projects,
         create,
+        closeTask
       }}
     >
       {props.children}
