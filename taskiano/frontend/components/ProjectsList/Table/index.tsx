@@ -5,10 +5,12 @@ import { ClockTimer } from "../../ClockTimer";
 import { getDescriptionTime } from "../../../utils";
 
 import styles from "./styles.module.scss";
+import Task from "../../Task";
 
 export interface TaskProps {
   id?: number;
-  name?: string;
+  title?: string;
+  note?: string;
   remainingTime?: any;
   priority: number;
   created_at?: string;
@@ -36,7 +38,16 @@ function Table(props: TableProps) {
       <tbody className={styles.body}>
         {props.tasks.map((task, index) => (
           <tr key={index} className={styles.row}>
-            <td className={styles.name}>{task.name}</td>
+            <td className={styles.name}>
+              <Task
+                hideTimer
+                key={index}
+                id={task.id}
+                title={task.title}
+                remainingTime={task.remainingTime}
+                note={task.note ?? ""}
+              />
+            </td>
 
             <td className={styles.timer}>
               <ClockTimer remainingTime={task.remainingTime} />
@@ -47,7 +58,10 @@ function Table(props: TableProps) {
 
             <td className={styles.createdAt}>{task.created_at}</td>
 
-            <td className={styles.project} style={{ background: task.projectColor }}>
+            <td
+              className={styles.project}
+              style={{ background: task.projectColor }}
+            >
               <BiLeftArrow />
               {task.project}
             </td>
