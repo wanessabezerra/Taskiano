@@ -5,21 +5,26 @@ import styles from "./styles.module.scss";
 
 interface ModalProps {
   className?: string;
+  opacity?: number;
   children: ReactNode;
   close?: () => void;
 }
 
 function Modal(props: ModalProps) {
   return (
-    <div className={`${styles.modal} ${props.className}`}>
-      <div className={styles.modalContainer} />
-      {props.children}
-      {props.close && (
-        <AiFillCloseCircle
-          className={styles.closeModal}
-          onClick={props.close}
-        />
-      )}
+    <div
+      className={`${styles.modal} ${props.className}`}
+      style={{ background: `rgba(17, 18, 24, ${props.opacity ?? 0.85})` }} // $darkForce
+    >
+      <div className={styles.modalContainer}>
+        {props.children}
+        {props.close && (
+          <AiFillCloseCircle
+            className={styles.closeModal}
+            onClick={props.close}
+          />
+        )}
+      </div>
     </div>
   );
 }

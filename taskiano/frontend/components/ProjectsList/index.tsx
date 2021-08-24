@@ -13,7 +13,7 @@ function ProjectsList(props: ProjectsListProps) {
     for (const task of project.tasks ?? []) {
       return {
         id: task.id,
-        name: task.title,
+        title: task.title,
         remainingTime: task.remainingTime,
         priority: task.priority,
         created_at: new Date(task.created_at ?? "")
