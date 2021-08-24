@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Modal from "../Modal";
+import CheckBox from "../Checkbox";
 import { ClockTimer } from "../ClockTimer";
 import { MarkdownPreview } from "../MarkdownPreview";
 import { getDescriptionTime } from "../../utils";
@@ -11,14 +12,27 @@ interface TaskProps {
   id?: number;
   title?: string;
   remainingTime?: number;
+  hideTimer?: boolean;
+  hideCheckbox?: boolean;
   note?: string;
 }
 
-function Task(props: TaskProps) {
+function Task({ remainingTime, ...props }: TaskProps) {
   const [showTasks, setShowTasks] = useState(false);
 
+  const Description = () => {
+    return (
+      <>
+        <ClockTimer remainingTime={remainingTime} />
+        <p className={styles.description}>
+          {getDescriptionTime({ remainingTime }) + " - " + props.title}
+        </p>
+      </>
+    );
+  };
+
   return (
-    <div className={styles.taskContainer}>
+    <>
       {showTasks && (
         <Modal className={styles.modal} close={() => setShowTasks(false)}>
           <div className={styles.taskModal}>
@@ -26,18 +40,23 @@ function Task(props: TaskProps) {
             <MarkdownPreview
               className={styles.taskMarkdownPreview}
               note={props.note}
-            ></MarkdownPreview>
+            />
           </div>
         </Modal>
       )}
 
-      <div className={styles.timeContainer} onClick={() => setShowTasks(true)}>
-        <ClockTimer remainingTime={props.remainingTime} />
-        <h1 className={styles.timeRemains}>
-          {getDescriptionTime({ remainingTime: props.remainingTime }) + " - " + props.title}
-        </h1>
+      <div className={styles.taskContainer}>
+        <div className={styles.timeContainer}>
+          {!props.hideCheckbox && (
+            <CheckBox className={styles.checkBox} onClick={() => {}} />
+          )}
+
+          <h1 className={styles.timeRemains} onClick={() => setShowTasks(true)}>
+            {props.hideTimer ? props.title : <Description />}
+          </h1>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
