@@ -1,40 +1,81 @@
 @import "../styles/variables.scss";
 
 .pageAuth {
-  @include flex-box($justify: center, $align: center);
-
+  @include flex-box($justify: flex-start, $align: center);
   @include max-size-viewport;
+  background: $darker;
 
-  .mainContent {
-    @include flex-box(
-      $direction: column,
-      $justify: space-between,
-      $align: space-between
-    );
+  .sidebar {
+    @include flex-box($justify: center, $align: center);
+    width: 50vw;
+    height: 100%;
+    position: relative;
 
-    gap: 2rem;
+    .particles {
+      width: 100%;
+      height: 100%;
+      background: #24283f;
 
-    .signInButton {
-      @include flex-box($justify: space-between, $align: center);
+      box-shadow: 8px 4px 4px -1px rgba(0, 0, 0, 0.25);
+    }
 
-      @include font-bebas-neue();
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    .logo {
+      @include flex-box($direction: column, $justify: center, $align: center);
+      position: absolute;
+      gap: 2rem;
 
-      color: $dark;
-      border-radius: 8px;
+      .logoContainer {
+        @include flex-box($justify: center, $align: center);
+        position: relative;
 
-      padding: 0 1rem;
-      width: 15rem;
-      height: 3rem;
-
-      transition: all 0.2s ease;
-
-      &:hover {
-        filter: brightness(0.9);
+        img {
+          width: 10vw;
+        }
       }
 
-      svg {
-        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+      .logoText {
+        @include font-bebas-neue($size: 4.5rem);
+        opacity: 0.6;
+      }
+    }
+  }
+  main {
+    @include flex-box($justify: center, $align: center);
+    width: 50vw;
+    height: 100%;
+
+    .mainContent {
+      @include flex-box(
+        $direction: column,
+        $justify: space-between,
+        $align: space-between
+      );
+      @include font-bebas-neue($size: 1.5rem);
+
+      gap: 2rem;
+
+      .signInButton {
+        @include flex-box($justify: space-between, $align: center);
+        @include font-bebas-neue();
+
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+        background: $dark;
+        border-radius: 8px;
+
+        padding: 0 1rem;
+        width: 18rem;
+        height: 4rem;
+
+        transition: all 0.2s ease;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+
+        svg {
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+        }
       }
     }
   }
