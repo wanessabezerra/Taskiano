@@ -2,6 +2,7 @@
 
 .countdownContent {
   @include flex-box($direction: column, $justify: center, $align: center);
+  @include font-raleway($size: 1.2rem);
 }
 
 .RemainsFormatText {
@@ -10,4 +11,8 @@
 
 .RemainsFormatValue {
   @include font-bebas-neue($size: 4.2rem);
+  transition: all 1s ease-in-out;
+  &:hover{
+    text-shadow: 0px 4px 4px $hightOrange;
+  }
 }

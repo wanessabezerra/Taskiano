@@ -18,6 +18,7 @@ function TasksStatus(props: TasksStatusProps) {
       <div className={styles.tasksList}>
         {props.tasks.map((task, index) => (
           <Task
+            hideCheckbox
             key={index}
             id={task.id}
             title={task.title}
