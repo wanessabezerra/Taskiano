@@ -14,6 +14,7 @@ type CarouselProps = {
   autoInfiniteScroll?: boolean;
   autoInfiniteScrollInterval?: number;
   showIndicator?: boolean;
+  hideArrowInFirstAndLastPage?: boolean;
   howMany: number;
   children: ReactNode | Element[];
 };
@@ -33,6 +34,14 @@ function Carousel({
     infiniteScroll: props.infiniteScroll,
   });
 
+  function ShowArrowBackward() {
+    return !(currentPage === 1 && props.hideArrowInFirstAndLastPage);
+  }
+
+  function ShowArrowForward() {
+    return !(currentPage === pageCount - 1 && props.hideArrowInFirstAndLastPage);
+  }
+
   function showInPage(index: number) {
     return (
       index + 1 <= currentPage * props.howMany &&
@@ -49,9 +58,11 @@ function Carousel({
   return (
     <div className={`${styles.carouselContainer}  ${props?.className}`}>
       <div className={styles.widgetsSlider}>
-        <div className={styles.circleIcon}>
-          <IoIosArrowBack onClick={handles.decrease} />
-        </div>
+        {ShowArrowBackward() && (
+          <div className={styles.circleIcon} onClick={handles.decrease}>
+            <IoIosArrowBack />
+          </div>
+        )}
 
         <div className={styles.itemsContainer} style={itemsContainerStyle}>
           {React.Children.map(
@@ -60,9 +71,11 @@ function Carousel({
           )}
         </div>
 
-        <div className={styles.circleIcon}>
-          <IoIosArrowForward onClick={handles.increase} />
-        </div>
+        {ShowArrowForward() && (
+          <div className={styles.circleIcon} onClick={handles.increase}>
+            <IoIosArrowForward />
+          </div>
+        )}
       </div>
 
       {props.showIndicator && (
