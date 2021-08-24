@@ -6,11 +6,11 @@ import { RiAddFill } from "react-icons/ri";
 
 import { useProjects } from "../../../hooks/useProjects";
 
+import Loader from "../../../components/Loader";
 import ProjectsList from "../../../components/ProjectsList";
 import ProjectsWidget from "../../../components/ProjectsWidget";
 
 import styles from "./styles.module.scss";
-import Loader from "../../../components/Loader";
 
 function Projects() {
   const [viewIn, setViewIn] = useState<"widgets" | "list">("widgets");
