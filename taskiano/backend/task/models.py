@@ -25,6 +25,8 @@ class Project(models.Model):
     closed_in = models.DateField(null=False)
     color = models.IntegerField(null=False, default=16777215)
     has_archived = models.BooleanField(default=False)
+    user = models.ForeignKey(
+        Users, related_name='%(class)ss', on_delete=models.CASCADE)
 
 
 class Task(models.Model):
@@ -53,10 +55,12 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     closed_in = models.DateField(null=True, default=None)
     timer = models.DateTimeField(null=True, default=None)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="1")
+    status = models.CharField(
+        max_length=1, choices=STATUS_CHOICES, default="1")
     priority = models.IntegerField(choices=PRIORITIES)
     fixed = models.BooleanField(default=False)
-    user = models.ForeignKey(Users, related_name='%(class)ss', on_delete=models.CASCADE)
+    project = models.ForeignKey(
+        Project, related_name='%(class)ss', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.id + ' - ' + self.name

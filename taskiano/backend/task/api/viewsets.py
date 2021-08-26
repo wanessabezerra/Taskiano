@@ -35,7 +35,6 @@ class UsersViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     filterset_fields = '__all__'
     search_fields = '__all__'
     ordering_fields = '__all__'
-    pagination_class = PageNumberPagination
 
 
 class ProjectViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
@@ -47,7 +46,7 @@ class ProjectViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     filterset_fields = '__all__'
     search_fields = '__all__'
     ordering_fields = '__all__'
-    pagination_class = PageNumberPagination
+    #pagination_class = PageNumberPagination
 
 
 class ReminderViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
