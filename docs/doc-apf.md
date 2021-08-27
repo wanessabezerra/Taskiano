@@ -181,48 +181,43 @@ Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
 
 3 **EE** _ 3 PF + 2 **CE** _ 3 PF = **15 PF**
 
-| Operação                | Tipo | Complexidade       | PF     |
-| ----------------------- | ---- | ------------------ | ------ |
-| Task                    | ALI  | Baixa              | 7      |
-| Reminder                | ALI  | Baixa              | 7      |
-| Project                 | ALI  | Baixa              | 7      |
-| User                    | ALI  | Baixa              | 7      |
-
-| _______________________ | ____ | **Soma de Dados**  | **28** |
-| > **Tarefa**            |      |                    |        |
-|                         |      |                    |        |
-| Inserir Tarefa          | EE   | Média              | 4      |
-| Atualizar Tarefa        | EE   | Média              | 4      |
-| Listar Tarefa           | CE   | Média              | 4      |
-| Deletar Tarefa          | EE   | Média              | 4      |
-| Listar TarefasAtrasadas | SE   | Média              | 5      |
-| Visualizar Tarefa       | CE   | Média              | 4      |
-
-| _______________________ | ____ | **Soma de Dados**  | **25** |
-| > **Lembrete**          |      |                    |        |
-|                         |      |                    |        |
-| Inserir Lembrete        | EE   | Baixa              | 3      |
-| Atualizar Lembrete      | EE   | Baixa              | 3      |
-| Listar Lembrete         | CE   | Baixa              | 3      |
-| Deletar Lembrete        | EE   | Baixa              | 3      |
-| Visualizar Lembrete     | CE   | Baixa              | 3      |
-
-| _______________________ | ____ | **Soma de Dados**  | **15** |
-|                         |      |                    |        |
-| > **Projeto**           |      |                    |        |
-|                         |      |                    |        |
-| Inserir Projeto         | EE   | Médio              | 4      |
-| Atualizar Projeto       | SE   | Médio              | 5      |
-| Listar Projeto          | CE   | Médio              | 4      |
-| Deletar Projeto         | EE   | Médio              | 4      |
-| Visualizar Projeto      | CE   | Baixa              | 4      |
-| _______________________ | ____ | **Soma de Dados**  | **21** |
-|                         |      |                    |        |
-| > **Usuário**           |      |                    |        |
-|                         |      |                    |        |
-| Inserir User            | EE   | Médio              | 4      |
-| Atualizar User          | SE   | Médio              | 5      |
-| Listar dados do User    | CE   | Baixo              | 3      |
-| Desativar conta         | EE   | Médio              | 4      |
-|                         |      |**Soma de Dados**   | **16** |
-| _______________________ | ____ |**Total de Dados**  | **105** |
+| Operação                | Tipo | Complexidade       | PF      |
+| ----------------------- | ---- | ------------------ | ------- |
+| Task                    | ALI  | Baixa              | 7       |
+| Reminder                | ALI  | Baixa              | 7       |
+| Project                 | ALI  | Baixa              | 7       |
+| User                    | ALI  | Baixa              | 7       |
+| ----------------------- | ---- | **Soma de Dados**  | **28**  |
+| > **Tarefa**            |      |                    |         |
+| ----------------------- | ---- | -----------------  | ------  |
+| Inserir Tarefa          | EE   | Média              | 4       |
+| Atualizar Tarefa        | EE   | Média              | 4       |
+| Listar Tarefa           | CE   | Média              | 4       |
+| Deletar Tarefa          | EE   | Média              | 4       |
+| Listar TarefasAtrasadas | SE   | Média              | 5       |
+| Visualizar Tarefa       | CE   | Média              | 4       |
+| ----------------------- | ---- | **Soma de Dados**  | **25**  |
+| > **Lembrete**          |      |                    |         |
+| ----------------------- | ---- | -----------------  | ------  |
+| Inserir Lembrete        | EE   | Baixa              | 3       |
+| Atualizar Lembrete      | EE   | Baixa              | 3       |
+| Listar Lembrete         | CE   | Baixa              | 3       |
+| Deletar Lembrete        | EE   | Baixa              | 3       |
+| Visualizar Lembrete     | CE   | Baixa              | 3       |
+| ----------------------- | ---- | **Soma de Dados**  | **15**  |
+| > **Projeto**           |      |                    |         |
+| ----------------------- | ---- | -----------------  | ------  |
+| Inserir Projeto         | EE   | Médio              | 4       |
+| Atualizar Projeto       | SE   | Médio              | 5       |
+| Listar Projeto          | CE   | Médio              | 4       |
+| Deletar Projeto         | EE   | Médio              | 4       |
+| Visualizar Projeto      | CE   | Baixa              | 4       |
+| ----------------------- | ---- | **Soma de Dados**  | **21**  |
+| > **Usuário**           |      |                    |         |
+| ----------------------- | ---- | ------------------ | ------- |
+| Inserir User            | EE   | Médio              | 4       |
+| Atualizar User          | SE   | Médio              | 5       |
+| Listar dados do User    | CE   | Baixo              | 3       |
+| Desativar conta         | EE   | Médio              | 4       |
+|                         |      | **Soma de Dados**  | **16**  |
+| ----------------------- | ---- | **Total de Dados** | **105** |
