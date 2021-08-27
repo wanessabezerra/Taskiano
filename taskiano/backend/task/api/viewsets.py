@@ -12,18 +12,19 @@ from firebase_auth.mixins import FirebaseAuthMixin
 class TaskViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     serializer_class = serializers.TaskSerializer
     queryset = models.Task.objects.all()
+    pagination_class = PageNumberPagination
 
     filter_backends = [DjangoFilterBackend,
                        filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = '__all__'
     search_fields = '__all__'
     ordering_fields = '__all__'
-    pagination_class = PageNumberPagination
 
 
 class SubTaskViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     serializer_class = serializers.SubTaskSerializer
     queryset = models.SubTask.objects.all()
+    pagination_class = PageNumberPagination
 
 
 class UsersViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
@@ -35,21 +36,22 @@ class UsersViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     filterset_fields = '__all__'
     search_fields = '__all__'
     ordering_fields = '__all__'
-    pagination_class = PageNumberPagination
 
 
 class ProjectViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
     queryset = models.Project.objects.all()
+    pagination_class = PageNumberPagination
 
     filter_backends = [DjangoFilterBackend,
                        filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = '__all__'
     search_fields = '__all__'
     ordering_fields = '__all__'
-    pagination_class = PageNumberPagination
+
 
 
 class ReminderViewSet(FirebaseAuthMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ReminderSerializer
     queryset = models.Reminder.objects.all()
+    pagination_class = PageNumberPagination
