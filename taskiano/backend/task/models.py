@@ -12,17 +12,14 @@ class Users(models.Model):
     score = models.FloatField(default=0, db_index=True)
     avatar = models.URLField(max_length=260)
 
-    def __str__(self):
-        return self.name
-
 
 class Project(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=254)
-    created_at = models.DateTimeField(auto_now_add=True)
-    closed_in = models.DateField(null=False)
+    created_at = models.DateTimeField(null=False)
+    closed_in = models.DateField(null=True, default=None)
     color = models.IntegerField(null=False, default=16777215)
     has_archived = models.BooleanField(default=False)
     user = models.ForeignKey(
@@ -52,7 +49,7 @@ class Task(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100)
     note = models.TextField(max_length=4096)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(null=False)
     closed_in = models.DateField(null=True, default=None)
     timer = models.DateTimeField(null=True, default=None)
     status = models.CharField(
@@ -62,9 +59,6 @@ class Task(models.Model):
     project = models.ForeignKey(
         Project, related_name='%(class)ss', on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.id + ' - ' + self.name
-
 
 class SubTask(models.Model):
     id = models.UUIDField(
@@ -72,12 +66,9 @@ class SubTask(models.Model):
     subtask = models.ForeignKey(
         Task, related_name='%(class)ss', on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.id_subtask + ' - ' + self.name
-
 
 class Reminder(models.Model):
-    id_project = models.UUIDField(
+    id = models.UUIDField(
         primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=254)
