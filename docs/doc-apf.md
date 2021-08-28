@@ -33,6 +33,8 @@ Os pontos de função são utilizados como fator normalizado do tamanho do softw
 | 08/07/2021 | 1.2    | Revisão estrutural, Descrições e Referência | Zaú Júlio Araújo Galvão  |
 | 09/07/2021 | 2.0    | Contagem Indicativa (Ci)                    | Zaú Júlio Araújo Galvão  |
 | 09/07/2021 | 3.0    | Contagem Detalhada                          | Wanessa da Silva Bezerra |
+| 27/08/2021 | 3.1    | Contagem Detalhada, atualização             | Wanessa da Silva Bezerra |
+| 27/08/2021 | 4.0    | Contagem Estimativa (Ce)                    | Wanessa da Silva Bezerra |
 
 # 2. Contagem Indicativa (Ci)
 
@@ -110,114 +112,97 @@ Considerando o cenário acadêmico, a equipe constituída por 4 membros, empenha
 
 Na Ce todas as funções de dados são classificados como baixa complexidade.
 
-| ALI/AIE          | Entidades Relacionadas    | PF     |
-| ---------------- | ------------------------- | ------ |
-| AIE Language     | Language                  | 5      |
-| AIE Genre        | Genre                     | 5      |
-| ALI User         | User e Group              | 7      |
-| ALI Library      | Library                   | 7      |
-| ALI Author       | Author                    | 7      |
-| ALI Book         | Book                      | 7      |
-| ALI BookInstance | BookInstance e LoanStatus | 7      |
-|                  | **Total de Dados**        | **45** |
-
 Na Ce todas as operações elementares são classificadas como de média complexidade:
 **EE** tem 4 PF, **CE** tem 4 PF e **SE** tem 5 PF.
 
 | Operação                 | Tipo | Complexidade       | PF      |
 | ------------------------ | ---- | ------------------ | ------- |
-| Insert User              | EE   | Média              | 4       |
-| Update User              | EE   | Média              | 4       |
-| List User                | CE   | Média              | 4       |
-| Delete User              | EE   | Média              | 4       |
-| Block User               | EE   | Média              | 4       |
-| List Loans User          | SE   | Média              | 5       |
-| Insert Author            | EE   | Média              | 4       |
-| Update Author            | EE   | Média              | 4       |
-| List Author              | CE   | Média              | 4       |
-| Delete Author            | EE   | Média              | 4       |
-| Insert Genre             | EE   | Média              | 4       |
-| List Genre               | CE   | Média              | 4       |
-| Insert Language          | EE   | Média              | 4       |
-| List Language            | CE   | Média              | 4       |
-| Insert Library           | EE   | Média              | 4       |
-| Update Library           | EE   | Média              | 4       |
-| List Library             | CE   | Média              | 4       |
-| Delete Library           | EE   | Média              | 4       |
-| List Books Library       | SE   | Média              | 5       |
-| List Loans Library       | SE   | Média              | 5       |
-| Insert Book              | EE   | Média              | 4       |
-| Update Book              | EE   | Média              | 4       |
-| List Book                | CE   | Média              | 4       |
-| Delete Book              | EE   | Média              | 4       |
-| Insert BookInstance      | EE   | Média              | 4       |
-| Update BookInstance      | EE   | Média              | 4       |
-| List BookInstance        | CE   | Média              | 4       |
-| Delete BookInstance      | EE   | Média              | 4       |
-| RequestLoan BookInstance | EE   | Média              | 4       |
-| AcceptLoan BookInstance  | EE   | Média              | 4       |
-| MakeReturn BookInstance  | EE   | Média              | 4       |
-|                          |      | **Total de Dados** | **127** |
-
-Tamanho Funcional: Dados + Operações
-
-**Ce** = 45 PF + 127 PF = **172 PF**
+| Task                     | ALI  | Baixa              | 7       |
+| Reminder                 | ALI  | Baixa              | 7       |
+| Project                  | ALI  | Baixa              | 7       |
+| User                     | ALI  | Baixa              | 7       |
+|                          |      | **Soma de Dados**  | **28**  |
+| > **Tarefa**             |      |                    |         |
+| Inserir Tarefa           | EE   | Média              | 4       |
+| Atualizar Tarefa         | EE   | Média              | 4       |
+| Listar Tarefa            | CE   | Média              | 4       |
+| Deletar Tarefa           | EE   | Média              | 4       |
+| Listar Tarefas Atrasadas | SE   | Média              | 5       |
+| Visualizar Tarefa        | CE   | Média              | 4       |
+|                          |      | **Soma de Dados**  | **25**  |
+| > **Lembrete**           |      |                    |         |
+| Inserir Lembrete         | EE   | Baixa              | 4       |
+| Atualizar Lembrete       | EE   | Baixa              | 4       |
+| Listar Lembrete          | CE   | Baixa              | 4       |
+| Deletar Lembrete         | EE   | Baixa              | 4       |
+| Visualizar Lembrete      | CE   | Baixa              | 4       |
+|                          |      | **Soma de Dados**  | **20**  |
+| > **Projeto**            |      |                    |         |
+| Inserir Projeto          | EE   | Média              | 4       |
+| Atualizar Projeto        | EE   | Média              | 4       |
+| Listar Projeto           | CE   | Média              | 4       |
+| Deletar Projeto          | EE   | Média              | 4       |
+| Visualizar Projeto       | CE   | Baixa              | 4       |
+|                          |      | **Soma de Dados**  | **20**  |
+| > **Usuário**            |      |                    |         |
+| Inserir Usuário          | EE   | Média              | 4       |
+| Atualizar Usuário        | EE   | Média              | 4       |
+| Listar Usuário           | CE   | Média              | 4       |
+| Deletar Usuário          | EE   | Média              | 4       |
+| Visualizar Usuário       | CE   | Baixa              | 4       |
+|                          |      | **Soma de Dados**  | **20**  |
+|                          |      | **Total de Dados** | **113** |
 
 # 4. Contagem Detalhada
 
 Tabela Task (2 RFR e 9 DER - Baixa Complexidade)
-1 ALI \* 7PF = 7PF
+1 ALI \* 7 PF = 7PF
 
 Tabela Reminder (1 RFR e 4 DER - Baixa Complexidade)
 1 ALI \* 7 PF = 7 PF
 
+Tabela Project (2 RFR e 7 DER - Baixa Complexidade)
+1 ALI \* 7 PF = 7 PF
+
+Tabela Users (1 RFR e 7 DER  - Baixa Complexidade)
+1 ALI \* 7 PF = 7 PF
+
 ALI: 4 ALI \* 7 PF = **28 PF**
 
-Incluir, Selecionar, Excluir, Atualizar, Listar Task
-
-3 **EE** _ 4PF + 1 **SE** _ 5 PF + 2 **CE** \* 4 PF = **25 PF**
-
-Incluir, Selecionar, Excluir, Atualizar, Listar Reminder
-
-3 **EE** _ 3 PF + 2 **CE** _ 3 PF = **15 PF**
-
-| Operação                | Tipo | Complexidade       | PF      |
-| ----------------------- | ---- | ------------------ | ------- |
-| Task                    | ALI  | Baixa              | 7       |
-| Reminder                | ALI  | Baixa              | 7       |
-| Project                 | ALI  | Baixa              | 7       |
-| User                    | ALI  | Baixa              | 7       |
-| ----------------------- | ---- | **Soma de Dados**  | **28**  |
-| > **Tarefa**            |      |                    |         |
-| ----------------------- | ---- | -----------------  | ------  |
-| Inserir Tarefa          | EE   | Média              | 4       |
-| Atualizar Tarefa        | EE   | Média              | 4       |
-| Listar Tarefa           | CE   | Média              | 4       |
-| Deletar Tarefa          | EE   | Média              | 4       |
-| Listar TarefasAtrasadas | SE   | Média              | 5       |
-| Visualizar Tarefa       | CE   | Média              | 4       |
-| ----------------------- | ---- | **Soma de Dados**  | **25**  |
-| > **Lembrete**          |      |                    |         |
-| ----------------------- | ---- | -----------------  | ------  |
-| Inserir Lembrete        | EE   | Baixa              | 3       |
-| Atualizar Lembrete      | EE   | Baixa              | 3       |
-| Listar Lembrete         | CE   | Baixa              | 3       |
-| Deletar Lembrete        | EE   | Baixa              | 3       |
-| Visualizar Lembrete     | CE   | Baixa              | 3       |
-| ----------------------- | ---- | **Soma de Dados**  | **15**  |
-| > **Projeto**           |      |                    |         |
-| ----------------------- | ---- | -----------------  | ------  |
-| Inserir Projeto         | EE   | Médio              | 4       |
-| Atualizar Projeto       | SE   | Médio              | 5       |
-| Listar Projeto          | CE   | Médio              | 4       |
-| Deletar Projeto         | EE   | Médio              | 4       |
-| Visualizar Projeto      | CE   | Baixa              | 4       |
-| ----------------------- | ---- | **Soma de Dados**  | **21**  |
-| > **Usuário**           |      |                    |         |
-| ----------------------- | ---- | ------------------ | ------- |
-| Inserir User            | EE   | Médio              | 4       |
-| Atualizar User          | SE   | Médio              | 5       |
-| Listar dados do User    | CE   | Baixo              | 3       |
-| Desativar conta         | EE   | Médio              | 4       |
-|                         |      | **Soma de Dados**  | **16**  |
-| ----------------------- | ---- | **Total de Dados** | **105** |
+| Operação                 | Tipo | Complexidade       | PF      |
+| ------------------------ | ---- | ------------------ | ------- |
+| Task                     | ALI  | Baixa              | 7       |
+| Reminder                 | ALI  | Baixa              | 7       |
+| Project                  | ALI  | Baixa              | 7       |
+| User                     | ALI  | Baixa              | 7       |
+|                          |      | **Soma de Dados**  | **28**  |
+| > **Tarefa**             |      |                    |         |
+| Inserir Tarefa           | EE   | Média              | 4       |
+| Atualizar Tarefa         | EE   | Média              | 4       |
+| Listar Tarefa            | CE   | Média              | 4       |
+| Deletar Tarefa           | EE   | Média              | 4       |
+| Listar Tarefas Atrasadas | SE   | Média              | 5       |
+| Visualizar Tarefa        | CE   | Média              | 4       |
+|                          |      | **Soma de Dados**  | **25**  |
+| > **Lembrete**           |      |                    |         |
+| Inserir Lembrete         | EE   | Baixa              | 3       |
+| Atualizar Lembrete       | EE   | Baixa              | 3       |
+| Listar Lembrete          | CE   | Baixa              | 3       |
+| Deletar Lembrete         | EE   | Baixa              | 3       |
+| Visualizar Lembrete      | CE   | Baixa              | 3       |
+|                          |      | **Soma de Dados**  | **15**  |
+| > **Projeto**            |      |                    |         |
+| Inserir Projeto          | EE   | Média              | 4       |
+| Atualizar Projeto        | EE   | Média              | 4       |
+| Listar Projeto           | CE   | Média              | 4       |
+| Deletar Projeto          | EE   | Média              | 4       |
+| Visualizar Projeto       | CE   | Baixa              | 4       |
+|                          |      | **Soma de Dados**  | **20**  |
+| > **Usuário**            |      |                    |         |
+| Inserir Usuário          | EE   | Média              | 3       |
+| Atualizar Usuário        | EE   | Média              | 3       |
+| Listar Usuário           | CE   | Média              | 3       |
+| Deletar Usuário          | EE   | Média              | 3       |
+| Visualizar Usuário       | CE   | Baixa              | 3       |
+|                          |      | **Soma de Dados**  | **15**  |
+|                          |      | **Total de Dados** | **103** |
