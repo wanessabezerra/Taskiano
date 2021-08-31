@@ -29,10 +29,8 @@ class Project(models.Model):
 class Task(models.Model):
 
     STATUS_CHOICES = (
-        ("1", "Planejada"),
-        ("2", "Em Execução"),
-        ("3", "Concluída"),
-        ("4", "Cancelada"),
+        ("1", "Em Execução"),
+        ("2", "Concluída"),
     )
 
     PRIORITIES = (
@@ -73,6 +71,5 @@ class Reminder(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=254)
     date = models.DateTimeField(null=True, default=None)
-
     task = models.ForeignKey(
         Task, related_name='%(class)ss', on_delete=models.CASCADE)
