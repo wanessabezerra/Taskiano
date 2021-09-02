@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import { useAuth } from "../../hooks/useAuth";
 import { FaUserCircle } from "react-icons/fa";
@@ -7,10 +7,11 @@ import styles from "./styles.module.scss";
 
 interface TopbarProps {}
 
-function Topbar(props: TopbarProps) {
+function TopbarFC(props: TopbarProps) {
   const [search, setSearch] = useState("");
   const [useImg, setUseImg] = useState(true);
-  const { user } = useAuth();
+  const user = useAuth((ctx) => ctx.user);
+  const signOut = useAuth((ctx) => ctx.signOut);
 
   return (
     <div className={styles.topbarContainer}>
@@ -29,13 +30,15 @@ function Topbar(props: TopbarProps) {
             src={user?.avatar}
             alt="user_avatar"
             onError={() => setUseImg(false)}
+            onClick={signOut}
           />
         ) : (
-          <FaUserCircle />
+          <FaUserCircle onClick={signOut} />
         )}
       </div>
     </div>
   );
 }
 
+const Topbar = memo(TopbarFC);
 export default Topbar;
