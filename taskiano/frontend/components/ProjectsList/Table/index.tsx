@@ -4,22 +4,19 @@ import { BiLeftArrow } from "react-icons/bi";
 import { ClockTimer } from "../../ClockTimer";
 import { getDescriptionTime } from "../../../utils";
 
-import styles from "./styles.module.scss";
 import Task from "../../Task";
 
-export interface TaskProps {
-  id?: number;
-  title?: string;
-  note?: string;
-  remainingTime?: any;
-  priority: number;
-  created_at?: string;
-  project?: string;
+import type { TaskType } from "../../../@types";
+import styles from "./styles.module.scss";
+
+export interface TaskProps extends TaskType {
+  projectName?: string;
   projectColor?: string;
+  projectId?: string;
 }
 
 interface TableProps {
-  tasks: Array<TaskProps>;
+  tasks?: TaskProps[];
 }
 
 function Table(props: TableProps) {
@@ -36,34 +33,27 @@ function Table(props: TableProps) {
       </thead>
 
       <tbody className={styles.body}>
-        {props.tasks.map((task, index) => (
-          <tr key={index} className={styles.row}>
+        {props.tasks?.map((task) => (
+          <tr key={task?.id} className={styles.row}>
             <td className={styles.name}>
-              <Task
-                hideTimer
-                key={index}
-                id={task.id}
-                title={task.title}
-                remainingTime={task.remainingTime}
-                note={task.note ?? ""}
-              />
+              <Task hideTimer key={task?.id} {...task} />
             </td>
 
             <td className={styles.timer}>
-              <ClockTimer remainingTime={task.remainingTime} />
-              {getDescriptionTime({ remainingTime: task.remainingTime })}
+              <ClockTimer remainingTime={task?.remainingTime} />
+              {getDescriptionTime(task?.remainingTime)}
             </td>
 
-            <td className={styles.priority}>{task.priority}</td>
+            <td className={styles.priority}>{task?.priority}</td>
 
-            <td className={styles.createdAt}>{task.created_at}</td>
+            <td className={styles.createdAt}>{task?.created_at}</td>
 
             <td
               className={styles.project}
-              style={{ background: task.projectColor }}
+              style={{ background: task?.projectColor }}
             >
               <BiLeftArrow />
-              {task.project}
+              {task?.projectName}
             </td>
 
             <td className={styles.whiteSpace} />

@@ -24,6 +24,7 @@
   .body {
     @include max-size-percent();
     overflow-y: scroll;
+    border-radius: 0 0 8px 8px;
 
     .row {
       border: 1px solid rgba(216, 216, 216, 0.1);
@@ -72,7 +73,7 @@
     width: 10%;
   }
 
-  .whiteSpace{
+  .whiteSpace {
     width: 9%;
   }
 
