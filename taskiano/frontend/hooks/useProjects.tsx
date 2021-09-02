@@ -1,6 +1,9 @@
-import { useContext } from "react";
-import { ProjectsContext } from "../contexts/ProjectsContext/Provider";
+import { useContextSelector } from "use-context-selector";
+import {
+  ProjectsContext,
+  ProjectsContextType,
+} from "../contexts/ProjectsContext/Provider";
 
-export function useProjects() {
-  return useContext(ProjectsContext);
+export function useProjects(selector: (value: ProjectsContextType) => any) {
+  return useContextSelector(ProjectsContext, selector);
 }
