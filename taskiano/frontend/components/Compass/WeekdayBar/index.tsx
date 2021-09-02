@@ -1,5 +1,4 @@
 import React from "react";
-import { Bar } from "../components/Bar.styles";
 
 import styles from "./styles.module.scss";
 
@@ -13,7 +12,11 @@ interface WeekdayBarProps {
 function WeekdayBar(props: WeekdayBarProps) {
   return (
     <div className={styles.weekdayBarContainer}>
-      <Bar height={props.height} onClick={props.onClick} />
+      <button
+        className={styles.bar}
+        style={{ height: `${props.height}%` }}
+        onClick={props.onClick}
+      />
       <div className={styles.weekday}>
         <p>{props.day}</p>
         <div className={styles.tasksDone}>
