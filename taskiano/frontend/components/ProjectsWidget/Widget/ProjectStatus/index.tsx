@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { FaTimes } from "react-icons/fa";
 import { GiAlarmClock } from "react-icons/gi";
 import { MdDone } from "react-icons/md";
@@ -13,13 +13,13 @@ interface ProjectStatusProps {
   color?: string;
 }
 
-function ProjectStatus(props: ProjectStatusProps) {
+function ProjectStatusFC(props: ProjectStatusProps) {
   const color = props.color || colors.highPurple;
 
   return (
     <div
       className={styles.projectStatusContainer}
-      style={{ background: color }}
+      style={{ backgroundColor: color }}
     >
       <div className={styles.statusTasks}>
         <p>{props.over}</p>
@@ -44,5 +44,7 @@ function ProjectStatus(props: ProjectStatusProps) {
     </div>
   );
 }
+
+const ProjectStatus = memo(ProjectStatusFC);
 
 export default ProjectStatus;
