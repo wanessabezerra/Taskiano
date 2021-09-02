@@ -189,7 +189,7 @@ Figure 2. Representação gráfica com diagrama UML para representar os componen
 
 ## 8. Implantação
 
-![Diagrama de Implantação](images/Implantação Taskiano - Diagrama de Implantação.jpeg)
+![Diagrama de Implantação](images/diagrama_implantacao.jpeg)
 Figure 3. Representação gráfica da fase de implantação.
 
 ## 9. Referências
