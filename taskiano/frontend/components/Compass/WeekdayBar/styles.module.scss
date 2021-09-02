@@ -33,4 +33,17 @@
       font-size: 0.8rem;
     }
   }
+
+  .bar {
+    background: linear-gradient(180deg, $purple 17%, $orange 85%);
+    border-radius: 8px;
+
+    width: 1.3rem;
+
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      background: linear-gradient(180deg, $hightPurple 17%, $hightOrange 85%);
+    }
+  }
 }

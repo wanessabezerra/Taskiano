@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 
 interface TasksStatusProps {
   title: string;
-  tasks: Array<TaskType>;
+  tasks: TaskType[];
 }
 
 function TasksStatus(props: TasksStatusProps) {
@@ -19,7 +19,7 @@ function TasksStatus(props: TasksStatusProps) {
         {props.tasks.map((task, index) => (
           <Task
             hideCheckbox
-            key={index}
+            key={task.id ?? index}
             id={task.id}
             title={task.title}
             remainingTime={task.remainingTime}

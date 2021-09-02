@@ -1,10 +1,11 @@
-import { createContext } from "react";
+import { createContext } from 'use-context-selector';
 import type { User } from "../../@types";
 
-type AuthContextType = {
+export type AuthContextType = {
   user?: User;
-  signIn: (providerId: string) => Promise<void>;
-  getToken: () => Promise<string | undefined>;
+  token?: string;
+  signIn: (providerId: string) => void;
+  signOut: () => void;
 };
 
 export const AuthContext = createContext({} as AuthContextType);

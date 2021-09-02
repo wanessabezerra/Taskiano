@@ -1,58 +1,57 @@
 import React, { useState } from "react";
 
-import Modal from "../Modal";
+import View from "./View";
 import CheckBox from "../Checkbox";
 import { ClockTimer } from "../ClockTimer";
-import { MarkdownPreview } from "../MarkdownPreview";
 import { getDescriptionTime } from "../../utils";
 
+import { useTasks } from "../../hooks/useTasks";
+
+import type { TaskType } from "../../@types";
 import styles from "./styles.module.scss";
 
-interface TaskProps {
-  id?: number;
-  title?: string;
-  remainingTime?: number;
+interface TaskProps extends TaskType {
   hideTimer?: boolean;
   hideCheckbox?: boolean;
-  note?: string;
 }
 
 function Task({ remainingTime, ...props }: TaskProps) {
-  const [showTasks, setShowTasks] = useState(false);
+  const [viewTask, setViewTask] = useState(false);
 
-  const Description = () => {
-    return (
-      <>
-        <ClockTimer remainingTime={remainingTime} />
-        <p className={styles.description}>
-          {getDescriptionTime({ remainingTime }) + " - " + props.title}
-        </p>
-      </>
-    );
-  };
+  const openTask = useTasks((ctx) => ctx.openTask);
+  const close = useTasks((ctx) => ctx.close);
 
   return (
     <>
-      {showTasks && (
-        <Modal className={styles.modal} close={() => setShowTasks(false)}>
-          <div className={styles.taskModal}>
-            <h1 className={styles.taskModalTitle}>{props.title}</h1>
-            <MarkdownPreview
-              className={styles.taskMarkdownPreview}
-              note={props.note}
-            />
-          </div>
-        </Modal>
+      {viewTask && (
+        <View task={props} onClose={() => setViewTask(false)}></View>
       )}
 
       <div className={styles.taskContainer}>
         <div className={styles.timeContainer}>
           {!props.hideCheckbox && (
-            <CheckBox className={styles.checkBox} onClick={() => {}} />
+            <CheckBox
+              className={styles.checkBox}
+              checked={props.status === "2"}
+              onClick={async () => {
+                props.status === "1"
+                  ? await close(props.id)
+                  : await openTask(props.id);
+              }}
+            />
           )}
 
-          <h1 className={styles.timeRemains} onClick={() => setShowTasks(true)}>
-            {props.hideTimer ? props.title : <Description />}
+          <h1 className={styles.timeRemains} onClick={() => setViewTask(true)}>
+            {props.hideTimer ? (
+              props.title
+            ) : (
+              <>
+                <ClockTimer remainingTime={remainingTime} />
+                <p className={styles.description}>
+                  {getDescriptionTime(remainingTime)} - {props.title}
+                </p>
+              </>
+            )}
           </h1>
         </div>
       </div>

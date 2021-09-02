@@ -1,20 +1,11 @@
 import { api } from "./";
 import type { TaskType } from "../../@types";
 
-interface CreateProps {
-  taskData: TaskType;
-  token?: string;
-}
-
-interface CloseProps extends CreateProps {};
-
 export const TaskRest = {
-  async create(props: CreateProps): Promise<TaskType | undefined> {
+  async create(data: TaskType, token?: string): Promise<TaskType | undefined> {
     return api
-      .post("/task/", props.taskData, {
-        headers: {
-          Authorization: props.token,
-        },
+      .post("/task/", data, {
+        headers: { Authorization: token },
       })
       .then(
         (res) => {
@@ -25,12 +16,59 @@ export const TaskRest = {
         }
       );
   },
-  async close(props: CloseProps): Promise<TaskType | undefined> {
+  async update(
+    id: string,
+    data: TaskType,
+    token?: string
+  ): Promise<TaskType | undefined> {
     return api
-      .post("/task/close/", props.taskData, {
-        headers: {
-          Authorization: props.token,
+      .patch(`/task/${id}/`, data, { headers: { Authorization: token } })
+      .then(
+        (res) => {
+          return res.data;
         },
+        (error) => {
+          console.log(error);
+        }
+      );
+  },
+  async close(id: string, token?: string): Promise<TaskType | undefined> {
+    return api
+      .patch(
+        `/task/${id}/`,
+        { status: "2", closed_in: new Date().toISOString().split("T")[0] },
+        { headers: { Authorization: token } }
+      )
+      .then(
+        (res) => {
+          return res.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  },
+  async openTask(id: string, token?: string): Promise<TaskType | undefined> {
+    return api
+      .patch(
+        `/task/${id}/`,
+        { status: "1", closed_in: null },
+        { headers: { Authorization: token } }
+      )
+      .then(
+        (res) => {
+          return res.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  },
+  async get(projectId?: string, token?: string, page?: string): Promise<any> {
+    return api
+      .get(page ?? "/task/", {
+        params: { project: projectId },
+        headers: { Authorization: token },
       })
       .then(
         (res) => {
@@ -41,13 +79,9 @@ export const TaskRest = {
         }
       );
   },
-  async get(id: string | undefined): Promise<TaskType | undefined> {
+  async deleteTask(id: string, token?: string): Promise<TaskType | undefined> {
     return api
-      .get("/task/", {
-        headers: {
-          Authorization: id,
-        },
-      })
+      .delete(`/task/${id}/`, { headers: { Authorization: token } })
       .then(
         (res) => {
           return res.data;

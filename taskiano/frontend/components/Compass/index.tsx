@@ -23,7 +23,7 @@ function Compass(props: CompassProps) {
           day={data.day}
           height={data.percent}
           value={data.count}
-          key={index}
+          key={data.day}
         />
       ))}
     </div>

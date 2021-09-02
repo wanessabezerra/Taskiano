@@ -41,7 +41,7 @@ function Timers() {
 
       <Carousel howMany={3} infiniteScroll>
         {tasks.map((task, index) => (
-          <a key={index} className={styles.taskTag}>
+          <a key={task.number} className={styles.taskTag}>
             #{task.number}
           </a>
         ))}

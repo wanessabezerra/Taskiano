@@ -1,5 +1,9 @@
 @import "../../styles/variables.scss";
 
+.none {
+  display: none;
+}
+
 .loaderContainer {
   @include absolute-center($z-index: 2000);
   @include flex-box($direction: column, $align: center, $justify: center);

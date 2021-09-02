@@ -1,17 +1,18 @@
-import React from "react";
+import React, { memo } from "react";
 import MarkdownWrapper from "../MarkdownWrapper";
 
 import styles from "./styles.module.scss";
 
 interface MarkdownPreviewProps {
   className?: string;
+  showLabel?: boolean;
   note?: string;
 }
 
-export const MarkdownPreview = (props: MarkdownPreviewProps) => {
+const MarkdownPreviewFC = (props: MarkdownPreviewProps) => {
   return (
     <div className={styles.notePreviewContainer}>
-      <label>Preview</label>
+      {props.showLabel && <label>Preview</label>}
       <MarkdownWrapper
         className={`${styles.markdown} ${props.className}`}
         note={props.note}
@@ -19,3 +20,6 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
     </div>
   );
 };
+
+const MarkdownPreview = memo(MarkdownPreviewFC);
+export default MarkdownPreview;

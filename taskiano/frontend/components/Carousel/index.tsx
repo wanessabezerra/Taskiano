@@ -19,14 +19,10 @@ type CarouselProps = {
   children: ReactNode | Element[];
 };
 
-function Carousel({
-  autoInfiniteScrollInterval = 3000,
-  gap = 2,
-  ...props
-}: CarouselProps) {
+function Carousel(props: CarouselProps) {
   const childrenCount = Children.count(props.children);
   const pageCount = Math.ceil(childrenCount / props.howMany);
-  const itemsContainerStyle = { gap: `${gap}rem` };
+  const itemsContainerStyle = { gap: `${props.gap ?? 2}rem` };
 
   const { currentPage, setCurrentPage, handles } = PageState({
     pageCount,
@@ -34,26 +30,31 @@ function Carousel({
     infiniteScroll: props.infiniteScroll,
   });
 
-  function ShowArrowBackward() {
+  const ShowArrowBackward = () => {
     return !(currentPage === 1 && props.hideArrowInFirstAndLastPage);
-  }
+  };
 
-  function ShowArrowForward() {
-    return !(currentPage === pageCount - 1 && props.hideArrowInFirstAndLastPage);
-  }
+  const ShowArrowForward = () => {
+    return !(
+      currentPage === pageCount - 1 && props.hideArrowInFirstAndLastPage
+    );
+  };
 
-  function showInPage(index: number) {
+  const showInPage = (index: number) => {
     return (
       index + 1 <= currentPage * props.howMany &&
       index + 1 > (currentPage - 1) * props.howMany
     );
-  }
+  };
 
   useEffect(() => {
     props.autoInfiniteScroll &&
-      setTimeout(() => handles.increase(), autoInfiniteScrollInterval);
+      setTimeout(
+        () => handles.increase(),
+        props.autoInfiniteScrollInterval ?? 3000
+      );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [autoInfiniteScrollInterval, currentPage, props.autoInfiniteScroll]);
+  }, [props.autoInfiniteScrollInterval, currentPage, props.autoInfiniteScroll]);
 
   return (
     <div className={`${styles.carouselContainer}  ${props?.className}`}>

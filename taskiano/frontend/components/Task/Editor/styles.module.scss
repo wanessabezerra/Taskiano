@@ -1,6 +1,6 @@
-@import "../../styles/variables.scss";
+@import "../../../styles/variables.scss";
 
-.createTaskContainer {
+.editorTaskContainer {
   @include absolute-center($z-index: 2000);
   @include flex-box($direction: column, $align: center, $justify: center);
 
@@ -12,7 +12,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
 
-  .headerCreateTask {
+  .headerEditorTask {
     @include font-bebas-neue($size: 2rem);
     @include flex-box($justify: center, $align: center);
 
@@ -29,7 +29,6 @@
       height: 18rem;
       width: 4.5rem;
 
-      background: $white;
       opacity: 0.9;
       border-radius: 8px 0 8px 0;
       padding: 0.5rem;

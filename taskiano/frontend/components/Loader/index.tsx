@@ -3,9 +3,13 @@ import Modal from "../Modal";
 
 import styles from "./styles.module.scss";
 
-function Loader() {
+interface LoaderProps {
+  isLoading?: boolean;
+}
+
+function Loader(props: LoaderProps) {
   return (
-    <Modal>
+    <Modal className={props.isLoading ? "" : styles.none}>
       <div className={styles.loaderContainer}>
         <div className={styles.loader}></div>
       </div>

@@ -1,17 +1,28 @@
 import { api } from "./";
 import type { Project } from "../../@types";
 
-interface CreateProps {
-  data: Project;
-  token?: string;
-}
-
 export const ProjectRest = {
-  async create(props: CreateProps): Promise<Project> {
+  async create(data: Project, token?: string): Promise<Project> {
     return api
-      .post("/project/", props.data, {
+      .post("/project/", data, {
         headers: {
-          Authorization: props.token,
+          Authorization: token,
+        },
+      })
+      .then(
+        (res) => {
+          return res.data.results;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  },
+  async get(id?: string, page?: string): Promise<Project[] | any> {
+    return api
+      .get(page ?? "/project/", {
+        headers: {
+          Authorization: id,
         },
       })
       .then(
@@ -23,19 +34,51 @@ export const ProjectRest = {
         }
       );
   },
-  async get(id: string | undefined): Promise<Project[]> {
+  async archive(id: string, token?: string): Promise<boolean> {
     return api
-      .get("/project/", {
-        headers: {
-          Authorization: id,
-        },
-      })
+      .post(
+        `/project/${id}`,
+        { has_archived: true },
+        {
+          params: {
+            id: id,
+          },
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
       .then(
         (res) => {
-          return res.data;
+          return true;
         },
         (error) => {
           console.log(error);
+          return false;
+        }
+      );
+  },
+  async unArchive(id: string, token?: string): Promise<boolean> {
+    return api
+      .post(
+        `/project/${id}`,
+        { has_archived: false },
+        {
+          params: {
+            id: id,
+          },
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
+      .then(
+        (res) => {
+          return true;
+        },
+        (error) => {
+          console.log(error);
+          return false;
         }
       );
   },

@@ -14,7 +14,7 @@
     .particles {
       width: 100%;
       height: 100%;
-      background: #24283f;
+      background: $blueDark;
 
       box-shadow: 8px 4px 4px -1px rgba(0, 0, 0, 0.25);
     }
@@ -29,7 +29,7 @@
         position: relative;
 
         img {
-          width: 10vw;
+          width: 15vw;
         }
       }
 

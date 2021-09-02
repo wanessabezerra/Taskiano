@@ -4,7 +4,7 @@ import { useAuth } from "../../hooks/useAuth";
 import styles from "./styles.module.scss";
 
 function UserScore() {
-  const { user } = useAuth();
+  const user = useAuth((ctx) => ctx.user);
 
   return (
     <div className={styles.userScore}>

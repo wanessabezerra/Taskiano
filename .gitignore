@@ -380,3 +380,4 @@ sketch
 
 **/**/migrations/**
 **/**/taskiano-todo-firebase-adminsdk-*.json
+.scannerwork

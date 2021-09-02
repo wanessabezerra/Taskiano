@@ -1,6 +1,7 @@
-from django.conf import settings
 from django.db import models
 from uuid import uuid4
+
+RELATED_NAME = '%(class)ss'
 
 
 class Users(models.Model):
@@ -23,7 +24,7 @@ class Project(models.Model):
     color = models.IntegerField(null=False, default=16777215)
     has_archived = models.BooleanField(default=False)
     user = models.ForeignKey(
-        Users, related_name='%(class)ss', on_delete=models.CASCADE)
+        Users, related_name=RELATED_NAME, on_delete=models.CASCADE)
 
 
 class Task(models.Model):
@@ -55,14 +56,14 @@ class Task(models.Model):
     priority = models.IntegerField(choices=PRIORITIES)
     fixed = models.BooleanField(default=False)
     project = models.ForeignKey(
-        Project, related_name='%(class)ss', on_delete=models.CASCADE)
+        Project, related_name=RELATED_NAME, on_delete=models.CASCADE)
 
 
 class SubTask(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid4, editable=False)
     subtask = models.ForeignKey(
-        Task, related_name='%(class)ss', on_delete=models.CASCADE)
+        Task, related_name=RELATED_NAME, on_delete=models.CASCADE)
 
 
 class Reminder(models.Model):
@@ -72,4 +73,4 @@ class Reminder(models.Model):
     description = models.TextField(max_length=254)
     date = models.DateTimeField(null=True, default=None)
     task = models.ForeignKey(
-        Task, related_name='%(class)ss', on_delete=models.CASCADE)
+        Task, related_name=RELATED_NAME, on_delete=models.CASCADE)
