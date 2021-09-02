@@ -9,7 +9,7 @@ from rest_framework import exceptions
 import firebase_admin
 from firebase_admin import credentials, auth
 
-from .exceptions import InvalidAuthToken
+from .exceptions import ExpiredIdTokenError, InvalidAuthToken, RevokedIdTokenError
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,9 +26,8 @@ class FirebaseAuthentication(authentication.BaseAuthentication):
         method = request.META.get('REQUEST_METHOD')
         route = request.META.get('PATH_INFO')
 
-        if auth_header:
-            if (' ' in auth_header):
-                auth_header = auth_header.split(' ')[1]
+        if auth_header and ' ' in auth_header:
+            auth_header = auth_header.split(' ')[1]
 
         if method == "POST" and route == "/users/":
             try:
@@ -41,13 +40,17 @@ class FirebaseAuthentication(authentication.BaseAuthentication):
                     avatar=request.data.get('avatar'),
                     email=request.data.get('email'),
                 )
-                
+
                 Users.is_authenticated = True
                 return (user, None)
 
         try:
             decoded_token = auth.verify_id_token(auth_header)
-        except:
+        except auth.RevokedIdTokenError:
+            raise RevokedIdTokenError
+        except auth.ExpiredIdTokenError:
+            raise ExpiredIdTokenError
+        except auth.InvalidIdTokenError:
             raise InvalidAuthToken
 
         if not auth_header or not decoded_token:
