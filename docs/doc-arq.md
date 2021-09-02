@@ -189,15 +189,8 @@ Figure 2. Representação gráfica com diagrama UML para representar os componen
 
 ## 8. Implantação
 
-O arquiteto deve descrever as configurações de distribuição dos componentes de software na área física em que serão implantados.
-
-Exemplo:
-
-![alt_text](images/image3.jpg "image_tooltip")
-
-Figure 3 Representação de um cenário para implantação
-
-Read more:[http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx#ixzz5AE2cXUmI](http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx#ixzz5AE2cXUmI)
+![Diagrama de Implantação](images/Implantação Taskiano - Diagrama de Implantação.jpeg)
+Figure 3. Representação gráfica da fase de implantação.
 
 ## 9. Referências
 
