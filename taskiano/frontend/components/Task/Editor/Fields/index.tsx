@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-import ToogleButton from "../../ToogleButton";
+import ToogleButton from "../../../ToogleButton";
 
 import styles from "./styles.module.scss";
 
@@ -9,7 +9,7 @@ interface FieldProps {
   onChange: (value: string | number | boolean | any) => void;
 }
 
-export const NoteTask = (props: FieldProps) => {
+const NoteTaskFc = (props: FieldProps) => {
   return (
     <div className={`${styles.noteEditor} ${styles.general}`}>
       <label>Editor</label>
@@ -22,7 +22,7 @@ export const NoteTask = (props: FieldProps) => {
   );
 };
 
-export const TimerTask = (props: FieldProps) => {
+const TimerTaskFc = (props: FieldProps) => {
   return (
     <label className={`${styles.timerForm} ${styles.general}`}>
       Tempo Estimado/Limite
@@ -35,7 +35,7 @@ export const TimerTask = (props: FieldProps) => {
   );
 };
 
-export const TitleTask = (props: FieldProps) => {
+const TitleTaskFc = (props: FieldProps) => {
   return (
     <label className={`${styles.titleForm} ${styles.general}`}>
       Título
@@ -48,7 +48,7 @@ export const TitleTask = (props: FieldProps) => {
   );
 };
 
-export const FixTask = (props: FieldProps) => {
+const FixTaskFc = (props: FieldProps) => {
   return (
     <label className={`${styles.fixedButtonForm} ${styles.general}`}>
       Fixado
@@ -57,7 +57,7 @@ export const FixTask = (props: FieldProps) => {
   );
 };
 
-export const SelectPriority = (props: FieldProps) => {
+const SelectPriorityFc = (props: FieldProps) => {
   return (
     <label className={`${styles.priorityForm} ${styles.general}`}>
       Prioridade
@@ -77,3 +77,9 @@ export const SelectPriority = (props: FieldProps) => {
     </label>
   );
 };
+
+export const NoteTask = memo(NoteTaskFc);
+export const TimerTask = memo(TimerTaskFc);
+export const TitleTask = memo(TitleTaskFc);
+export const FixTask = memo(FixTaskFc);
+export const SelectPriority = memo(SelectPriorityFc);
