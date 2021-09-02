@@ -8,6 +8,18 @@ class NoAuthToken(APIException):
     default_code = 'no_auth_token'
 
 
+class ExpiredIdTokenError(APIException):
+    status_code = status.HTTP_401_UNAUTHORIZED
+    default_detail = 'Authentication token expired'
+    default_code = 'expiredid_token_error'
+
+
+class RevokedIdTokenError(APIException):
+    status_code = status.HTTP_401_UNAUTHORIZED
+    default_detail = 'Authentication token revoked'
+    default_code = 'revoked_id_token_error'
+
+
 class InvalidAuthToken(APIException):
     status_code = status.HTTP_401_UNAUTHORIZED
     default_detail = 'Invalid authentication token provided'
