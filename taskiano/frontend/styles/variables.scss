@@ -1,13 +1,21 @@
+$blueDark: #24283f;
 $dark: #282a36;
 $darker: #21232d;
 $darkForce: #111218;
 $purple: #ab70ff;
 $orange: #ffa039;
-$hightPurple: #832CFF;
-$hightOrange: #FF901A;
+$hightPurple: #832cff;
+$hightOrange: #ff901a;
 $gray: #797979;
+$gray-dark: #354f6e;
 $white-gray: #d8d8d8;
 $white: #f1f1f1;
+$red: #ff6363;
+$orangeDark: #ff7055;
+$gold: #ff8f36;
+$yellow: #eab521;
+$cyan: #8be9fd;
+$green: #3ae651;
 
 @mixin max-size-percent() {
   height: 100%;
@@ -61,11 +69,13 @@ $white: #f1f1f1;
   -webkit-text-fill-color: transparent;
 }
 
-@mixin flex-box(
-  $direction: row,
-  $justify: normal,
-  $align: center,
-) {
+@mixin font-hight-hallowen-gradient() {
+  background: -webkit-linear-gradient($hightPurple 15%, $hightOrange 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin flex-box($direction: row, $justify: normal, $align: center) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
