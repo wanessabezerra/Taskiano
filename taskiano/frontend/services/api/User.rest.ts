@@ -1,34 +1,29 @@
 import { api } from "./";
-import type { User as UserType } from "../../@types";
+import type { User } from "../../@types";
 
-interface CreateProps {
-  userData: UserType;
-  token: string;
-}
+type UserP = User | undefined;
 
 export const UserRest = {
-  async create(props: CreateProps): Promise<UserType | undefined> {
+  async create(userData: User, token: string): Promise<UserP> {
     return api
-      .post("/users/", props.userData, {
+      .post("/users/", userData, {
         headers: {
-          Authorization: props.token,
+          Authorization: token,
         },
       })
       .then(
         (res) => {
-          return res.data;
+          return res.data.results;
         },
         (error) => {
           console.log(error);
         }
       );
   },
-  async get(id: string | undefined): Promise<UserType | undefined> {
+  async get(id: string, token: string): Promise<UserP> {
     return api
-      .get("/users/", {
-        headers: {
-          Authorization: id,
-        },
+      .get(`/users/${id}/`, {
+        headers: { Authorization: token },
       })
       .then(
         (res) => {
