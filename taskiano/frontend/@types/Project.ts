@@ -3,12 +3,13 @@ import Task from "./Task";
 type Project = {
   id?: string;
   name?: string;
-  createDate?: Date;
-  completeDate?: Date;
+  created_at?: Date;
+  closed_in?: Date;
   description?: string;
-  color?: string;
+  color?: number;
   hasArchived?: boolean;
-  tasks?: Array<Task>;
+  tasks?: Task[];
+  user?: string;
 };
 
 export default Project;
