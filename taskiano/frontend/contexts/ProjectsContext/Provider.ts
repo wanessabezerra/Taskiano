@@ -1,10 +1,11 @@
-import { createContext } from "react";
-import type { Project, TaskType } from "../../@types";
+import { createContext } from 'use-context-selector';
+import type { Project } from "../../@types";
 
-type ProjectsContextType = {
-  projects?: Project[];
-  create: (project: Project) => void;
-  closeTask: (task: TaskType) => void;
+export type ProjectsContextType = {
+  projects: Project[];
+  create: (project: Project) => Promise<void>;
+  archive: (project: string) => Promise<void>;
+  unArchive: (project: string) => Promise<void>;
 };
 
 export const ProjectsContext = createContext({} as ProjectsContextType);

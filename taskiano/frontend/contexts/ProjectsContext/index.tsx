@@ -1,77 +1,106 @@
-import { ReactNode, useState } from "react";
-
-import useSWR from "swr";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 
 import { useAuth } from "../../hooks/useAuth";
-import { ProjectRest, TaskRest } from "../../services/api";
+import { ProjectRest } from "../../services/api";
 
 import { ProjectsContext } from "./Provider";
 
-import type { Project, TaskType } from "../../@types";
+import type { Project } from "../../@types";
+import type { NextRouter } from "next/router";
 
 interface ProjectsContextProviderProps {
+  router: NextRouter;
   children: ReactNode;
 }
 
-const mock_projects = [
-  { name: "UFRN" },
-  { name: "Curso Técnico IMD" },
-  { name: "Lista de Compras" },
-  { name: "Trabalho" },
-  { name: "Curso Online" },
-  { name: "Curso Online" },
-  { name: "Curso Online" },
-  { name: "Curso Online" },
-  { name: "Curso Online" },
-  { name: "Curso Online" },
-];
-
 export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
-  const [projects, setProjects] = useState<Project[]>();
-  const { getToken } = useAuth();
+  const [projects, setProjects] = useState<Project[]>([]);
+  const token = useAuth((ctx) => ctx.token);
 
-  const { mutate } = useSWR("task/", async () => {
-    let tasks: any = await TaskRest.get(await getToken());
-    let projects = [] as Project[];
+  const preFetchProjects = useCallback(async () => {
+    let res = {} as any;
 
-    for (var task of tasks) {
-      const dateInit = new Date(task.timer);
-      const dateCurr = new Date();
+    do {
+      res = await ProjectRest.get(token);
+      setProjects(projects.concat(res.results));
+    } while (res?.next);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
 
-      const diff = Number(dateInit) - Number(dateCurr);
+  const fetchTasks = useCallback(async () => {
+    const _projects = [];
 
-      task.remainingTime = Math.abs(diff / 1000);
+    let res = await ProjectRest.get(token);
+    _projects.push(...(res?.results ?? []));
+
+    while (res.next !== null) {
+      res = await ProjectRest.get(token, res.next);
+      _projects.push(...res.results);
     }
 
-    for (var project of mock_projects) {
-      projects.push({
-        name: project.name,
-        tasks: tasks,
-      });
-    }
+    setProjects(_projects);
+  }, [token]);
 
-    setProjects(projects);
-  });
+  const updateProjects = useCallback(
+    (project?: Project) => {
+      project
+        ? setProjects(
+            projects.map((changedProject) =>
+              changedProject.id === project.id ? project : changedProject
+            )
+          )
+        : fetchTasks();
+    },
+    [fetchTasks, projects]
+  );
 
-  async function create(data: Project) {
-    const token = await getToken();
-    const project = await ProjectRest.create({ data, token });
-    if (project) setProjects([...(projects ?? []), project]);
-    mutate();
-  }
+  const create = useCallback(
+    async (data: Project) => {
+      const project = await ProjectRest.create(data, token);
+      project && setProjects(projects.concat(project));
+    },
+    [token, projects]
+  );
 
-  async function closeTask(task: TaskType) {
-    const token = await getToken();
-    await TaskRest.close({ taskData: task, token });
-    mutate();
-  }
+  const archive = useCallback(
+    async (id: string) => {
+      await ProjectRest.archive(id, token);
+    },
+    [token]
+  );
+
+  const unArchive = useCallback(
+    async (id: string) => {
+      await ProjectRest.unArchive(id, token);
+    },
+    [token]
+  );
+
+  /**
+   * Auto update tasks when project is updated
+   */
+  useEffect(() => {
+    if (projects.length === 0 && token) preFetchProjects();
+    else if (token) updateProjects();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
+
+  /**
+   * Auto update tasks every 2 minutes since last update
+   */
+  useEffect(() => {
+    return () =>
+      clearTimeout(setTimeout(() => token && updateProjects(), 120000));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projects]);
 
   return (
     <ProjectsContext.Provider
       value={{
         projects,
         create,
-        closeTask
+        archive,
+        unArchive,
       }}
     >
       {props.children}
