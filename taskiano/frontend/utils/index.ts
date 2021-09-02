@@ -1,11 +1,25 @@
 import type { Weekday, WeekdayPercent } from "../@types";
+import { TaskKey } from "../contexts/TasksContext/Provider";
+import StyleColors from "../styles/colors";
 
 const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 const weekSeconds = 604800;
 
-const colors = ["#ff6363", "#ff7055", "#ff8f36", "#eab521", "#8be9fd"];
+const colors = [
+  StyleColors.red,
+  StyleColors.orangeDark,
+  StyleColors.gold,
+  StyleColors.yellow,
+  StyleColors.cyan,
+];
+
+export const sleepSync = (ms: number, func?: () => any) => {
+  const end = new Date().getTime() + ms;
+  while (new Date().getTime() < end);
+  func && func();
+};
 
 export function selectColorByTime(remainingTime: number) {
   let value = "";
@@ -30,23 +44,18 @@ export function RemainsFormatText(remainingTime: number) {
   let text = "";
 
   if (_reaminingTime <= minuteSeconds) {
-    text = "Seg";
-    if (remainingTime > 1) text += "'s";
+    text = remainingTime > 1 ? "Seg's" : "Seg";
   } else if (_reaminingTime > minuteSeconds && _reaminingTime < hourSeconds) {
-    text = "Min";
-    if (remainingTime >= minuteSeconds * 2) text += "'s";
+    text = remainingTime >= minuteSeconds * 2 ? "Min's" : "Min";
   } else if (_reaminingTime > hourSeconds && _reaminingTime < daySeconds) {
-    text = "Hora";
-    if (remainingTime >= hourSeconds * 2) text += "s";
+    text = remainingTime >= hourSeconds * 2 ? "Horas" : "Hora";
   } else if (_reaminingTime > daySeconds && _reaminingTime < weekSeconds) {
-    text = "Dia";
-    if (remainingTime >= daySeconds * 2) text += "s";
+    text = remainingTime >= daySeconds * 2 ? "Dias" : "Dia";
   } else {
     text = "Semana(s)";
   }
 
-  if (remainingTime > 0) return text;
-  else return text + " atrás";
+  return remainingTime > 0 ? text : text + " atrás";
 }
 
 export function RemainsFormatValue(remainingTime: number) {
@@ -96,15 +105,22 @@ export function MapPercentageOfMaxPerDay(array: Weekday[]): WeekdayPercent[] {
   return result;
 }
 
-interface getDescriptionTimeProps {
-  remainingTime?: number;
-}
-
-export function getDescriptionTime({
-  remainingTime = 0,
-}: getDescriptionTimeProps) {
+export function getDescriptionTime(remainingTime: number = 0) {
   const remainsTime = RemainsFormatValue(remainingTime);
   const reamainsTimeText = RemainsFormatText(remainingTime);
 
   return `${remainsTime} ${reamainsTimeText}`;
+}
+
+export const getTasksOfProject = (tasks: TaskKey[], projectId?: string) => {
+  return tasks.filter((task) => task.projectId === projectId)[0]?.tasks;
+};
+
+export function calcRemainingTime(timer?: string | Date) {
+  const dateInit = new Date(timer || Date.now());
+  const dateCurr = new Date();
+
+  const diff = Number(dateInit) - Number(dateCurr);
+
+  return Math.ceil(diff / 1000);
 }
