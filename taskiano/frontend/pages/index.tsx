@@ -1,15 +1,19 @@
-import React from "react";
+import React, { memo, useCallback } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
+import firebase from "firebase/app";
+
+import Particles from "react-tsparticles";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillTwitterCircle, AiFillGithub } from "react-icons/ai";
-import Particles from "react-tsparticles";
 
 import { useAuth } from "../hooks/useAuth";
 
 import logo from "../assets/icons/logo_primary.svg";
+
+import colors from "../styles/colors";
 import styles from "../styles/Login.module.scss";
 
 interface ButtonProviderProps {
@@ -31,12 +35,24 @@ const ButtonProvider = (props: ButtonProviderProps) => {
   );
 };
 
-function Login() {
-  const { user, signIn } = useAuth();
+const Logo = memo(function LogoFC() {
+  return (
+    <div className={styles.logo}>
+      <div className={styles.logoContainer}>
+        <Image src={logo} alt="logo" />
+      </div>
+      <h1 className={styles.logoText}>TASKIANO</h1>
+    </div>
+  );
+});
 
-  async function handleSingIn(provider: string) {
-    if (!user) await signIn(provider);
-  }
+function Login() {
+  const signIn = useAuth((ctx) => ctx.signIn);
+
+  const handleSingIn = useCallback(
+    (provider: string) => signIn(provider),
+    [signIn]
+  );
 
   return (
     <div className={styles.pageAuth}>
@@ -52,71 +68,65 @@ function Login() {
           options={{
             fpsLimit: 60,
             interactivity: {
-              detectsOn: "canvas",
+              detect_on: "canvas",
               events: {
-                onClick: {
-                  enable: true,
-                  mode: "push",
-                },
-                onHover: {
-                  enable: true,
-                  parallax: {
-                    enable: true,
-                  },
-                },
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
                 resize: true,
               },
               modes: {
-                bubble: {
-                  distance: 400,
-                  duration: 2,
-                  opacity: 0.8,
-                  size: 40,
-                },
-                push: {
-                  quantity: 4,
-                },
+                repulse: { distance: 200, duration: 0.4 },
+                push: { particles_nb: 4 },
               },
             },
             particles: {
               color: {
-                value: "#ffffff",
+                value: [
+                  colors.purple,
+                  colors.orange,
+                  colors.highPurple,
+                  colors.highOrange,
+                  colors.white,
+                ],
               },
               move: {
+                attract: {
+                  enable: false,
+                  rotate: { x: 800, y: 800 },
+                },
                 direction: "none",
                 enable: true,
-                outMode: "bounce",
+                outModes: { default: "destroy" },
                 random: false,
-                speed: 4,
+                speed: 3,
                 straight: false,
+                trail: { enable: true, length: 30 },
               },
-              number: {
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-                value: 80,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: "circle",
-              },
+              number: { density: { enable: true, area: 400 }, value: 0 },
+              opacity: { value: 0.4 },
+              shape: { type: "circle" },
               size: {
-                random: true,
-                value: 5,
+                value: 25,
+                animation: {
+                  startValue: "min",
+                  enable: true,
+                  minimumValue: 1,
+                  speed: 2,
+                  destroy: "max",
+                  sync: true,
+                },
               },
             },
             detectRetina: true,
+            emitters: {
+              direction: "none",
+              rate: { quantity: 5, delay: 0.3 },
+              size: { width: 0, height: 0 },
+              position: { x: 50, y: 50 },
+            },
           }}
         />
-        <div className={styles.logo}>
-          <div className={styles.logoContainer}>
-            <Image src={logo} alt="logo" />
-          </div>
-          <h1 className={styles.logoText}>TASKIANO</h1>
-        </div>
+        <Logo />
       </aside>
 
       <main>
@@ -124,7 +134,7 @@ function Login() {
           <span>Entrar com...</span>
           <ButtonProvider
             name="Google"
-            provider="google"
+            provider={firebase.auth.GoogleAuthProvider.PROVIDER_ID}
             handleSingIn={handleSingIn}
           >
             <FcGoogle />
@@ -132,7 +142,7 @@ function Login() {
 
           <ButtonProvider
             name="Twitter"
-            provider="twitter"
+            provider={firebase.auth.TwitterAuthProvider.PROVIDER_ID}
             handleSingIn={handleSingIn}
           >
             <AiFillTwitterCircle color="#57A9E3" />
@@ -140,7 +150,7 @@ function Login() {
 
           <ButtonProvider
             name="Facebook"
-            provider="facebook"
+            provider={firebase.auth.FacebookAuthProvider.PROVIDER_ID}
             handleSingIn={handleSingIn}
           >
             <FaFacebook color="#3D5694" />
@@ -148,7 +158,7 @@ function Login() {
 
           <ButtonProvider
             name="GitHub"
-            provider="github"
+            provider={firebase.auth.GithubAuthProvider.PROVIDER_ID}
             handleSingIn={handleSingIn}
           >
             <AiFillGithub />
