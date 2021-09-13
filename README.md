@@ -14,8 +14,8 @@ O projeto Taskiano é um software de gestão de tarefas que visa a otimização 
 
 ## Documentos
 
-| Nome                                  | Link                                                                                       |
-| ------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Nome                                  | Link                                                                                      |
+| ------------------------------------- | ----------------------------------------------------------------------------------------- |
 | Plano de Iteração                     | [Clique aqui ➡️](docs/doc-iteracao.md)                                                     |
 | Documento de Visão                    | [Clique aqui ➡️](docs/doc-visao.md)                                                        |
 | Documento de Modelos                  | [Clique aqui ➡️](docs/doc-modelos.md)                                                      |
@@ -24,7 +24,7 @@ O projeto Taskiano é um software de gestão de tarefas que visa a otimização 
 | Relatório de Testes de Módulo/Sistema | [Clique aqui ➡️](docs/doc-us-tests.md)                                                     |
 | Análise de Pontos de Função - APF     | [Clique aqui ➡️](docs/doc-apf.md)                                                          |
 | Termo de Abertura de Projeto          | [Clique aqui ➡️](docs/doc-project-charter.md)                                              |
-| Figma: Conceito e design              | [Clique aqui ➡️](https://www.figma.com/file/Mflem8uxMXESz9KeoSydEo/Platform?node-id=0%3A1)    |
+| Figma: Conceito e design              | [Clique aqui ➡️](https://www.figma.com/file/Mflem8uxMXESz9KeoSydEo/Platform?node-id=0%3A1) |
 
 ## Tecnologias utilizadas para o desenvolvimento
 
@@ -32,11 +32,13 @@ Nextjs, TS/JS, SASS, Django, MariaDB.
 
 ### Tutoriais
 
-| Nome       | Descrição                           | Link                                                                                             |
-| ---------- | ----------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Nome       | Descrição                           | Link                                                                                            |
+| ---------- | ----------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Django     | Primeiros passos com o Django.      | [Clique aqui ➡️](https://django-portuguese.readthedocs.io/en/1.0/intro/index.html)               |
 | Django     | Escrevendo seu primeiro app Django. | [Clique aqui ➡️](https://docs.djangoproject.com/pt-br/3.2/intro/tutorial01/)                     |
 | Django     | Introdução ao Django                | [Clique aqui ➡️](https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Django/Introduction) |
+| Django     | Local deploying                     | [Clique aqui ➡️](taskiano/backend/docs/local.md)                                                 |
+| Heroku     | Deploying no Heroku                 | [Clique aqui ➡️](taskiano/backend/docs/heroku.md)                                                |
 | Typescript | Typescript: Tipos e Interfaces      | [Clique aqui ➡️](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)      |
 | Reactjs    | Hello World: Reactjs                | [Clique aqui ➡️](https://pt-br.reactjs.org/docs/hello-world.html)                                |
 | Next.js    | Começando: Next.js                  | [Clique aqui ➡️](https://nextjs.org/docs/getting-started)                                        |
