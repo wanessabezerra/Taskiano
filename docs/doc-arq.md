@@ -146,7 +146,6 @@ Nesta fase selecionar User Stories com cenários escolhidos para a validação d
 
 Exemplo:
 
-
 <table>
   <td>User Story</td><td>Motivos da escolha e descrição</td>
   <tr>
