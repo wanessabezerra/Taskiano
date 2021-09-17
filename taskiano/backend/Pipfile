@@ -13,6 +13,9 @@ gunicorn = "*"
 django-heroku = "*"
 django-cors-headers = "*"
 firebase-admin = "*"
+django-filter = "*"
+termcolor = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
