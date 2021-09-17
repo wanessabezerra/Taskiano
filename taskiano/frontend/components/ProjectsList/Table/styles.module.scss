@@ -70,7 +70,9 @@
   }
 
   .project {
+    cursor: pointer;
     width: 10%;
+    transition: all 0.3s ease-in-out;
   }
 
   .whiteSpace {
@@ -82,6 +84,7 @@
       font-size: 2rem;
       width: 15%;
       padding-left: 1rem;
+
       :after {
         left: 0;
       }
@@ -101,7 +104,7 @@
     width: 3rem;
     height: 4rem;
 
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out;
 
     text-indent: 100%;
     white-space: nowrap;
