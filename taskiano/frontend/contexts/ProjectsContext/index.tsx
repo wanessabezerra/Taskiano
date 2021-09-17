@@ -15,6 +15,8 @@ interface ProjectsContextProviderProps {
 
 export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
   const [projects, setProjects] = useState<Project[]>([]);
+
+  const authenticated = useAuth((ctx) => ctx.authenticated);
   const token = useAuth((ctx) => ctx.token);
 
   const preFetchProjects = useCallback(async () => {
@@ -22,23 +24,22 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
 
     do {
       res = await ProjectRest.get(token);
-      setProjects(projects.concat(res.results));
+      res && setProjects(projects.concat(res.results));
     } while (res?.next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   const fetchTasks = useCallback(async () => {
     const _projects = [];
+    let res = {} as any;
 
-    let res = await ProjectRest.get(token);
-    _projects.push(...(res?.results ?? []));
-
-    while (res.next !== null) {
-      res = await ProjectRest.get(token, res.next);
-      _projects.push(...res.results);
-    }
+    do {
+      res = await ProjectRest.get(token);
+      res && _projects.push(...res.results);
+    } while (res?.next);
 
     setProjects(_projects);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   const updateProjects = useCallback(
@@ -54,12 +55,27 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
     [fetchTasks, projects]
   );
 
+  const updateDropTask = useCallback(
+    (id: string) => {
+      setProjects(projects.filter((project) => project.id !== id));
+    },
+    [projects]
+  );
+
   const create = useCallback(
     async (data: Project) => {
       const project = await ProjectRest.create(data, token);
       project && setProjects(projects.concat(project));
     },
     [token, projects]
+  );
+
+  const update = useCallback(
+    async (id: string, data: Project) => {
+      const project = await ProjectRest.update(id, data, token);
+      project && updateProjects(project);
+    },
+    [token, updateProjects]
   );
 
   const archive = useCallback(
@@ -76,21 +92,44 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
     [token]
   );
 
+  const getProjectColor = useCallback(
+    (id: string) => {
+      const project = projects.find((_project) => _project.id === id);
+      const color = project?.color;
+
+      return `#${color?.toString(16)}`;
+    },
+    [projects]
+  );
+
+  const get = useCallback(
+    (id?: string) => projects.find((project) => project.id === id),
+    [projects]
+  );
+
+  const deleteProject = useCallback(
+    async (id: string) => {
+      await ProjectRest.delete(id, token);
+      updateDropTask(id);
+    },
+    [token, updateDropTask]
+  );
+
   /**
    * Auto update tasks when project is updated
    */
   useEffect(() => {
-    if (projects.length === 0 && token) preFetchProjects();
+    if (projects.length === 0 && authenticated) preFetchProjects();
     else if (token) updateProjects();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+  }, [authenticated]);
 
   /**
    * Auto update tasks every 2 minutes since last update
    */
   useEffect(() => {
     return () =>
-      clearTimeout(setTimeout(() => token && updateProjects(), 120000));
+      clearTimeout(setTimeout(() => authenticated && updateProjects(), 120000));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projects]);
 
@@ -98,9 +137,13 @@ export function ProjectsContextProvider(props: ProjectsContextProviderProps) {
     <ProjectsContext.Provider
       value={{
         projects,
+        get,
         create,
+        update,
+        deleteProject,
         archive,
         unArchive,
+        getProjectColor,
       }}
     >
       {props.children}
