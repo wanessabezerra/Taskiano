@@ -1,6 +1,5 @@
-import React, { memo, useCallback } from "react";
+import React, { useCallback } from "react";
 import Head from "next/head";
-import Image from "next/image";
 
 import firebase from "firebase/app";
 
@@ -11,10 +10,9 @@ import { AiFillTwitterCircle, AiFillGithub } from "react-icons/ai";
 
 import { useAuth } from "../hooks/useAuth";
 
-import logo from "../assets/icons/logo_primary.svg";
-
 import colors from "../styles/colors";
 import styles from "../styles/Login.module.scss";
+import Logo from "../components/Logo";
 
 interface ButtonProviderProps {
   name: string;
@@ -34,17 +32,6 @@ const ButtonProvider = (props: ButtonProviderProps) => {
     </button>
   );
 };
-
-const Logo = memo(function LogoFC() {
-  return (
-    <div className={styles.logo}>
-      <div className={styles.logoContainer}>
-        <Image src={logo} alt="logo" />
-      </div>
-      <h1 className={styles.logoText}>TASKIANO</h1>
-    </div>
-  );
-});
 
 function Login() {
   const signIn = useAuth((ctx) => ctx.signIn);
@@ -69,15 +56,7 @@ function Login() {
             fpsLimit: 60,
             interactivity: {
               detect_on: "canvas",
-              events: {
-                onhover: { enable: true, mode: "repulse" },
-                onclick: { enable: true, mode: "push" },
-                resize: true,
-              },
-              modes: {
-                repulse: { distance: 200, duration: 0.4 },
-                push: { particles_nb: 4 },
-              },
+              events: { resize: true },
             },
             particles: {
               color: {
@@ -94,12 +73,9 @@ function Login() {
                   enable: false,
                   rotate: { x: 800, y: 800 },
                 },
-                direction: "none",
                 enable: true,
-                outModes: { default: "destroy" },
-                random: false,
                 speed: 3,
-                straight: false,
+                outModes: { default: "destroy" },
                 trail: { enable: true, length: 30 },
               },
               number: { density: { enable: true, area: 400 }, value: 0 },
@@ -126,7 +102,13 @@ function Login() {
             },
           }}
         />
-        <Logo />
+        
+        <div className={styles.logo}>
+          <div className={styles.logoContainer}>
+            <Logo />
+          </div>
+          <h1 className={styles.logoText}>TASKIANO</h1>
+        </div>
       </aside>
 
       <main>
