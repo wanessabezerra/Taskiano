@@ -19,7 +19,7 @@ export function getProvider(providerId: string): firebase.auth.AuthProvider {
   }
 }
 
-export function assembleDataUser(user: FirebaseUser) {
+export function assembleUser(user: FirebaseUser) {
   return {
     id: user.uid,
     name: user.displayName,
@@ -30,7 +30,7 @@ export function assembleDataUser(user: FirebaseUser) {
 
 export const ErrorAccountExists = (code: string) => {
   return code === "auth/account-exists-with-different-credential";
-}
+};
 
 export const auth = app.auth();
 
