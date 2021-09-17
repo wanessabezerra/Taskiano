@@ -7,12 +7,13 @@ import { RiAddFill } from "react-icons/ri";
 import { useTasks } from "../../../hooks/useTasks";
 import { useProjects } from "../../../hooks/useProjects";
 
-import CreateProject from "../../../components/CreateProject";
 import ProjectsList from "../../../components/ProjectsList";
 import ProjectsWidget from "../../../components/ProjectsWidget";
 import Loader from "../../../components/Loader";
 
 import styles from "./styles.module.scss";
+import { useAuth } from "../../../hooks/useAuth";
+import CreateProject from "../../../components/Project/Create";
 
 function Projects() {
   const [viewIn, setViewIn] = useState<"widgets" | "list">("widgets");
@@ -20,6 +21,7 @@ function Projects() {
 
   const projects = useProjects((ctx) => ctx.projects);
   const tasks = useTasks((value) => value.tasks);
+  const token = useAuth((ctx) => ctx.token);
 
   const viewHandle = {
     list: () => setViewIn("list"),
@@ -30,7 +32,7 @@ function Projects() {
 
   return (
     <div className={styles.projectsContent}>
-      <Loader isLoading={!projects?.length || !tasks?.length} />
+      <Loader isLoading={!token} />
       {addProject && <CreateProject close={() => setAddProject(false)} />}
 
       <div className={styles.projectViewOptions}>

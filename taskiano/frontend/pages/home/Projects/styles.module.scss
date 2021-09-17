@@ -46,6 +46,7 @@
 
     .title {
       @include font-bebas-neue($size: 3.6rem);
+      @include block-text-select();
     }
 
     .addProject {
@@ -62,6 +63,8 @@
         font-size: 1.3rem;
         color: $darker;
       }
+
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         filter: 0px 3px 3px rgba(0, 0, 0, 0.8);
