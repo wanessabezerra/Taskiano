@@ -1,6 +1,7 @@
 type TaskType = {
   id?: string;
   title?: string;
+  number?: number;
   timer?: string | Date;
   remainingTime?: number;
   note?: string;
