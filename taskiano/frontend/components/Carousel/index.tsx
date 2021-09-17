@@ -54,7 +54,7 @@ function Carousel(props: CarouselProps) {
         props.autoInfiniteScrollInterval ?? 3000
       );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.autoInfiniteScrollInterval, currentPage, props.autoInfiniteScroll]);
+  }, [currentPage]);
 
   return (
     <div className={`${styles.carouselContainer}  ${props?.className}`}>
