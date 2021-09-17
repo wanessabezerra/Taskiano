@@ -15,6 +15,7 @@ import Loader from "../components/Loader";
 import "../services/Firebase/initService";
 import "../styles/globals.scss";
 import "react-toastify/dist/ReactToastify.css";
+import { HistoryContextProvider } from "../contexts/HistoryContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -33,15 +34,22 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <ToastContainer theme="dark" className={stylesToast.toast} />
+      <ToastContainer
+        theme="dark"
+        className={stylesToast.toast}
+        position="bottom-right"
+      />
+
       <Loader isLoading={loading} />
 
       <AuthContextProvider router={router}>
-        <ProjectsContextProvider router={router}>
-          <TasksContextProvider>
-            <Component {...pageProps} />
-          </TasksContextProvider>
-        </ProjectsContextProvider>
+        <HistoryContextProvider>
+          <ProjectsContextProvider router={router}>
+            <TasksContextProvider>
+              <Component {...pageProps} />
+            </TasksContextProvider>
+          </ProjectsContextProvider>
+        </HistoryContextProvider>
       </AuthContextProvider>
     </>
   );
