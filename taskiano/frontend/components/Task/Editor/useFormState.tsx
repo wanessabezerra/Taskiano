@@ -46,7 +46,10 @@ function useFormState(props: FormStateProps) {
       if (note !== props.task.note) data.note = note;
       if (fixed !== props.task.fixed) data.fixed = fixed;
       if (priority !== props.task.priority) data.priority = priority;
-      if (timer !== props.task.timer) data.timer = timer;
+      if (timer !== props.task.timer) {
+        data.created_at = new Date();
+        data.timer = timer;
+      }
 
       operation = () => update(props.task?.id, data);
     } else {
@@ -72,7 +75,7 @@ function useFormState(props: FormStateProps) {
 
       props.close();
     } catch (err) {
-      toast.error(err.message);
+      toast.error(String(err));
     }
   };
 

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
 import { toast } from "react-toastify";
+
 import { RiEdit2Fill } from "react-icons/ri";
 import { BsFillTrashFill } from "react-icons/bs";
 import { IoMdArchive } from "react-icons/io";
 
+import EditorTask from "../Editor";
 import Modal from "../../Modal";
 import MarkdownPreview from "../../MarkdownPreview";
-import EditorTask from "../Editor";
 
 import { useTasks } from "../../../hooks/useTasks";
+import { useProjects } from "../../../hooks/useProjects";
 
 import type { TaskType } from "../../../@types";
 
@@ -24,6 +26,7 @@ interface ViewProps {
 function View(props: ViewProps) {
   const [editTask, setEditTask] = useState(false);
   const deleteTask = useTasks((value) => value.deleteTask);
+  const getProjectColor = useProjects((value) => value.getProjectColor);
 
   const tryDeleteTask = () => {
     try {
@@ -35,7 +38,7 @@ function View(props: ViewProps) {
 
       props.onClose();
     } catch (err) {
-      toast.error(err.message);
+      console.error(err);
     }
   };
 
@@ -68,6 +71,7 @@ function View(props: ViewProps) {
             close={() => setEditTask(false)}
             task={props.task}
             projectId={props.task.project}
+            projectColor={getProjectColor(props.task.project)}
           />
         ) : (
           <MarkdownPreview

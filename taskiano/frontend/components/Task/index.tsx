@@ -42,7 +42,7 @@ function Task({ remainingTime, ...props }: TaskProps) {
           )}
 
           <h1 className={styles.timeRemains} onClick={() => setViewTask(true)}>
-            {props.hideTimer ? (
+            {props.hideTimer || !remainingTime ? (
               props.title
             ) : (
               <>
