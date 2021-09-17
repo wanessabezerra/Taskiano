@@ -1,37 +1,23 @@
 import { api } from "./";
 import type { User } from "../../@types";
 
-type UserP = User | undefined;
-
 export const UserRest = {
-  async create(userData: User, token: string): Promise<UserP> {
+  async create(userData: User, token: string): Promise<User | undefined> {
     return api
-      .post("/users/", userData, {
-        headers: {
-          Authorization: token,
-        },
-      })
-      .then(
-        (res) => {
-          return res.data.results;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+      .post("/users/", userData, { headers: { Authorization: token } })
+      .then((res) => res.data)
+      .catch((error) => console.error(error));
   },
-  async get(id: string, token: string): Promise<UserP> {
+  async get(id: string, token: string): Promise<User | undefined> {
     return api
-      .get(`/users/${id}/`, {
-        headers: { Authorization: token },
-      })
-      .then(
-        (res) => {
-          return res.data;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+      .get(`/users/${id}/`, { headers: { Authorization: token } })
+      .then((res) => res.data)
+      .catch((error) => console.error(error));
+  },
+  async getScore(id?: string, token?: string | null): Promise<number | undefined> {
+    return api
+      .get(`/score/${id}/`, { headers: { Authorization: token } })
+      .then((res) => res.data.score)
+      .catch((error) => console.error(error));
   },
 };

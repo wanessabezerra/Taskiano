@@ -13,7 +13,14 @@
   .statusTasks {
     @include flex-box($align: center, $justify: space-around);
     @include font-bebas-neue($size: 1.5rem);
+    @include block-text-select();
+
     gap: 0.5rem;
+
+    p {
+      text-shadow: rgba(0, 0, 0, 0.95) 0px 5px 15px
+    }
+
     .icon {
       @include flex-box($align: center, $justify: center);
 
@@ -21,6 +28,7 @@
       height: 1.3rem;
       border-radius: 50%;
       background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
       svg {
         width: 1rem;

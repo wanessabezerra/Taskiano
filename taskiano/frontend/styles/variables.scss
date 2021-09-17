@@ -65,13 +65,13 @@ $green: #3ae651;
 
 @mixin font-hallowen-gradient() {
   background: -webkit-linear-gradient($purple 15%, $orange 85%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 @mixin font-hight-hallowen-gradient() {
   background: -webkit-linear-gradient($hightPurple 15%, $hightOrange 85%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -88,4 +88,46 @@ $green: #3ae651;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: $z-index;
+}
+
+@mixin block-text-select() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@keyframes underline {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@mixin underline-text-gradient() {
+  &:after {
+    display: block;
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+    content: "";
+
+    height: 2px;
+    width: 0;
+
+    background: none repeat scroll 0 0 transparent;
+    background: currentcolor;
+
+    animation: underline 1.5s forwards;
+    transition: all 0.3s linear;
+  }
+
+  &:hover:after {
+    background: -webkit-linear-gradient($purple 15%, $orange 85%);
+  }
 }

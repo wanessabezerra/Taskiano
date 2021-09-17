@@ -1,9 +1,14 @@
 import React from "react";
-import * as format from "../../../utils";
+import { remainsFormatValue, remainsFormatText } from "../../../utils";
 
 import styles from "./styles.module.scss";
 
-function RenderTime(props: { remainingTime: number }) {
+interface RenderTimeProps {
+  remainingTime: number;
+  elapsedTime: number;
+}
+
+function RenderTime(props: RenderTimeProps) {
   if (props.remainingTime === 0)
     return (
       <div className={`${styles.countdownContent} ${styles.over}`}>
@@ -14,11 +19,11 @@ function RenderTime(props: { remainingTime: number }) {
   return (
     <div className={styles.countdownContent}>
       <div className={styles.RemainsFormatValue}>
-        {format.RemainsFormatValue(props.remainingTime)}
+        {remainsFormatValue(props.remainingTime)}
       </div>
 
       <div className={styles.RemainsFormatText}>
-        {format.RemainsFormatText(props.remainingTime)}
+        {remainsFormatText(props.remainingTime)}
       </div>
     </div>
   );

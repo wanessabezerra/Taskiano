@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import styles from "./styles.module.scss";
 
@@ -8,7 +8,7 @@ interface CheckBoxProps {
   onClick?: () => void;
 }
 
-function CheckBox(props: CheckBoxProps) {
+function CheckBoxFC(props: CheckBoxProps) {
   const [checked, setChecked] = useState(props.checked);
 
   const handleChange = () => {
@@ -35,4 +35,5 @@ function CheckBox(props: CheckBoxProps) {
   );
 }
 
+const CheckBox = memo(CheckBoxFC);
 export default CheckBox;

@@ -9,11 +9,43 @@
   .projectTitle {
     @include font-bebas-neue($size: 2rem);
 
-    background: -webkit-linear-gradient(90deg, #aa71fa 15%, #fbb366 85%);
+    background: -webkit-linear-gradient(90deg, #fbb366 15%, #aa71fa 85%);
 
     background-size: 2rem;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: transparent;
+      -webkit-text-fill-color: currentcolor;
+      filter: drop-shadow(0 0 0.5rem $darker);
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+
+      left: 50%;
+      bottom: 0;
+      content: "";
+
+      height: 2px;
+      width: 0;
+
+      background: none repeat scroll 0 0 transparent;
+      background: currentcolor;
+
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    }
+
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
   }
 
   .projectContainer {
@@ -28,7 +60,7 @@
 
     padding-bottom: 3rem;
     gap: 2rem;
-    width: 25rem;
+    width: 28rem;
 
     .projectHeader {
       @include flex-box(
@@ -103,9 +135,7 @@
     }
 
     .tasksContainer {
-      @include flex-box(
-        $direction: column,
-      );
+      @include flex-box($direction: column);
 
       gap: 2rem;
       align-self: center;

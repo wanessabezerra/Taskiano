@@ -13,7 +13,7 @@
   }
 
   .weekday {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 1.1rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -39,8 +39,6 @@
     border-radius: 8px;
 
     width: 1.3rem;
-
-    transition: transform 0.2s ease-out;
 
     &:hover {
       background: linear-gradient(180deg, $hightPurple 17%, $hightOrange 85%);

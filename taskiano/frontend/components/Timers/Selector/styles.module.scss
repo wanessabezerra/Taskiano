@@ -1,50 +1,34 @@
 @import "../../../styles/variables.scss";
 
-.selector {
-  @include flex-box($justify: center, $align: center);
-  gap: 1rem;
-
-  .selectorItem {
-    @include flex-box($justify: center, $align: center);
-
-
-    width: 1.5rem;
-    height: 1.5rem;
-
-    background: white;
-    border-radius: 50%;
-
-    svg {
-      width: 90%;
-      height: 90%;
-
-      color: $dark;
-    }
-
-    cursor: pointer;
-    transition: all 0.3s ease;
-    &:hover {
-      background: #8090af;
-
-    }
-
-    &:first-of-type {
-      svg {
-        margin-left: -0.1rem;
-      }
-    }
-
-    &:last-of-type {
-      svg {
-        margin-right: -0.1rem;
-      }
-    }
+.selector{
+  @include flex-box($justify: space-between);
+  @include max-size-percent();
+  
+  &:first-child:nth-last-child(1){
+    @include flex-box($justify: center);
   }
 
-  .projectName {
-    @include font-bebas-neue($size: 2rem);
-    @include font-hallowen-gradient();
+  .circleIcon {
+    @include flex-box($justify: center, $align: center);
 
-    padding-top: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    svg {
+      color: rgba(255, 255, 255, 0.7);
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      svg {
+        color: #21232d;
+      }
+    }
   }
 }

@@ -17,7 +17,11 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   .logoIcon {
-    position: relative;
     padding-top: 1.5rem;
+
+    svg {
+      width: 3.4rem;
+      height: auto;
+    }
   }
 }

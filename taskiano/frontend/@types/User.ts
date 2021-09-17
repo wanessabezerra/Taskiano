@@ -1,10 +1,11 @@
 type User = {
   id?: string;
+  countCreatedTasks?: number;
+  score?: number;
   username?: string | null;
   name?: string | null;
   avatar?: string | null;
   birthday?: Date | null;
-  score?: number | null;
   email?: string | null;
 };
 

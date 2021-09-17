@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
-import ProjectStatus from "./ProjectStatus";
-import CreateTask from "../../Task/Create";
 import Task from "../../Task";
+import CreateTask from "../../Task/Create";
+import EditorProject from "../../Project/Editor";
+import { useProjects } from "../../../hooks/useProjects";
 
-import type { TaskType } from "../../../@types";
+import ProjectStatus from "./ProjectStatus";
+
+import type { Project, TaskType } from "../../../@types";
 
 import styles from "./styles.module.scss";
+import { countTasksDone, countTasksOverTime, countTasksTimers } from "../../../utils";
 
 interface ProjectWidgetProps {
   id?: string;
@@ -17,11 +21,11 @@ interface ProjectWidgetProps {
 
 function ProjectWidget(props: ProjectWidgetProps) {
   const [addTask, setAddTask] = useState(false);
+  const [editProject, setEditProject] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project>();
 
-  const handleModal = {
-    openModal: () => setAddTask(true),
-    closeModal: () => setAddTask(false),
-  };
+  const getProject = useProjects((ctx) => ctx.get);
+  const colorHex = `#${props.color?.toString(16)}`;
 
   const getTitle = () => {
     if (props.tasks?.length) {
@@ -30,42 +34,60 @@ function ProjectWidget(props: ProjectWidgetProps) {
   };
 
   return (
-    <div className={styles.projectWidget}>
+    <>
       {addTask && (
         <CreateTask
           projectId={props.id}
-          projectColor={`#${props.color?.toString(16)}`}
-          close={() => handleModal.closeModal()}
+          projectColor={colorHex}
+          close={() => setAddTask(false)}
         />
       )}
 
-      <h1 className={styles.projectTitle}>{props.name}</h1>
-      <div className={styles.projectContainer}>
-        <div className={styles.projectHeader}>
-          <h1 className={styles.totalTasks}>{getTitle()}</h1>
-          <ProjectStatus
-            over={2}
-            timers={3}
-            done={4}
-            color={`#${props.color?.toString(16)}`}
-          />
-        </div>
+      {editProject && (
+        <EditorProject
+          project={selectedProject}
+          close={() => setEditProject(false)}
+        />
+      )}
 
-        <button
-          type="button"
-          className={styles.addTask}
-          onClick={() => handleModal.openModal()}
+      <div className={styles.projectWidget}>
+        <h1
+          className={styles.projectTitle}
+          style={{ color: colorHex }}
+          onClick={() => {
+            setEditProject(true);
+            setSelectedProject(getProject(props.id));
+          }}
         >
-          +
-        </button>
+          {props.name}
+        </h1>
+        <div className={styles.projectContainer}>
+          <div className={styles.projectHeader}>
+            <h1 className={styles.totalTasks}>{getTitle()}</h1>
+            <ProjectStatus
+              over={countTasksOverTime(props.tasks)}
+              timers={countTasksTimers(props.tasks)}
+              done={countTasksDone(props.tasks)}
+              color={colorHex}
+            />
+          </div>
 
-        <div className={styles.tasksContainer}>
-          {props.tasks?.map((task, index) => (
-            <Task {...task} key={task.id ?? index} />
-          ))}
+          <button
+            type="button"
+            className={styles.addTask}
+            onClick={() => setAddTask(true)}
+          >
+            +
+          </button>
+
+          <div className={styles.tasksContainer}>
+            {props.tasks?.map((task, index) => (
+              <Task {...task} key={task.id ?? index} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

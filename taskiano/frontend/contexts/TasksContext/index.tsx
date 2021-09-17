@@ -3,7 +3,9 @@ import { ReactNode, useCallback, useState, useEffect } from "react";
 import { TaskKey, TasksContext } from "./Provider";
 
 import { useAuth } from "../../hooks/useAuth";
+import { useHistory } from "../../hooks/useHistory";
 import { useProjects } from "../../hooks/useProjects";
+
 import { TaskRest } from "../../services/api";
 import { calcRemainingTime } from "../../utils";
 
@@ -18,24 +20,28 @@ const insertRemainingTime = (task: TaskType) => {
   else return { ...task, remainingTime: calcRemainingTime(task.timer) };
 };
 
-async function getTasks(projectId?: string, token?: string) {
+const getTasks = async (projectId?: string, token?: string) => {
   let tasks: TaskType[] = [];
+  let res = {} as any;
 
-  let res = await TaskRest.get(projectId, token);
-  tasks.push(...res.results);
-
-  while (res.next !== null) {
+  do {
     res = await TaskRest.get(projectId, token, res.next);
-    tasks.push(...res.results);
-  }
+    res && tasks.push(...res.results);
+  } while (res?.next);
 
   return tasks.map((task) => insertRemainingTime(task));
-}
+};
 
 export function TasksContextProvider(props: TasksContextProviderProps) {
   const [tasks, setTasks] = useState<TaskKey[]>([]);
   const projects = useProjects((ctx) => ctx.projects);
+
   const token = useAuth((ctx) => ctx.token);
+  const updateScore = useAuth((ctx) => ctx.updateScore);
+  const authenticated = useAuth((ctx) => ctx.authenticated);
+
+  const increase = useHistory((ctx) => ctx.increase);
+  const decrease = useHistory((ctx) => ctx.decrease);
 
   const preFetchTasks = useCallback(async () => {
     const _tasksKey: TaskKey[] = [];
@@ -49,12 +55,12 @@ export function TasksContextProvider(props: TasksContextProviderProps) {
           .find((t) => t.projectId === project.id)
           ?.tasks.push(insertRemainingTime(task));
 
-        setTasks([..._tasksKey]);
+        if (_tasksKey) setTasks([..._tasksKey]);
       }
     }
   }, [projects, token]);
 
-  const fetchTasks = async () => {
+  const fetchTasks = useCallback(async () => {
     const _tasks: TaskKey[] = [];
 
     for (var project of projects) {
@@ -65,27 +71,55 @@ export function TasksContextProvider(props: TasksContextProviderProps) {
     }
 
     return _tasks;
-  };
+  }, [projects, token]);
+
+  const insertTask = useCallback(
+    (task: TaskType) => {
+      setTasks(
+        tasks.map((t) =>
+          t.projectId === task?.project
+            ? {
+                projectId: t.projectId,
+                tasks: [...t.tasks, insertRemainingTime(task)],
+              }
+            : t
+        )
+      );
+    },
+    [tasks]
+  );
+
+  const updateTask = useCallback(
+    (task: TaskType) => {
+      setTasks(
+        tasks.map((t) =>
+          t.projectId === task?.project
+            ? {
+                projectId: t.projectId,
+                tasks: t.tasks.map((_tasks) =>
+                  _tasks.id === task?.id ? insertRemainingTime(task) : _tasks
+                ),
+              }
+            : t
+        )
+      );
+    },
+    [tasks]
+  );
 
   const updateInsertTasks = useCallback(
     (task?: TaskType) => {
       if (task) {
-        setTasks(
-          tasks.map(({ projectId, tasks: _tasks }) => {
-            return {
-              projectId,
-              tasks: _tasks.map((t) =>
-                insertRemainingTime(task.id === t.id ? task : t)
-              ),
-            };
-          })
-        );
+        const taskExists = tasks
+          .find((t) => t.projectId === task?.project)
+          ?.tasks.find((t) => t.id === task?.id);
+
+        taskExists ? updateTask(task) : insertTask(task);
       } else {
         fetchTasks();
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [fetchTasks]
+    [fetchTasks, insertTask, tasks, updateTask]
   );
 
   const updateDropTask = useCallback(
@@ -106,9 +140,8 @@ export function TasksContextProvider(props: TasksContextProviderProps) {
 
   const create = useCallback(
     async (data: TaskType) => {
-      console.log(data);
       const task = await TaskRest.create(data, token);
-      updateInsertTasks(task);
+      task && updateInsertTasks(task);
     },
     [token, updateInsertTasks]
   );
@@ -116,7 +149,7 @@ export function TasksContextProvider(props: TasksContextProviderProps) {
   const update = useCallback(
     async (taskId: string, data: TaskType) => {
       const task = await TaskRest.update(taskId, data, token);
-      updateInsertTasks(task);
+      task && updateInsertTasks(task);
     },
     [token, updateInsertTasks]
   );
@@ -124,40 +157,53 @@ export function TasksContextProvider(props: TasksContextProviderProps) {
   const close = useCallback(
     async (id: string) => {
       const task = await TaskRest.close(id, token);
-      updateInsertTasks(task);
+
+      if (task) {
+        updateInsertTasks(task);
+        await increase();
+        await updateScore();
+      }
     },
-    [token, updateInsertTasks]
+    [increase, token, updateInsertTasks, updateScore]
   );
 
   const openTask = useCallback(
     async (id: string) => {
-      const task = await TaskRest.openTask(id, token);
-      updateInsertTasks(task);
+      const task = await TaskRest.open(id, token);
+
+      if (task) {
+        updateInsertTasks(task);
+        await decrease();
+        await updateScore();
+      }
     },
-    [token, updateInsertTasks]
+    [decrease, token, updateInsertTasks, updateScore]
   );
 
   const deleteTask = useCallback(
     async (id: string) => {
-      await TaskRest.deleteTask(id, token);
+      await TaskRest.delete(id, token);
       updateDropTask(id);
+      await updateScore();
     },
-    [token, updateDropTask]
+    [token, updateDropTask, updateScore]
   );
 
   // Auto update tasks when project is updated
   useEffect(() => {
-    token && tasks.length === 0 && preFetchTasks();
-    updateInsertTasks();
+    if (authenticated) {
+      if (authenticated && tasks.length === 0) preFetchTasks();
+      else fetchTasks();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projects]);
+  }, [projects, authenticated]);
 
   // Auto update tasks every 2 minute since last update
   useEffect(() => {
-    const timeout = setTimeout(() => updateInsertTasks(), 120000);
+    const timeout = setTimeout(() => authenticated && fetchTasks(), 120000);
     return () => clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tasks]);
+  }, [tasks, authenticated]);
 
   return (
     <TasksContext.Provider
