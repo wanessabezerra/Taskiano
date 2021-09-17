@@ -1,24 +1,19 @@
 import React from "react";
 
 import WeekdayBar from "./WeekdayBar";
+import { useHistory } from "../../hooks/useHistory";
 import { MapPercentageOfMaxPerDay } from "../../utils";
 
-import type { Weekday, WeekdayPercent } from "../../@types";
-
+import type { Weekday } from "../../@types";
 import styles from "./styles.module.scss";
 
-interface CompassProps {
-  weekdays: Weekday[];
-}
-
-function Compass(props: CompassProps) {
-  const weekdaysPercents: WeekdayPercent[] = MapPercentageOfMaxPerDay(
-    props.weekdays
-  );
+function Compass() {
+  const weekdays: Weekday[] = useHistory((state) => state.weekdays);
+  const weekdaysPercents = MapPercentageOfMaxPerDay(weekdays);
 
   return (
     <div className={styles.compassContainer}>
-      {weekdaysPercents.map((data, index) => (
+      {weekdaysPercents.map((data) => (
         <WeekdayBar
           day={data.day}
           height={data.percent}
