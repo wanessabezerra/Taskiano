@@ -28,13 +28,14 @@
         @include flex-box($justify: center, $align: center);
         position: relative;
 
-        img {
+        svg {
           width: 15vw;
         }
       }
 
       .logoText {
         @include font-bebas-neue($size: 4.5rem);
+        @include block-text-select();
         opacity: 0.6;
       }
     }

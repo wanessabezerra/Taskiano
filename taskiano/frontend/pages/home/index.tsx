@@ -1,19 +1,14 @@
 import React from "react";
 import Head from "next/head";
-import dynamic from 'next/dynamic'
 
 import GlobalStatus from "./GlobalStatus";
 import Projects from "./Projects";
 
 import Sidebar from "../../components/Sidebar";
 import Topbar from "../../components/Topbar";
+import Timers from "../../components/Timers";
 
 import styles from "./styles.module.scss";
-
-const Timers = dynamic(
-  () => import('../../components/Timers'),
-  { ssr: false }
-)
 
 export default function Home() {
   return (
