@@ -381,3 +381,5 @@ sketch
 **/**/migrations/**
 **/**/taskiano-todo-firebase-adminsdk-*.json
 .scannerwork
+taskiano/backend/data_man.json
+.vscode/launch.json
