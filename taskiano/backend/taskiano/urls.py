@@ -3,20 +3,18 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-from task.api import viewsets as taskviewsets
-from task.api import viewsets as usersviewsets
-from task.api import viewsets as projectviewsets
-from task.api import viewsets as reminderviewsets
-from task.api import viewsets as subtaskviewsets
+from api import viewsets
 
 route = routers.DefaultRouter()
 
-route.register(r'task', taskviewsets.TaskViewSet, basename="Task")
-route.register(r'subtask', subtaskviewsets.SubTaskViewSet, basename="Subtask")
-route.register(r'users', usersviewsets.UsersViewSet, basename="User")
-route.register(r'project', projectviewsets.ProjectViewSet, basename="Project")
-route.register(r'reminder', reminderviewsets.ReminderViewSet,
-               basename="Reminder")
+route.register(r'task', viewsets.TaskViewSet, basename="Task")
+route.register(r'task-preview', viewsets.TaskPreviewViewSet, basename="TaskPreview")
+route.register(r'subtask', viewsets.SubTaskViewSet, basename="Subtask")
+route.register(r'users', viewsets.UsersViewSet, basename="User")
+route.register(r'history', viewsets.HistoryViewSet, basename="History")
+route.register(r'score', viewsets.UserScoreViewSet, basename="UserScore")
+route.register(r'project', viewsets.ProjectViewSet, basename="Project")
+route.register(r'reminder', viewsets.ReminderViewSet, basename="Reminder")
 
 
 urlpatterns = [
