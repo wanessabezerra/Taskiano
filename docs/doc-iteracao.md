@@ -4,23 +4,26 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 
 ## Plano de Iterações
 
-| Iteração | Data início | Data Final | Apresentação | Gerente       | Detalhes                                                                                                                                           |
-| -------- | ----------- | ---------- | ------------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| It1      | 15/06/2021  | 30/06/2021 | 30/06/2021   | Wanessa       | Criar Documento de Visão, Modelos e Plano de Iteração e Plano de Release, Detalhar User Story Base - US00, Estrutura do Projeto (Implementar US00) |
-| It2      | 01/07/2021  | 15/07/2021 | 15/07/2021   | Zaú           | Implementar US00, Testar US00, Detalhar US01, Detalhar US02                                                                                        |
-| It3      | 16/07/2021  | 03/07/2021 | 03/08/2021   | Lucas         | Implementar US01, Testar US01, Implementar US02, Testar US02, Detalhar US03, US04, Deploy do Release (Implantação)                                 |
-| It4      | 04/08/2021  | 04/08/2021 | 27/08/2021   | Zaú / Wanessa | ....                                                                                                                                               |
-| It5      | 13/08/2021  | 28/08/2021 | 14/09/2021   | Wanessa       | ....                                                                                                                                               |
+| Iteração | Data início | Data Final | Apresentação | Gerente | Detalhes                                                                                                                                                                                                                               |
+| -------- | ----------- | ---------- | ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| It1      | 15/06/2021  | 30/06/2021 | 30/06/2021   | Wanessa | Criar Documento de Visão, Modelos e Plano de Iteração e Plano de Release, Detalhar User Story Base - US00, Estrutura do Projeto (Implementar US00)                                                                                     |
+| It2      | 01/07/2021  | 15/07/2021 | 15/07/2021   | Zaú     | Implementar US00, Testar US00, Detalhar US01, Detalhar US02                                                                                                                                                                            |
+| It3      | 16/07/2021  | 03/07/2021 | 03/08/2021   | Lucas   | Implementar US01, Testar US01, Implementar US02, Testar US02, Detalhar US03, Deploy do Release (Implantação)                                                                                                                           |
+| It4      | 04/08/2021  | 27/08/2021 | 27/08/2021   | Zaú     | Criar Documento de Contagem por Pontos de Função,  Arquitetura Geral do Sistema, Implementar US03,                                                                                                                                     |
+| It5      | 28/08/2021  | 16/09/2021 | 16/09/2021   | Wanessa | Criar Relatório de Testes, Atualizar Documento de Visão, Modelos, Plano de Iteração, Plano de Release, Documento de Contagem por Pontos de Função e Arquitetura Geral do Sistema, Detalhar US04, Implementar US04 e Implementar Testes |
 
 - Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
 - Observação 2: Use este Plano de Iteração como Modelo. No seu projeto você deve identificar os User Stories e o gerente deve alocar um US por membro da equipe.
 
 ## Plano de Release
 
-| Release | Data início | Data Final | Gerente   | Detalhes                                                |
-| ------- | ----------- | ---------- | --------- | ------------------------------------------------------- |
-| R01     | 15/06/2021  | 28/07/2021 | Gerente 1 | Lista de funcionalidades da Release 01 (It1, It2, It3). |
-| R02     | 29/07/2021  | 09/09/2021 | Gerente 2 | Lista de funcionalidades da Release 02 (It4, It5, It6). |
+| Release | Data início | Data Final | Gerente | Detalhes                                     |
+| ------- | ----------- | ---------- | ------- | -------------------------------------------- |
+| R01     | 15/06/2021  | 30/06/2021 | Wanessa | Lista de funcionalidades da Release 01 (It1) |
+| R02     | 01/07/2021  | 15/07/2021 | Zaú     | Lista de funcionalidades da Release 02 (It2) |
+| R03     | 16/07/2021  | 03/07/2021 | Lucas   | Lista de funcionalidades da Release 03 (It3) |
+| R04     | 04/08/2021  | 27/08/2021 | Zaú     | Lista de funcionalidades da Release 04 (It4) |
+| R05     | 28/08/2021  | 16/09/2021 | Wanessa | Lista de funcionalidades da Release 05 (It5) |
 
 - Observação 3: Os releases são ajustados para fornecer um MVP. As release podem ter número de iterações diferentes, de acordo com as funcionalidades necessárias por release.
 

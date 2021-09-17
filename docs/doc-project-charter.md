@@ -49,8 +49,8 @@ O projeto foi criado para auxiliar usuários a organizar suas tarefas cotidianas
 
 # 5. Descrição dos produtos/entregáveis do projeto
 
-| Nome                            | Link                                 |
-| ------------------------------- | ------------------------------------ |
+| Nome                            | Link                                |
+| ------------------------------- | ----------------------------------- |
 | Documento de Visão              | [Clique aqui ➡️](doc-visao.md)       |
 | Documento de Modelos            | [Clique aqui ➡️](doc-modelos.md)     |
 | Documento Lista de User Stories | [Clique aqui ➡️](doc-userstories.md) |
@@ -65,8 +65,8 @@ Restrições:
 
 # 7. Cronograma de macros
 
-| Milestones                                 | Data de Início | Data de Conclusão | Link                                                                     |
-| ------------------------------------------ | -------------- | ----------------- | ------------------------------------------------------------------------ |
+| Milestones                                 | Data de Início | Data de Conclusão | Link                                                                    |
+| ------------------------------------------ | -------------- | ----------------- | ----------------------------------------------------------------------- |
 | T01 - Iteração 1 - Planejamento            | 23/06/2021     | 30/07/2021        | [Clique aqui ➡️](https://github.com/wanessabezerra/Taskiano/milestone/1) |
 | T02 - Iteração 2 - Inicialização           | 08/07/2021     | 14/07/2021        | [Clique aqui ➡️](https://github.com/wanessabezerra/Taskiano/milestone/2) |
 | T03 - Iteração 3 - Desenvolvimento: Fase 1 | 15/07/2021     | 22/07/2021        | [Clique aqui ➡️](https://github.com/wanessabezerra/Taskiano/milestone/3) |
