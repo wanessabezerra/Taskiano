@@ -1,0 +1,68 @@
+@import "../../styles/vars.scss";
+
+.containerGrid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.8fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "sideBar topBar topBar topBar topBar topBar topBar topBar topBar topBar topBar"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer"
+    "sideBar content content content content content content content content timer timer";
+
+  .sideBar {
+    grid-area: sideBar;
+  }
+
+  .topBar {
+    grid-area: topBar;
+  }
+
+  .timer {
+    grid-area: timer;
+  }
+
+  .main {
+    grid-area: content;
+    height: max-content;
+    position: relative;
+    .container {
+      @include flex-box($direction: column, $justify: center, $align: center);
+
+      .globalStatus {
+        @include flex-box($justify: space-between, $align: center);
+        gap: 2rem;
+        width: 100%;
+        height: 30%;
+      }
+
+      .projectsContent {
+        @include flex-box(
+          $align: flex-end,
+          $justify: center,
+          $direction: column
+        );
+
+        width: 100%;
+        padding: 0 3rem;
+
+        .projectsContainer {
+          @include flex-box($justify: flex-start, $direction: row);
+
+          gap: 2rem;
+          @include max-size-percent();
+          overflow-x: scroll;
+        }
+      }
+    }
+  }
+}
