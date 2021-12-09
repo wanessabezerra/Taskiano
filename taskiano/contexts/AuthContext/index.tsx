@@ -63,8 +63,9 @@ export function AuthContextProvider(props: IAuthContextProvider) {
   useEffect(() => {
     if (fireAuth.user && fireAuth.mounted) fetchUser();
     else if (isDisconnected()) {
-      ToastDisconnected();
-      props.router.push("/");
+      if (props.router.pathname !== "/" && props.router.pathname !== "/login")
+        ToastDisconnected();
+        props.router.push("/login");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fireAuth.user, fireAuth.mounted]);
