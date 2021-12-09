@@ -1,0 +1,25 @@
+@import "../../../../styles/variables.scss";
+
+.signInButton {
+  @include flex-box($justify: space-between, $align: center);
+  @include font-bebas-neue();
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: $dark;
+  border-radius: 8px;
+
+  padding: 0 1rem;
+  width: 18rem;
+  height: 4rem;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  svg {
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+  }
+}
