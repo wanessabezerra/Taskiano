@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@import "../../../styles/vars.scss";
 
 .pageIndicatorsContainer {
   @include flex-box($justify: center, $align: center);

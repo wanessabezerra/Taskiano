@@ -1,0 +1,40 @@
+@import "../../../styles/vars.scss";
+
+.selector{
+  @include flex-box($justify: space-between);
+  @include max-size-percent();
+
+  &:first-child:nth-last-child(1){
+    @include flex-box($justify: center);
+  }
+
+  .title {
+    @include font-bebas-neue($size: 2rem);
+    @include font-hallowen-gradient();
+    @include block-text-select();
+  }
+
+  .circleIcon {
+    @include flex-box($justify: center, $align: center);
+
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    svg {
+      color: rgba(255, 255, 255, 0.7);
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      svg {
+        color: #21232d;
+      }
+    }
+  }
+}

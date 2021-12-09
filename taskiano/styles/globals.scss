@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import "./variables.scss";
+@import "./vars.scss";
 
 @media (max-width: 1920px) {
   html {
@@ -33,7 +33,7 @@ html,
 body {
   height: -webkit-fill-available;
   width: -webkit-fill-available;
-  
+
   padding: 0;
   margin: 0;
   font-family: Raleway, Bebas Neue, Bitter, Lato, Roboto, -apple-system,

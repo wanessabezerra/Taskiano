@@ -22,10 +22,6 @@ $bp-s: 320px;
 $bp-m: 720px;
 $bp-l: 1440px;
 
-// @media screen and (max-width: $bp-m) {
-//   width: 20rem;
-// }
-
 @mixin max-size-percent() {
   height: 100%;
   width: 100%;
