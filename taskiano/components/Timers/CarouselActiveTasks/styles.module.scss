@@ -1,0 +1,14 @@
+@import "../../../styles/vars.scss";
+
+.taskTag {
+  @include font-bebas-neue();
+  @include block-text-select();
+  cursor: pointer;
+  color: white;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}

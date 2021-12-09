@@ -1,0 +1,31 @@
+@import "../../styles/vars.scss";
+
+.modal {
+  @include absolute-center();
+  @include max-size-viewport();
+  position: fixed;
+
+  backdrop-filter: blur(20px);
+
+  .modalContainer {
+
+    .closeModal {
+      position: absolute;
+      top: 4.5rem;
+      right: 14rem;
+      z-index: 2000;
+
+      cursor: pointer;
+      color: $white;
+
+      width: 2rem;
+      height: 2rem;
+
+      transition: all 0.3s ease;
+      &:hover {
+        color: #ff6363;
+        filter: 0px 4px 4px rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}

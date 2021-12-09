@@ -1,0 +1,38 @@
+@import "../../styles/vars.scss";
+
+.userScore {
+  @include flex-box(
+    $direction: column,
+    $justify: center,
+    $align: center
+  );
+
+  background: linear-gradient(
+    125deg,
+    #00000000 40%,
+    #333c59 75%
+  );
+
+  border-radius: 8px;
+  margin-right: 2rem;
+  width: 55%;
+
+  .title {
+    align-self: flex-start;
+
+    @include font-bebas-neue($size: 2.5rem);
+    @include font-hallowen-gradient();
+    @include block-text-select();
+  }
+
+  .score {
+    @include font-bebas-neue($size: 9rem);
+    @include block-text-select();
+
+    align-self: flex-end;
+    padding-right: 1rem;
+
+    color: white;
+    text-shadow: 16px 8px 4px rgba(0, 0, 0, 0.25);
+  }
+}
