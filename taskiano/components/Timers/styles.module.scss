@@ -1,0 +1,48 @@
+@import "../../styles/vars.scss";
+
+.container {
+  @include flex-box($direction: column, $justify: flex-start);
+  @include max-size-percent();
+
+  gap: 1.7rem;
+
+  background: $darker;
+
+  .countdown {
+    @include flex-box($direction: column, $justify: center);
+
+    gap: 1.5rem;
+    width: 100%;
+
+    .title {
+      @include font-bitter($size: 1.8rem, $weight: 800);
+      text-align: center;
+    }
+
+    .description {
+      @include font-bitter($size: 1.2rem);
+      color: #d8d8d8;
+    }
+  }
+
+  .sepLine {
+    border: 1px solid rgba(121, 121, 121, 0.25);
+    margin: 1rem 0 0.5rem 0;
+    width: 40%;
+  }
+
+  .compass {
+    @include flex-box($direction: column, $justify: center);
+    @include max-size-percent();
+
+    color: white;
+    margin-bottom: 3rem;
+
+    .compassTitle {
+      @include font-bebas-neue($size: 2.5rem);
+      text-align: right;
+      width: 80%;
+      padding-bottom: 2rem;
+    }
+  }
+}
