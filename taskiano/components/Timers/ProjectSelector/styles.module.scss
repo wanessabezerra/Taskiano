@@ -1,0 +1,20 @@
+@import "../../../styles/vars.scss";
+
+.projectSelector {
+  @include flex-box($justify: center);
+
+  width: 80%;
+  background: $dark;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+
+  padding: 1rem 1.4rem;
+  margin: 2rem 0 1rem;
+  gap: 1.5rem;
+
+  .selectorOption {
+    @include font-bebas-neue($size: 2rem);
+    @include font-hallowen-gradient();
+    width: 100%;
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../styles/vars.scss";
+
+.switchContainer {
+  position: relative;
+
+  width: 2rem;
+  height: 2rem;
+
+  .switch {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .switch + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+  }
+
+  .switchShadow + label {
+    width: 4rem;
+    height: 2rem;
+    background-color: $gray;
+    border-radius: 60px;
+  }
+
+  .switchShadow + label:before,
+  .switchShadow + label:after {
+    display: block;
+    position: absolute;
+
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+
+    content: "";
+  }
+  .switchShadow + label:before {
+    right: 1px;
+    background-color: $white-gray;
+    border-radius: 60px;
+    transition: background 0.4s;
+  }
+  .switchShadow + label:after {
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 100%;
+    background-color: $white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    transition: all 0.4s;
+  }
+  .switchShadow:checked + label:before {
+    background-color: $hightPurple;
+  }
+  .switchShadow:checked + label:after {
+    transform: translateX(2rem);
+  }
+}

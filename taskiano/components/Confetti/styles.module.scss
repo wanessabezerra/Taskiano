@@ -1,0 +1,15 @@
+@import "../../styles/vars.scss";
+
+.confetti {
+  @include max-size-percent();
+  position: relative;
+
+  .particles {
+    @include max-size-percent();
+    position: absolute;
+  }
+
+  .children {
+    position: absolute;
+  }
+}
