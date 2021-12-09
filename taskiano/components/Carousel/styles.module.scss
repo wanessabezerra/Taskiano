@@ -1,0 +1,18 @@
+@import "../../styles/variables.scss";
+
+.carouselContainer {
+  @include flex-box($justify: center, $align: center);
+  flex-wrap: wrap;
+  width: 100%;
+
+  .widgetsSlider {
+    @include flex-box($justify: space-around, $align: center);
+    width: 100%;
+    gap: 1rem;
+
+    .itemsContainer {
+      @include flex-box($justify: center, $align: center);
+      @include max-size-percent();
+    }
+  }
+}
