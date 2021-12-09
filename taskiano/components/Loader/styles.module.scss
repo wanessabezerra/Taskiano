@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../styles/vars.scss";
 
 .none {
   display: none;
@@ -13,8 +13,8 @@
     border-top: 6px solid $hightPurple;
 
     border-radius: 50%;
-    width: 13rem;
-    height: 13rem;
+    width: 11rem;
+    height: 11rem;
     animation: spin 2s steps(360, jump-start) infinite;
 
     z-index: 2000;
