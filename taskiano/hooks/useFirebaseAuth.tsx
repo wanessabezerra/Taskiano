@@ -10,7 +10,7 @@ import {
   User as IFirebaseUser,
 } from "firebase/auth";
 
-import { UserController } from "../db";
+import { UserController } from "../lib";
 import { auth } from "../services/Firebase";
 
 import {

@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
 
 import { HistoryContext } from "./Provider";
-import { HistoryController } from "../../db";
+import { HistoryController } from "../../lib";
 import { useAuth } from "../../hooks/useAuth";
 
 import {

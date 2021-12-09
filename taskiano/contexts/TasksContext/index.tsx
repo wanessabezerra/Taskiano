@@ -2,7 +2,7 @@ import { ReactNode, useCallback, useState, useEffect } from "react";
 
 import { TasksContext } from "./Provider";
 
-import { TaskController } from "../../db";
+import { TaskController } from "../../lib";
 import { useAuth, useHistory, useProjects } from "../../hooks";
 import { calcRemainingTime } from "../../utils";
 

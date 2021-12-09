@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from "react";
 import type { NextRouter } from "next/router";
 
 import { AuthContext } from "./Provider";
-import { UserController } from "../../db";
+import { UserController } from "../../lib";
 import useFirebaseAuth from "../../hooks/useFirebaseAuth";
 import { ToastDisconnected, ToastTrySignInAgain } from "../../utils/toasts";
 import type { IUser } from "../../types";
