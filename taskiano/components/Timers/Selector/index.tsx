@@ -17,12 +17,14 @@ function Selector(props: ISelector) {
 
   const handles = {
     decrease: () => {
-      if (selected === 0) setSelected(childrenCount - 1);
-      else setSelected(selected - 1);
+      selected === 0
+        ? setSelected(childrenCount - 1)
+        : setSelected(selected - 1);
     },
     increase: () => {
-      if (selected === childrenCount - 1) setSelected(0);
-      else setSelected(selected + 1);
+      selected === childrenCount - 1
+        ? setSelected(0)
+        : setSelected(selected + 1);
     },
   };
 
