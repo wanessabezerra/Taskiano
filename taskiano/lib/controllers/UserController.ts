@@ -40,7 +40,6 @@ class Controller extends FireController<IUser> {
       username: user.displayName,
       avatar: user.photoURL,
       email: user.email,
-      countCreatedTasks: 0,
     };
   }
 
