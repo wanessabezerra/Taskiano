@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.globalStatus {
+  @include flex-box($justify: space-between, $align: center);
+  gap: 2rem;
+  width: 100%;
+  height: 30%;
+
+  .tasksStatusContainer {
+    @include flex-box($direction: column, $justify: center, $align: center);
+    @include max-size-percent();
+    gap: 1.2rem;
+
+    margin-left: 2rem; // side offset
+    margin-top: 2rem; // top offset
+
+    .separator {
+      width: 60%;
+      align-self: flex-start;
+      border: 1px solid rgba(121, 121, 121, 0.15);
+    }
+
+    .allDone {
+      @include flex-box($justify: flex-start, $align: center);
+      @include font-bebas-neue($size: 3.5rem);
+      @include max-size-percent();
+      @include block-text-select();
+
+      padding-left: 8rem;
+      text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    }
+  }
+}
