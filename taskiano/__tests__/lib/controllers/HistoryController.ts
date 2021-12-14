@@ -1,10 +1,10 @@
 import FireController from './FireController'
 import collections from '../../mocks/data'
-import { HistorySchema } from '../schemas'
 
 import { getCurrentWeekday } from '../../../utils'
 
 import type { IHistory, ITask } from '../../../types'
+import { HistorySchema } from '../../../lib/schemas'
 
 interface IRecordObject {
   [key: string]: number

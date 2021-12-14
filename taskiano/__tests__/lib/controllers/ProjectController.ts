@@ -1,8 +1,8 @@
 import { TaskController } from ".";
 import FireController from "./FireController";
 
-import { ProjectSchema } from "../schemas";
 import type { IProject } from "../../../types";
+import { ProjectSchema } from "../../../lib/schemas";
 import collections from "../../mocks/data";
 
 class Controller extends FireController<IProject> {
@@ -97,7 +97,7 @@ function getInitialProjects() {
       tasks: [
         {
           title: "Projetos",
-          note: require("../md/aboutProject.md").default,
+          note: require("../../../lib/md/aboutProject.md").default,
           status: "open",
           created_at: new Date(),
           closed_in: null,

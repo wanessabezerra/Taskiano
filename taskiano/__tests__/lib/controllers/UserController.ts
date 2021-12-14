@@ -1,10 +1,10 @@
 import FireController from "./FireController";
 
 import { HistoryController, ProjectController } from ".";
-import { UserSchema } from "../schemas";
-import collections from "../../mocks/data"
+import collections from "../../mocks/data";
 
 import type { IUser, IFirebaseUser } from "../../../types";
+import { UserSchema } from "../../../lib/schemas";
 
 class Controller extends FireController<IUser> {
   constructor() {
@@ -12,7 +12,7 @@ class Controller extends FireController<IUser> {
       ref: "users",
       schema: UserSchema,
       _name: "User",
-      _data: collections.user
+      _data: collections.user,
     });
   }
 
