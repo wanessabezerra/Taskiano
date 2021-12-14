@@ -1,5 +1,6 @@
 interface IUser {
   id?: string;
+  countCreatedTasks?: number;
   username?: string | null;
   name?: string | null;
   avatar?: string | null;
