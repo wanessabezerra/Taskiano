@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.container {
+  @include flex-box($justify: space-between, $align: space-between);
+  @include max-size-viewport();
+
+  .main {
+    margin-top: 5rem; // Margin by topbar
+    margin-left: 6rem; // Margin by sidebar
+
+    width: calc(100% - 6rem); // Width offset sidebar;
+    height: calc(100% - 5rem); // Height offset topbar;
+
+    .content {
+      @include flex-box($justify: space-between, $align: space-between);
+      background: $dark; // content
+      @include max-size-percent();
+
+      .centerContainer {
+        background: $dark; // Center
+        @include flex-box($direction: column, $justify: center, $align: center);
+      }
+    }
+  }
+}

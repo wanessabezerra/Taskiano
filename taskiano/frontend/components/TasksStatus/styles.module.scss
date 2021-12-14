@@ -1,0 +1,37 @@
+@import "../../styles/variables.scss";
+
+.taskStatusContainer {
+  @include flex-box($justify: flex-start, $align: center);
+
+  width: 100%;
+  height: 90px;
+
+  .taskListTitle {
+    @include font-bebas-neue($size: 2.7rem);
+    @include block-text-select();
+
+    width: 40%;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .tasksList {
+    @include flex-box($direction: column, $justify: center, $align: flex-start);
+
+    gap: 1rem;
+    width: 60%;
+    height: 100%;
+    
+    .empty {
+      @include max-size-percent();
+
+      h2 {
+        @include font-bebas-neue($size: 2rem);
+        @include underline-text-gradient();
+        @include block-text-select();
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+}
