@@ -1,18 +1,25 @@
+import {
+  AuthProvider,
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
+} from "firebase/auth";
+
 import FireController from "./FireController";
 
 import { HistoryController, ProjectController } from ".";
-import collections from "../../mocks/data";
+import { UserRef } from "../models";
+import { UserSchema } from "../schemas";
 
-import type { IUser, IFirebaseUser } from "../../../types";
-import { UserSchema } from "../../../lib/schemas";
+import type { IUser, IFirebaseUser } from "../../types";
 
 class Controller extends FireController<IUser> {
   constructor() {
     super({
-      ref: "users",
+      ref: UserRef,
       schema: UserSchema,
       _name: "User",
-      _data: collections.user,
     });
   }
 
@@ -39,6 +46,21 @@ class Controller extends FireController<IUser> {
 
   public ErrorAccountExists(code: string) {
     return code === "auth/account-exists-with-different-credential";
+  }
+
+  public getProvider(providerId: string): AuthProvider {
+    switch (providerId) {
+      case GoogleAuthProvider.PROVIDER_ID:
+        return new GoogleAuthProvider();
+      case FacebookAuthProvider.PROVIDER_ID:
+        return new FacebookAuthProvider();
+      case TwitterAuthProvider.PROVIDER_ID:
+        return new TwitterAuthProvider();
+      case GithubAuthProvider.PROVIDER_ID:
+        return new GithubAuthProvider();
+      default:
+        throw new Error(`No provider implemented for ${providerId}`);
+    }
   }
 }
 

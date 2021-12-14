@@ -2,7 +2,7 @@ import { ReactNode, useCallback, useEffect, useState } from "react";
 
 import { useAuth } from "../../hooks/useAuth";
 import { ProjectsContext } from "./Provider";
-import { ProjectController } from "../../lib";
+import { ProjectController } from "../../db";
 
 import type { IProject } from "../../types";
 

@@ -33,11 +33,7 @@ class FireController<T> {
   }
 
   public castDate(date?: Timestamp): Date | any {
-    if (date instanceof Timestamp) {
-      return date.toDate();
-    } else {
-      return date;
-    }
+    return date ? date.toDate() : date;
   }
 
   public async Validator(data: T, schema: SchemaOf<any> = this.schema) {
