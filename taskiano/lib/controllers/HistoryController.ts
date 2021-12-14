@@ -5,7 +5,11 @@ import FireController from "./FireController";
 import { HistoryRef } from "../models";
 import { HistorySchema } from "../schemas";
 
-import { getCurrentWeekday } from "../../utils";
+import {
+  getCurrentWeekday,
+  getDaysOfDifference,
+  weekdaysList,
+} from "../../utils";
 
 import type { IHistory, ITask } from "../../types";
 
@@ -57,6 +61,17 @@ class Controller extends FireController<IHistory> {
     });
   }
 
+  public async update(_id: any, data: IHistory): Promise<IHistory | undefined> {
+    if (!_id) return;
+
+    const _data = {
+      ...data,
+      updated_at: this.castDate(data?.updated_at as unknown as Timestamp),
+    };
+
+    return super.update(_id, _data);
+  }
+
   public async get(id: string): Promise<IHistory | undefined> {
     const doc = await super.get(id);
     if (!doc) return;
@@ -72,11 +87,26 @@ class Controller extends FireController<IHistory> {
     await addDoc(this.ref, { ...this.initialHistory, userId });
   }
 
-  public async getHistoryOfUser(userId?: string): Promise<IHistory> {
+  private async resetHistory(_history: IHistory) {
+    const lastUpdateDate = new Date(_history?.updated_at!);
+    const diff = getDaysOfDifference(lastUpdateDate);
+
+    let weekday = getCurrentWeekday();
+
+    Array.from({ length: diff }, () => {
+      _history.weekdayTaskCount[weekday] = 0;
+      weekday = weekdaysList[weekdaysList.indexOf(weekday) - 1];
+    });
+
+    return this.update(_history.id, _history);
+  }
+
+  public async getHistoryOfUser(userId?: string) {
     const docs = await super.getDocsOfUser(
       userId ?? getAuth().currentUser?.uid
     );
-    return docs[0];
+
+    return (await this.resetHistory(docs[0])) ?? docs[0];
   }
 
   public async getScore(id: string): Promise<number | undefined> {
